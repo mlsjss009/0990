@@ -121,136 +121,92 @@ export default function ContactSection() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
-            <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl overflow-hidden">
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <Label htmlFor="firstName" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
-                        First Name *
-                      </Label>
-                      <Input
-                        id="firstName"
-                        type="text"
-                        value={formData.firstName}
-                        onChange={(e) => handleInputChange("firstName", e.target.value)}
-                        className="w-full h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="lastName" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
-                        Last Name *
-                      </Label>
-                      <Input
-                        id="lastName"
-                        type="text"
-                        value={formData.lastName}
-                        onChange={(e) => handleInputChange("lastName", e.target.value)}
-                        className="w-full h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors"
-                        required
-                      />
-                    </div>
-                  </div>
+        <div className="max-w-3xl mx-auto">
+          <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl overflow-hidden">
+            <CardContent className="p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="email" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
-                      Email Address *
+                    <Label htmlFor="firstName" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
+                      First Name *
                     </Label>
                     <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
+                      id="firstName"
+                      type="text"
+                      value={formData.firstName}
+                      onChange={(e) => handleInputChange("firstName", e.target.value)}
                       className="w-full h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors"
                       required
                     />
                   </div>
                   <div>
-                    <Label htmlFor="subject" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
-                      Subject *
+                    <Label htmlFor="lastName" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
+                      Last Name *
                     </Label>
-                    <Select value={formData.subject} onValueChange={(value) => handleInputChange("subject", value)}>
-                      <SelectTrigger className="h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary">
-                        <SelectValue placeholder="Select a subject" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="volunteer">Volunteer Opportunities</SelectItem>
-                        <SelectItem value="partnership">Partnership</SelectItem>
-                        <SelectItem value="grants">Grants</SelectItem>
-                        <SelectItem value="press">Press/Media</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div>
-                    <Label htmlFor="message" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
-                      Message *
-                    </Label>
-                    <Textarea
-                      id="message"
-                      rows={6}
-                      value={formData.message}
-                      onChange={(e) => handleInputChange("message", e.target.value)}
-                      className="w-full rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors resize-none"
+                    <Input
+                      id="lastName"
+                      type="text"
+                      value={formData.lastName}
+                      onChange={(e) => handleInputChange("lastName", e.target.value)}
+                      className="w-full h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors"
                       required
                     />
                   </div>
-                  <Button 
-                    type="submit" 
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold h-auto w-full"
-                    disabled={contactMutation.isPending}
-                  >
-                    <Send className="mr-3 h-5 w-5" />
-                    {contactMutation.isPending ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="space-y-8">
-            <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl overflow-hidden">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-ngo-neutral-dark mb-8">Contact Information</h3>
-                <div className="space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <div key={index} className="flex items-start group">
-                      <div className={`flex-shrink-0 w-12 h-12 bg-gray-50 rounded-2xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-                        <info.icon className={`${info.color} h-6 w-6`} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-ngo-neutral-dark text-lg mb-1">{info.title}</div>
-                        <div className="text-ngo-neutral leading-relaxed">{info.content}</div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl overflow-hidden">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-ngo-neutral-dark mb-6">Follow Us</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {socialLinks.map((social, index) => (
-                    <button
-                      key={index}
-                      className={`${social.color} text-white rounded-2xl p-4 hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-semibold`}
-                    >
-                      {social.name}
-                    </button>
-                  ))}
+                <div>
+                  <Label htmlFor="email" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
+                    Email Address *
+                  </Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="w-full h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors"
+                    required
+                  />
                 </div>
-                <div className="mt-6 p-4 bg-gradient-to-r from-gray-50 to-blue-50 rounded-2xl">
-                  <div className="text-sm text-ngo-neutral text-center">
-                    Follow our journey and stay updated with our latest impact stories and community initiatives.
-                  </div>
+                <div>
+                  <Label htmlFor="subject" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
+                    Subject *
+                  </Label>
+                  <Select value={formData.subject} onValueChange={(value) => handleInputChange("subject", value)}>
+                    <SelectTrigger className="h-12 rounded-xl border-2 border-gray-200 focus:border-ngo-primary">
+                      <SelectValue placeholder="Select a subject" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="general">General Inquiry</SelectItem>
+                      <SelectItem value="volunteer">Volunteer Opportunities</SelectItem>
+                      <SelectItem value="partnership">Partnership</SelectItem>
+                      <SelectItem value="grants">Grants</SelectItem>
+                      <SelectItem value="press">Press/Media</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
+                <div>
+                  <Label htmlFor="message" className="block text-sm font-semibold text-ngo-neutral-dark mb-3">
+                    Message *
+                  </Label>
+                  <Textarea
+                    id="message"
+                    rows={6}
+                    value={formData.message}
+                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    className="w-full rounded-xl border-2 border-gray-200 focus:border-ngo-primary transition-colors resize-none"
+                    required
+                  />
+                </div>
+                <Button 
+                  type="submit" 
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold h-auto w-full"
+                  disabled={contactMutation.isPending}
+                >
+                  <Send className="mr-3 h-5 w-5" />
+                  {contactMutation.isPending ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
