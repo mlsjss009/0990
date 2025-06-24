@@ -34,8 +34,8 @@ export default function ContactSection() {
     },
     onSuccess: () => {
       toast({
-        title: "Message Sent Successfully",
-        description: "Thank you for your message! We'll get back to you soon.",
+        title: "Thank You for Reaching Out!",
+        description: "Your message has been received. Our team will respond within 24 hours to help you make a difference in our community.",
       });
       setFormData({
         firstName: "",
@@ -44,6 +44,10 @@ export default function ContactSection() {
         subject: "",
         message: "",
       });
+      // Redirect to homepage after 3 seconds
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 3000);
     },
     onError: (error: any) => {
       toast({

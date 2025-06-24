@@ -82,9 +82,9 @@ export default function EligibilityChecker() {
             // Eligible Response
             <div className="text-center">
               <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-              <h3 className="text-3xl font-bold text-green-700 mb-4">Great News!</h3>
+              <h3 className="text-3xl font-bold text-green-700 mb-4">Wonderful News!</h3>
               <p className="text-lg text-gray-700 mb-6">
-                Based on your information, you are eligible to apply for our grant program.
+                You're eligible to join our community of changemakers! Your application can help us build stronger, more resilient communities together.
               </p>
               
               <div className="bg-green-50 rounded-2xl p-6 mb-8">
@@ -105,22 +105,30 @@ export default function EligibilityChecker() {
                   <ExternalLink className="ml-3 h-4 w-4" />
                 </Button>
                 
-                <Button
-                  onClick={resetForm}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Check Another Person's Eligibility
-                </Button>
+                <div className="flex space-x-4">
+                  <Button
+                    onClick={resetForm}
+                    variant="outline"
+                    className="flex-1"
+                  >
+                    Check Another Person's Eligibility
+                  </Button>
+                  <Button
+                    onClick={() => window.location.href = '/'}
+                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white"
+                  >
+                    Return to Homepage
+                  </Button>
+                </div>
               </div>
             </div>
           ) : (
             // Additional Documents Required Response
             <div className="text-center">
               <AlertCircle className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-              <h3 className="text-3xl font-bold text-orange-700 mb-4">Additional Documents Required</h3>
+              <h3 className="text-3xl font-bold text-orange-700 mb-4">We're Here to Help You Qualify!</h3>
               <p className="text-lg text-gray-700 mb-6">
-                You can still apply! We just need some additional documentation to verify your eligibility.
+                Don't worry - you can still join our mission! We just need a few additional documents to complete your eligibility verification and get you started on your journey to community impact.
               </p>
               
               <div className="bg-orange-50 rounded-2xl p-6 mb-8">
@@ -151,13 +159,21 @@ export default function EligibilityChecker() {
                   <ExternalLink className="ml-3 h-4 w-4" />
                 </Button>
                 
-                <Button
-                  onClick={resetForm}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Check Another Person's Eligibility
-                </Button>
+                <div className="flex space-x-4">
+                  <Button
+                    onClick={resetForm}
+                    variant="outline"
+                    className="flex-1"
+                  >
+                    Check Another Person's Eligibility
+                  </Button>
+                  <Button
+                    onClick={() => window.location.href = '/'}
+                    className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
+                  >
+                    Return to Homepage
+                  </Button>
+                </div>
               </div>
             </div>
           )}

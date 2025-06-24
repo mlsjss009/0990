@@ -53,7 +53,11 @@ export default function TelegramReportForm() {
         contactEmail: "",
         urgencyLevel: "normal"
       });
-      alert("Report sent successfully to Telegram!");
+      alert("Thank you for your report! Our support team has been notified and will address your concern promptly. Together, we ensure every voice is heard.");
+      // Redirect to homepage after 2 seconds
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 2000);
     },
     onError: (error) => {
       alert("Failed to send report. Please try again.");

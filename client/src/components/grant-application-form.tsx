@@ -88,17 +88,31 @@ export default function GrantApplicationForm() {
   };
 
   if (submitted) {
+    // Redirect to homepage after 4 seconds
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 4000);
+
     return (
       <Card className="bg-green-50 border-green-200 shadow-xl rounded-3xl overflow-hidden max-w-2xl mx-auto">
         <CardContent className="p-8 text-center">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-green-700 mb-2">Application Submitted Successfully!</h3>
-          <p className="text-green-600 mb-4">
-            Your grant application has been received. You will get a confirmation email within 24 hours.
+          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
+          <h3 className="text-3xl font-bold text-green-700 mb-4">Thank You for Taking the First Step!</h3>
+          <p className="text-green-600 mb-6 text-lg">
+            Your grant application has been successfully submitted. Together, we're building stronger communities and creating lasting change.
           </p>
+          <div className="bg-white rounded-2xl p-6 mb-6">
+            <p className="text-sm font-semibold text-gray-700 mb-2">What happens next:</p>
+            <ul className="text-sm text-gray-600 space-y-1">
+              <li>• Review process begins within 24 hours</li>
+              <li>• You'll receive confirmation via email</li>
+              <li>• Our team will contact you within 7-14 business days</li>
+            </ul>
+          </div>
           <p className="text-sm text-gray-600">
             Application ID: APP-{new Date().getFullYear()}-{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}
           </p>
+          <p className="text-xs text-gray-500 mt-4">Redirecting to homepage in a few seconds...</p>
         </CardContent>
       </Card>
     );
