@@ -8,11 +8,11 @@ export default function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Transforming Lives Through{" "}
-              <span className="text-ngo-secondary">Community Action</span>
+              Community Boost Nationwide Foundation{" "}
+              <span className="text-ngo-secondary">(CBNF)</span>
             </h1>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
+              Empowering communities across the nation through comprehensive support programs. Join CBNF in creating sustainable change and building stronger communities nationwide.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-ngo-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold h-auto">

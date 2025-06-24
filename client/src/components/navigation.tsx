@@ -30,9 +30,9 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-ngo-primary">Hope Together</h1>
+            <h1 className="text-2xl font-bold text-ngo-primary">CBNF</h1>
           </div>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
@@ -71,6 +71,12 @@ export default function Navigation() {
                 className="text-ngo-neutral-dark hover:text-ngo-primary px-3 py-2 text-sm font-medium transition-colors"
               >
                 Contact
+              </button>
+              <button
+                onClick={() => scrollToSection("application")}
+                className="text-ngo-neutral-dark hover:text-ngo-primary px-3 py-2 text-sm font-medium transition-colors"
+              >
+                Apply Now
               </button>
               <Button className="bg-ngo-secondary hover:bg-orange-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
                 Donate Now
@@ -129,6 +135,12 @@ export default function Navigation() {
                 className="block px-3 py-2 text-base font-medium text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left"
               >
                 Contact
+              </button>
+              <button
+                onClick={() => scrollToSection("application")}
+                className="block px-3 py-2 text-base font-medium text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left"
+              >
+                Apply Now
               </button>
               <div className="px-3 py-2">
                 <Button className="bg-ngo-secondary hover:bg-orange-600 text-white w-full">

@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero-section";
 import ImpactMetrics from "@/components/impact-metrics";
 import AboutSection from "@/components/about-section";
 import ProgramsSection from "@/components/programs-section";
+import ApplicationSection from "@/components/application-section";
 import PartnersSection from "@/components/partners-section";
 import TestimonialsSection from "@/components/testimonials-section";
 import DonationCTA from "@/components/donation-cta";
@@ -19,6 +20,7 @@ export default function Home() {
       <ImpactMetrics />
       <AboutSection />
       <ProgramsSection />
+      <ApplicationSection />
       <PartnersSection />
       <TestimonialsSection />
       <DonationCTA />

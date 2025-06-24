@@ -14,13 +14,13 @@ export default function AboutSection() {
           </div>
           <div>
             <h2 className="text-4xl font-bold text-ngo-neutral-dark mb-6">
-              Building Bridges to a Better Tomorrow
+              About CBNF
             </h2>
             <p className="text-lg text-ngo-neutral mb-6 leading-relaxed">
-              Founded in 2010, Hope Together emerged from a simple belief: that communities thrive when people come together with shared purpose. What started as a local initiative has grown into a global movement, touching lives across 25 countries.
+              Community Boost Nationwide Foundation (CBNF) is dedicated to strengthening communities across America through comprehensive support programs. We provide financial assistance, educational resources, and community development initiatives to help individuals and families achieve sustainable growth.
             </p>
             <p className="text-lg text-ngo-neutral mb-8 leading-relaxed">
-              We partner with local organizations, major corporations, and dedicated individuals to address the root causes of poverty, inequality, and social injustice. Our approach is community-driven, sustainable, and designed for lasting impact.
+              Our nationwide network ensures that support reaches every corner of the country, from urban centers to rural communities. Through our application-based programs, we connect resources with those who need them most, creating lasting positive impact.
             </p>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="flex items-start">
