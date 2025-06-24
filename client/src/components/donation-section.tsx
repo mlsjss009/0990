@@ -85,19 +85,29 @@ export default function GrantSection() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
           <Button 
-            onClick={() => alert('Grant application system would connect to application processor')}
+            onClick={() => {
+              const element = document.getElementById('application');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 rounded-full text-xl font-bold h-auto"
           >
             <Heart className="mr-3 h-6 w-6" />
             Apply for Grant
           </Button>
           <Button 
-            onClick={() => alert('Monthly grant program would be configured')}
+            onClick={() => {
+              const element = document.getElementById('application');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
             variant="outline"
             className="border-2 border-white text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto"
           >
             <Calendar className="mr-3 h-6 w-6" />
-            Monthly Program
+            Apply for Grant Monthly Program
           </Button>
         </div>
 

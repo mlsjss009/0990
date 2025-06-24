@@ -6,7 +6,7 @@ import ProgramsSection from "@/components/programs-section";
 import ApplicationSection from "@/components/application-section";
 import PartnersSection from "@/components/partners-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import GrantSection from "@/components/donation-section";
+import DonationSection from "@/components/donation-section";
 import VolunteerSection from "@/components/volunteer-section";
 import NewsSection from "@/components/news-section";
 import ContactSection from "@/components/contact-section";
@@ -23,7 +23,7 @@ export default function Home() {
       <ApplicationSection />
       <PartnersSection />
       <TestimonialsSection />
-      <GrantSection />
+      <DonationSection />
       <VolunteerSection />
       <NewsSection />
       <ContactSection />
