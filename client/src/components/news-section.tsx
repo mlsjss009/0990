@@ -6,7 +6,7 @@ import { executeAction } from "@/lib/actions";
 export default function NewsSection() {
   const news = [
     {
-      date: "March 15, 2024",
+      date: "March 15, 2025",
       title: "New Education Center Opens in Rural Bangladesh",
       description: "Thanks to our donors and local partners, 500 children now have access to quality education in their community.",
       image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
@@ -15,7 +15,7 @@ export default function NewsSection() {
       readTime: "3 min read"
     },
     {
-      date: "March 8, 2024",
+      date: "March 8, 2025",
       title: "Clean Water Initiative Reaches Milestone",
       description: "Our clean water program has now provided safe drinking water to over 50,000 people across 12 countries.",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",
@@ -24,7 +24,7 @@ export default function NewsSection() {
       readTime: "4 min read"
     },
     {
-      date: "February 28, 2024",
+      date: "February 28, 2025",
       title: "Women's Entrepreneurship Program Expands",
       description: "Launch of new entrepreneurship training centers in Kenya, Peru, and Vietnam supporting 1,200 women.",
       image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250",

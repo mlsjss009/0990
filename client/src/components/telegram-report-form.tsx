@@ -111,7 +111,7 @@ export default function TelegramReportForm() {
                 type="text"
                 value={formData.applicationId}
                 onChange={(e) => handleInputChange("applicationId", e.target.value)}
-                placeholder="e.g., APP-2024-001"
+                placeholder="e.g., APP-2025-001"
                 className="w-full rounded-xl border-2 border-gray-200 focus:border-blue-500 transition-colors"
                 required
               />

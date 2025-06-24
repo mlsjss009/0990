@@ -96,7 +96,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 py-8">
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             <div className="text-gray-400 text-center lg:text-left">
-              <p>© 2024 Hope Together. All rights reserved.</p>
+              <p>© 2025 Hope Together. All rights reserved.</p>
               <p className="text-sm mt-1">Registered 501(c)(3) nonprofit organization • EIN: 12-3456789</p>
             </div>
             
