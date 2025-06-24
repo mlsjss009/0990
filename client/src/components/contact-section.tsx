@@ -73,34 +73,6 @@ export default function ContactSection() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: "Headquarters",
-      content: "123 Hope Street, New York, NY 10001",
-      color: "text-ngo-primary"
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      content: "+1 (555) 123-4567",
-      color: "text-ngo-accent"
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      content: "info@hopetogether.org",
-      color: "text-ngo-secondary"
-    }
-  ];
-
-  const socialLinks = [
-    { name: "Facebook", color: "bg-blue-600" },
-    { name: "Twitter", color: "bg-sky-500" },
-    { name: "Instagram", color: "bg-pink-500" },
-    { name: "LinkedIn", color: "bg-blue-700" }
-  ];
-
   return (
     <section id="contact" className="py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
