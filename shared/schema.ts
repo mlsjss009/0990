@@ -28,7 +28,17 @@ export const insertContactSubmissionSchema = createInsertSchema(contactSubmissio
   createdAt: true,
 });
 
+export const insertTelegramReportSchema = z.object({
+  applicantName: z.string().min(1, "Applicant name is required"),
+  applicationId: z.string().min(1, "Application ID is required"),
+  reportType: z.string().min(1, "Report type is required"),
+  reportDetails: z.string().min(10, "Report details must be at least 10 characters"),
+  contactEmail: z.string().email("Valid email is required"),
+  urgencyLevel: z.enum(["low", "normal", "high", "critical"])
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
+export type InsertTelegramReport = z.infer<typeof insertTelegramReportSchema>;

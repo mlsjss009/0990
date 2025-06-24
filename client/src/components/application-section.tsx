@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, FileText, Users, DollarSign } from "lucide-react";
+import { CheckCircle, FileText, Users, DollarSign, MessageCircle } from "lucide-react";
+import TelegramReportForm from "./telegram-report-form";
 
 export default function ApplicationSection() {
   const eligibilityRequirements = [
@@ -143,6 +144,24 @@ export default function ApplicationSection() {
             Need help? Call our support line at <strong>(555) 123-CBNF</strong> or email applications@cbnf.org<br/>
             <span className="text-xs text-gray-500">Support available Monday-Friday, 9 AM - 6 PM EST</span>
           </p>
+        </div>
+
+        {/* Telegram Report Section */}
+        <div className="mt-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-semibold text-blue-600 mb-6">
+              <MessageCircle className="mr-2 h-4 w-4" />
+              Telegram Support
+            </div>
+            <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
+              Report Application Issues
+            </h3>
+            <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
+              Having issues with your application? Submit a report directly to our Telegram support channel for immediate assistance.
+            </p>
+          </div>
+          
+          <TelegramReportForm />
         </div>
       </div>
     </section>
