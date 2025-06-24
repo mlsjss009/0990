@@ -1,11 +1,12 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, CreditCard, Calendar, Gift, Zap } from "lucide-react";
 import { executeAction } from "@/lib/actions";
 
-const donationAmounts = [25, 50, 100, 250, 500, 1000];
+const grantAmounts = [25, 50, 100, 250, 500, 1000];
 
-const donationImpacts = [
+const grantImpacts = [
   { amount: 25, impact: "Provides school supplies for 5 children" },
   { amount: 50, impact: "Feeds a family of 4 for one week" },
   { amount: 100, impact: "Supplies clean water for 20 people for a month" },
@@ -20,35 +21,35 @@ const features = [
   { icon: Zap, text: "Immediate Impact" }
 ];
 
-export default function DonationSection() {
+export default function GrantSection() {
   return (
-    <section id="donate-section" className="py-24 bg-orange-500 text-white relative overflow-hidden">
+    <section id="grant-section" className="py-24 bg-orange-500 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-sm font-medium mb-8">
             <Heart className="mr-2 h-4 w-4" />
-            Make a Difference Today
+            Apply for Grants Today
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Your Support Changes{" "}
+            Your Grant Application Changes{" "}
             <span className="text-yellow-200">
               Everything
             </span>
           </h2>
           <p className="text-xl text-orange-100 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Every donation, no matter the size, helps us provide essential services to communities in need. 
-            Choose your impact level and join thousands of supporters making a real difference.
+            Every grant, no matter the size, helps us provide essential services to communities in need. 
+            Choose your grant level and join thousands of applicants making a real difference.
           </p>
         </div>
 
-        {/* Donation Amount Cards */}
+        {/* Grant Amount Cards */}
         <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
-          {donationAmounts.map((amount, index) => {
-            const impact = donationImpacts.find(d => d.amount === amount);
+          {grantAmounts.map((amount, index) => {
+            const impact = grantImpacts.find(d => d.amount === amount);
             return (
               <Card 
                 key={amount} 
-                onClick={() => alert(`Selected $${amount} donation - would proceed to payment`)}
+                onClick={() => alert(`Selected $${amount} grant - would proceed to application`)}
                 className="bg-white/10 border-0 text-white hover:bg-white/20 transition-all cursor-pointer"
               >
                 <CardContent className="p-6 text-center">
@@ -72,25 +73,25 @@ export default function DonationSection() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
           <Button 
-            onClick={() => alert('Donation system would connect to payment processor')}
+            onClick={() => alert('Grant application system would connect to application processor')}
             className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 rounded-full text-xl font-bold h-auto"
           >
             <Heart className="mr-3 h-6 w-6" />
-            Donate Now
+            Apply for Grant
           </Button>
           <Button 
-            onClick={() => alert('Monthly giving setup would be configured')}
+            onClick={() => alert('Monthly grant program would be configured')}
             variant="outline"
             className="border-2 border-white text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto"
           >
             <Calendar className="mr-3 h-6 w-6" />
-            Monthly Giving
+            Monthly Program
           </Button>
         </div>
 
         <div className="text-center">
           <p className="text-orange-100 text-sm">
-            Donations are secure and tax-deductible. You will receive a receipt for your records.
+            Grant applications are secure and tracked. You will receive confirmation for your records.
           </p>
         </div>
       </div>

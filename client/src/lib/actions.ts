@@ -1,7 +1,7 @@
 // Centralized action flow management for Hope Together NGO
 
 export type ActionType = 
-  | 'donate'
+  | 'grant_application'
   | 'volunteer_register'
   | 'contact_form'
   | 'newsletter_subscribe'
@@ -146,8 +146,8 @@ export const executeAction = (actionType: ActionType, data?: any) => {
   const flow = getActionFlow(actionType);
   
   switch (actionType) {
-    case 'donate':
-      return handleDonateAction(data);
+    case 'grant_application':
+      return handleGrantApplicationAction(data);
     case 'volunteer_register':
       return handleVolunteerAction(data);
     case 'contact_form':
@@ -164,6 +164,14 @@ export const executeAction = (actionType: ActionType, data?: any) => {
 };
 
 // Action handlers
+const handleGrantApplicationAction = (data?: any) => {
+  // Scroll to grant section
+  const element = document.getElementById('grant-section');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+  console.log('Grant application flow initiated', data);
+};
 const handleDonateAction = (data?: any) => {
   // Scroll to donation section
   const element = document.getElementById('donate-section');

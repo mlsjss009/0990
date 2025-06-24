@@ -24,11 +24,11 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Button 
-                onClick={() => executeAction('donate')}
+                onClick={() => executeAction('grant_application')}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto"
               >
                 <Heart className="mr-3 h-6 w-6" />
-                Donate Now
+                Apply for Grant
               </Button>
               <Button
                 onClick={() => executeAction('watch_video')}
