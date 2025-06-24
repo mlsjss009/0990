@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
     {
       name: "Michael O'Brien",
       role: "Environmental Coordinator, Australia",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "The coastal restoration project has planted over 10,000 native trees and restored 50 hectares of wetlands. Local wildlife populations have increased by 40% in just two years.",
       program: "Environmental Protection",
       location: "Melbourne, Australia"
@@ -88,7 +88,7 @@ export default function TestimonialsSection() {
     {
       name: "Thomas Brown",
       role: "Mental Health Counselor, UK",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Providing mental health support during the pandemic showed me how crucial community care is. We've helped over 1,000 people access counseling services when they needed it most.",
       program: "Mental Health Support",
       location: "Edinburgh, Scotland, UK"
@@ -104,7 +104,7 @@ export default function TestimonialsSection() {
     {
       name: "Jessica Davis",
       role: "Food Security Coordinator, Australia",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Our urban farming initiative has created 20 community gardens and trained 500 families in sustainable food production. Food insecurity in our region has dropped by 35%.",
       program: "Food Security",
       location: "Brisbane, Australia"
@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
     {
       name: "Christopher White",
       role: "Senior Program Manager, USA",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Overseeing multiple community programs has shown me the interconnected nature of social challenges. Our holistic approach has improved outcomes for over 2,000 families.",
       program: "Community Development",
       location: "Portland, Oregon, USA"
@@ -120,7 +120,7 @@ export default function TestimonialsSection() {
     {
       name: "Grace Williams",
       role: "Special Needs Educator, UK",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Creating inclusive education programs for children with disabilities has been my passion. We've integrated 150 special needs students into mainstream schools with remarkable success.",
       program: "Inclusive Education",
       location: "London, UK"
@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
     {
       name: "Pierre Martin",
       role: "Community Development Worker, France",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Revitalizing underserved neighborhoods has taught me about the power of grassroots organizing. We've established community centers in 10 areas and created 200 local jobs.",
       program: "Urban Development",
       location: "Marseille, France"
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
     {
       name: "Rachel Green",
       role: "Senior Care Specialist, Australia",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Our aging-in-place program has enabled 400 seniors to remain in their homes safely. We've created a support network that provides both practical help and meaningful social connections.",
       program: "Elder Care",
       location: "Perth, Australia"
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
     {
       name: "Kevin Anderson",
       role: "Addiction Recovery Counselor, USA",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Working in addiction recovery has shown me the incredible strength of the human spirit. Our program has achieved a 65% long-term recovery rate and reunited countless families.",
       program: "Addiction Recovery",
       location: "Seattle, Washington, USA"
@@ -152,7 +152,7 @@ export default function TestimonialsSection() {
     {
       name: "Helen Smith",
       role: "Domestic Violence Advocate, UK",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Supporting survivors of domestic violence requires both compassion and systemic change. We've helped 250 women and children find safety and rebuild their lives with dignity.",
       program: "Domestic Violence Support",
       location: "Glasgow, Scotland, UK"
@@ -160,7 +160,7 @@ export default function TestimonialsSection() {
     {
       name: "Antoine Dubois",
       role: "Climate Action Coordinator, France",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Leading climate action initiatives has mobilized 1,000+ volunteers across France. We've reduced community carbon emissions by 25% and installed solar panels on 100 public buildings.",
       program: "Climate Action",
       location: "Bordeaux, France"
