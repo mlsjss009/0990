@@ -41,7 +41,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-ngo-neutral-dark via-gray-900 to-black text-white relative overflow-hidden">
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 pattern-dots opacity-10"></div>
       
@@ -52,7 +52,7 @@ export default function Footer() {
             {/* Organization Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-ngo-primary rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                   <Heart className="text-white h-6 w-6" />
                 </div>
               <h3 className="text-3xl font-bold text-white">Hope Together</h3>
@@ -140,7 +140,7 @@ export default function Footer() {
                   placeholder="Enter your email"
                   className="px-4 py-2 bg-white/10 border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-ngo-primary transition-colors backdrop-blur-sm"
                 />
-                <button className="px-6 py-2 bg-gradient-ngo-primary text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105 font-semibold">
+                <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold">
                   Subscribe
                 </button>
               </div>

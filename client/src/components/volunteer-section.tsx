@@ -87,7 +87,7 @@ export default function VolunteerSection() {
               ))}
             </div>
 
-            <Button className="btn-premium text-white px-10 py-4 rounded-full text-lg font-bold h-auto">
+            <Button className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full text-lg font-bold h-auto">
               <UserPlus className="mr-3 h-6 w-6" />
               Become a Volunteer
             </Button>

@@ -3,11 +3,7 @@ import { Heart, Play, Sparkles, Globe } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="pt-20 bg-gradient-to-br from-ngo-primary via-blue-800 to-purple-900 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 pattern-dots opacity-20"></div>
-      <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl floating-animation"></div>
-      <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl floating-animation" style={{ animationDelay: "2s" }}></div>
+    <section id="home" className="pt-20 bg-blue-600 text-white relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -18,21 +14,21 @@ export default function HeroSection() {
             </div>
             <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-8">
               Transforming Lives Through{" "}
-              <span className="text-orange-300">
+              <span className="text-yellow-400">
                 Community Action
               </span>
             </h1>
-            <p className="text-xl text-blue-100 mb-10 leading-relaxed max-w-xl">
+            <p className="text-xl text-white mb-10 leading-relaxed max-w-xl">
               Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto">
                 <Heart className="mr-3 h-6 w-6" />
                 Make a Donation
               </Button>
               <Button
                 variant="outline"
-                className="glass-effect border-2 border-white/30 text-white hover:bg-white/10 px-10 py-6 rounded-full text-lg font-bold h-auto backdrop-blur-md"
+                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-10 py-6 rounded-full text-lg font-bold h-auto"
               >
                 <Play className="mr-3 h-6 w-6" />
                 Watch Our Story
@@ -40,16 +36,16 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center space-x-8 mt-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-200">150K+</div>
-                <div className="text-blue-200 text-sm">Lives Impacted</div>
+                <div className="text-3xl font-bold text-white">150K+</div>
+                <div className="text-white text-sm">Lives Impacted</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-200">45</div>
-                <div className="text-blue-200 text-sm">Active Programs</div>
+                <div className="text-3xl font-bold text-white">45</div>
+                <div className="text-white text-sm">Active Programs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-200">25</div>
-                <div className="text-blue-200 text-sm">Countries</div>
+                <div className="text-3xl font-bold text-white">25</div>
+                <div className="text-white text-sm">Countries</div>
               </div>
             </div>
           </div>

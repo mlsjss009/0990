@@ -31,7 +31,7 @@ export default function DonationCTA() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 text-white relative overflow-hidden">
+    <section className="py-24 bg-orange-500 text-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 pattern-dots opacity-20"></div>
       <div className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl floating-animation"></div>
@@ -74,13 +74,13 @@ export default function DonationCTA() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          <Button className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 rounded-full text-xl font-bold h-auto shadow-2xl hover:shadow-white/25 transition-all duration-300 transform hover:scale-105">
+          <Button className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 rounded-full text-xl font-bold h-auto">
             <Heart className="mr-3 h-6 w-6" />
             Donate Now
           </Button>
           <Button 
             variant="outline"
-            className="glass-effect border-2 border-white/30 text-white hover:bg-white/10 px-12 py-6 rounded-full text-xl font-bold h-auto backdrop-blur-md"
+            className="border-2 border-white text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto"
           >
             <Calendar className="mr-3 h-6 w-6" />
             Monthly Giving

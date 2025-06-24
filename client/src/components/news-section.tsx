@@ -106,7 +106,7 @@ export default function NewsSection() {
         </div>
         
         <div className="text-center mt-16">
-          <Button className="btn-premium text-white px-10 py-4 rounded-full text-lg font-bold">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold">
             <Newspaper className="mr-3 h-5 w-5" />
             View All News
           </Button>

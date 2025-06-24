@@ -31,10 +31,10 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-ngo-primary rounded-full flex items-center justify-center glow-effect">
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                 <Heart className="text-white h-6 w-6" />
               </div>
-              <h1 className="text-3xl font-bold text-ngo-primary">Hope Together</h1>
+              <h1 className="text-3xl font-bold text-blue-600">Hope Together</h1>
             </div>
           </div>
           
@@ -83,7 +83,7 @@ export default function Navigation() {
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
-              <Button className="btn-premium text-white px-8 py-3 rounded-full text-sm font-bold border-0">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0">
                 <Heart className="mr-2 h-4 w-4" />
                 Donate Now
               </Button>
@@ -144,7 +144,7 @@ export default function Navigation() {
                 Contact
               </button>
               <div className="px-4 py-3">
-                <Button className="btn-premium text-white w-full rounded-full font-bold">
+                <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold">
                   <Heart className="mr-2 h-4 w-4" />
                   Donate Now
                 </Button>

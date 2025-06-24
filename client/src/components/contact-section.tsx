@@ -199,7 +199,7 @@ export default function ContactSection() {
                   </div>
                   <Button 
                     type="submit" 
-                    className="btn-premium text-white px-10 py-4 rounded-full text-lg font-bold h-auto w-full"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold h-auto w-full"
                     disabled={contactMutation.isPending}
                   >
                     <Send className="mr-3 h-5 w-5" />
