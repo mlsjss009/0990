@@ -104,7 +104,7 @@ export default function GrantSection() {
               }
             }}
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto"
+            className="border-2 border-white bg-white/20 text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto shadow-lg backdrop-blur-sm"
           >
             <Calendar className="mr-3 h-6 w-6" />
             Apply for Grant Monthly Program
