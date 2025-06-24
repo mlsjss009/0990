@@ -7,7 +7,7 @@ import EligibilityChecker from "./eligibility-checker";
 
 export default function ApplicationSection() {
   const eligibilityRequirements = [
-    "Must be a U.S. citizen or legal resident",
+    "Must be a citizen or legal resident",
     "Household income below 200% of federal poverty guidelines",
     "Demonstration of financial need through documentation",
     "Commitment to program participation and community involvement",
