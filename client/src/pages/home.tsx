@@ -6,7 +6,7 @@ import ProgramsSection from "@/components/programs-section";
 import ApplicationSection from "@/components/application-section";
 import PartnersSection from "@/components/partners-section";
 import TestimonialsSection from "@/components/testimonials-section";
-import DonationCTA from "@/components/donation-cta";
+import GrantCTA from "@/components/grant-cta";
 import VolunteerSection from "@/components/volunteer-section";
 import NewsSection from "@/components/news-section";
 import ContactSection from "@/components/contact-section";
@@ -23,7 +23,7 @@ export default function Home() {
       <ApplicationSection />
       <PartnersSection />
       <TestimonialsSection />
-      <DonationCTA />
+      <GrantCTA />
       <VolunteerSection />
       <NewsSection />
       <ContactSection />

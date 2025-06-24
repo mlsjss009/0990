@@ -85,7 +85,7 @@ export default function Navigation() {
               </button>
               <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0">
                 <Heart className="mr-2 h-4 w-4" />
-                Donate Now
+                Grant Now
               </Button>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function Navigation() {
               <div className="px-4 py-3">
                 <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold">
                   <Heart className="mr-2 h-4 w-4" />
-                  Donate Now
+                  Grant Now
                 </Button>
               </div>
             </div>
