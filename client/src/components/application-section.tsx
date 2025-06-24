@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, FileText, Users, DollarSign } from "lucide-react";
 import GrantApplicationForm from "./grant-application-form";
+import EligibilityChecker from "./eligibility-checker";
 
 export default function ApplicationSection() {
   const eligibilityRequirements = [
@@ -101,8 +102,26 @@ export default function ApplicationSection() {
           </div>
         </div>
 
-        {/* Grant Application Form */}
+        {/* Eligibility Checker */}
         <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-semibold text-blue-600 mb-6">
+              <CheckCircle className="mr-2 h-4 w-4" />
+              Quick Eligibility Check
+            </div>
+            <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
+              Check Your Eligibility First
+            </h3>
+            <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
+              Before completing the full application, quickly verify your eligibility and see your potential grant range.
+            </p>
+          </div>
+          
+          <EligibilityChecker />
+        </div>
+
+        {/* Grant Application Form */}
+        <div id="application" className="mb-20">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full text-sm font-semibold text-orange-600 mb-6">
               <FileText className="mr-2 h-4 w-4" />
