@@ -18,7 +18,7 @@ export default function HeroSection() {
             </div>
             <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-8">
               Transforming Lives Through{" "}
-              <span className="bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-transparent">
+              <span className="text-orange-300">
                 Community Action
               </span>
             </h1>
@@ -26,7 +26,7 @@ export default function HeroSection() {
               Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button className="bg-gradient-ngo-secondary text-white px-10 py-6 rounded-full text-lg font-bold h-auto shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
+              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105">
                 <Heart className="mr-3 h-6 w-6" />
                 Make a Donation
               </Button>
@@ -40,15 +40,15 @@ export default function HeroSection() {
             </div>
             <div className="flex items-center space-x-8 mt-12">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-300">150K+</div>
+                <div className="text-3xl font-bold text-orange-200">150K+</div>
                 <div className="text-blue-200 text-sm">Lives Impacted</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-green-300">45</div>
+                <div className="text-3xl font-bold text-green-200">45</div>
                 <div className="text-blue-200 text-sm">Active Programs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-yellow-300">25</div>
+                <div className="text-3xl font-bold text-yellow-200">25</div>
                 <div className="text-blue-200 text-sm">Countries</div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function HeroSection() {
                     <Globe className="h-6 w-6 text-white" />
                     <div>
                       <div className="text-white font-semibold">Global Impact</div>
-                      <div className="text-white/80 text-sm">Active in 25 countries worldwide</div>
+                      <div className="text-white text-sm">Active in 25 countries worldwide</div>
                     </div>
                   </div>
                 </div>

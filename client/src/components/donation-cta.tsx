@@ -45,7 +45,7 @@ export default function DonationCTA() {
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
             Your Support Changes{" "}
-            <span className="bg-gradient-to-r from-yellow-300 to-orange-200 bg-clip-text text-transparent">
+            <span className="text-yellow-200">
               Everything
             </span>
           </h2>

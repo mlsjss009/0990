@@ -119,21 +119,22 @@
   }
 
   .bg-gradient-ngo-primary {
-    background: var(--ngo-gradient-1);
+    background: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(240, 70%, 60%) 100%);
   }
   
   .bg-gradient-ngo-secondary {
-    background: var(--ngo-gradient-2);
+    background: linear-gradient(135deg, hsl(20, 86%, 49%) 0%, hsl(35, 90%, 55%) 100%);
   }
   
   .bg-gradient-ngo-accent {
-    background: var(--ngo-gradient-3);
+    background: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(160, 70%, 45%) 100%);
   }
 
   .glass-effect {
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 
   .floating-animation {
@@ -149,6 +150,16 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    color: transparent;
+  }
+
+  /* Fallback for browsers that don't support gradient text */
+  @supports not (-webkit-background-clip: text) {
+    .text-gradient {
+      color: var(--ngo-primary);
+      background: none;
+      -webkit-text-fill-color: unset;
+    }
   }
 
   .section-divider {
@@ -197,14 +208,16 @@
   }
 
   .btn-premium {
-    background: linear-gradient(135deg, var(--ngo-primary) 0%, var(--ngo-primary-light) 100%);
+    background: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(221, 83%, 65%) 100%);
     box-shadow: 0 4px 15px 0 rgba(34, 102, 204, 0.3);
     transition: all 0.3s ease;
+    color: white;
   }
 
   .btn-premium:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px 0 rgba(34, 102, 204, 0.4);
+    background: linear-gradient(135deg, hsl(221, 83%, 45%) 0%, hsl(221, 83%, 60%) 100%);
   }
 
   .pattern-dots {

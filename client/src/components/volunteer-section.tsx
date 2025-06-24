@@ -119,7 +119,7 @@ export default function VolunteerSection() {
                   {benefits.slice(0, 3).map((benefit, index) => (
                     <div key={index} className="flex items-center space-x-2 text-sm">
                       <Check className="h-4 w-4 text-green-300 flex-shrink-0" />
-                      <span className="opacity-90">{benefit}</span>
+                      <span className="text-white">{benefit}</span>
                     </div>
                   ))}
                 </div>

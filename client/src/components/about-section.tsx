@@ -63,12 +63,12 @@ export default function AboutSection() {
               <div className="glass-effect rounded-2xl p-6">
                 <div className="grid grid-cols-2 gap-4 text-white">
                   <div className="text-center">
-                    <div className="text-2xl font-bold">15+</div>
-                    <div className="text-sm opacity-90">Years Experience</div>
+                    <div className="text-2xl font-bold text-white">15+</div>
+                    <div className="text-sm text-white">Years Experience</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold">25</div>
-                    <div className="text-sm opacity-90">Countries</div>
+                    <div className="text-2xl font-bold text-white">25</div>
+                    <div className="text-sm text-white">Countries</div>
                   </div>
                 </div>
               </div>

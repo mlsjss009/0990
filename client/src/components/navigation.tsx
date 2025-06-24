@@ -34,7 +34,7 @@ export default function Navigation() {
               <div className="w-12 h-12 bg-gradient-ngo-primary rounded-full flex items-center justify-center glow-effect">
                 <Heart className="text-white h-6 w-6" />
               </div>
-              <h1 className="text-3xl font-bold text-gradient">Hope Together</h1>
+              <h1 className="text-3xl font-bold text-ngo-primary">Hope Together</h1>
             </div>
           </div>
           

@@ -55,7 +55,7 @@ export default function Footer() {
                 <div className="w-12 h-12 bg-gradient-ngo-primary rounded-full flex items-center justify-center">
                   <Heart className="text-white h-6 w-6" />
                 </div>
-                <h3 className="text-3xl font-bold text-gradient">Hope Together</h3>
+              <h3 className="text-3xl font-bold text-white">Hope Together</h3>
               </div>
               <p className="text-gray-300 mb-8 leading-relaxed text-lg max-w-xl">
                 Dedicated to creating lasting change in communities worldwide through education, healthcare, economic empowerment, and emergency relief programs. Together, we build a better tomorrow.
