@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 5%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 47%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 5%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(20, 86%, 49%);
+  --secondary-foreground: hsl(60, 9%, 98%);
+  --accent: hsl(142, 76%, 36%);
+  --accent-foreground: hsl(355, 7%, 97%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(222, 84%, 5%);
+  --radius: 0.5rem;
+  
+  /* Custom NGO colors */
+  --ngo-primary: hsl(221, 83%, 53%);
+  --ngo-secondary: hsl(20, 86%, 49%);
+  --ngo-accent: hsl(142, 76%, 36%);
+  --ngo-neutral-light: hsl(210, 40%, 98%);
+  --ngo-neutral: hsl(215, 16%, 47%);
+  --ngo-neutral-dark: hsl(222, 84%, 15%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 20%, 65%);
+  --popover: hsl(222, 84%, 5%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 5%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --primary: hsl(221, 83%, 53%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(217, 32%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(212, 72%, 59%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-ngo-primary {
+    color: var(--ngo-primary);
+  }
+  
+  .text-ngo-secondary {
+    color: var(--ngo-secondary);
+  }
+  
+  .text-ngo-accent {
+    color: var(--ngo-accent);
+  }
+  
+  .text-ngo-neutral {
+    color: var(--ngo-neutral);
+  }
+  
+  .text-ngo-neutral-dark {
+    color: var(--ngo-neutral-dark);
+  }
+  
+  .bg-ngo-primary {
+    background-color: var(--ngo-primary);
+  }
+  
+  .bg-ngo-secondary {
+    background-color: var(--ngo-secondary);
+  }
+  
+  .bg-ngo-accent {
+    background-color: var(--ngo-accent);
+  }
+  
+  .bg-ngo-neutral-light {
+    background-color: var(--ngo-neutral-light);
+  }
+  
+  .bg-ngo-neutral-dark {
+    background-color: var(--ngo-neutral-dark);
+  }
+}
