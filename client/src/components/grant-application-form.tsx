@@ -20,16 +20,13 @@ interface GrantApplicationData {
   state: string;
   zipCode: string;
   dateOfBirth: string;
-  ssn: string;
   householdSize: string;
   monthlyIncome: string;
   employmentStatus: string;
   grantType: string;
   requestedAmount: string;
   purpose: string;
-  hasDebts: boolean;
   agreeToTerms: boolean;
-  agreeToVerification: boolean;
 }
 
 export default function GrantApplicationForm() {
@@ -43,16 +40,13 @@ export default function GrantApplicationForm() {
     state: "",
     zipCode: "",
     dateOfBirth: "",
-    ssn: "",
     householdSize: "",
     monthlyIncome: "",
     employmentStatus: "",
     grantType: "",
     requestedAmount: "",
     purpose: "",
-    hasDebts: false,
     agreeToTerms: false,
-    agreeToVerification: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -180,22 +174,6 @@ export default function GrantApplicationForm() {
                   type="date"
                   value={formData.dateOfBirth}
                   onChange={(e) => handleInputChange("dateOfBirth", e.target.value)}
-                  className="rounded-xl border-2 border-gray-200 focus:border-orange-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="ssn" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Social Security Number (Last 4 digits) *
-                </Label>
-                <Input
-                  id="ssn"
-                  type="text"
-                  maxLength={4}
-                  value={formData.ssn}
-                  onChange={(e) => handleInputChange("ssn", e.target.value)}
-                  placeholder="1234"
                   className="rounded-xl border-2 border-gray-200 focus:border-orange-500"
                   required
                 />
@@ -397,28 +375,6 @@ export default function GrantApplicationForm() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Checkbox
-                  id="hasDebts"
-                  checked={formData.hasDebts}
-                  onCheckedChange={(checked) => handleInputChange("hasDebts", !!checked)}
-                />
-                <Label htmlFor="hasDebts" className="text-sm text-gray-700 leading-relaxed">
-                  I acknowledge that I do not have any outstanding debt obligations to federal programs
-                </Label>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Checkbox
-                  id="agreeToVerification"
-                  checked={formData.agreeToVerification}
-                  onCheckedChange={(checked) => handleInputChange("agreeToVerification", !!checked)}
-                />
-                <Label htmlFor="agreeToVerification" className="text-sm text-gray-700 leading-relaxed">
-                  I agree to provide documentation for income verification and participate in follow-up assessments
-                </Label>
-              </div>
-
-              <div className="flex items-start space-x-3">
-                <Checkbox
                   id="agreeToTerms"
                   checked={formData.agreeToTerms}
                   onCheckedChange={(checked) => handleInputChange("agreeToTerms", !!checked)}
@@ -434,7 +390,7 @@ export default function GrantApplicationForm() {
           <div className="text-center pt-6">
             <Button
               type="submit"
-              disabled={!formData.agreeToTerms || !formData.agreeToVerification || isSubmitting}
+              disabled={!formData.agreeToTerms || isSubmitting}
               className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 rounded-full text-lg font-bold h-auto shadow-lg transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
