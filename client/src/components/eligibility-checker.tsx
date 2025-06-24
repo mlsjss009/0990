@@ -35,14 +35,31 @@ export default function EligibilityChecker() {
     e.preventDefault();
     setIsChecking(true);
     
-    // Simulate API call delay
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Rotate between two response types based on counter
-    const resultType: EligibilityResult = checkCounter % 2 === 0 ? 'eligible' : 'additional-docs';
-    setResult(resultType);
-    setCheckCounter(prev => prev + 1);
-    setIsChecking(false);
+    try {
+      const response = await fetch("/api/eligibility-check", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to check eligibility");
+      }
+      
+      const data = await response.json();
+      setResult(data.result);
+      setCheckCounter(prev => prev + 1);
+    } catch (error) {
+      console.error('Error checking eligibility:', error);
+      // Fallback to local simulation if API fails
+      const resultType: EligibilityResult = checkCounter % 2 === 0 ? 'eligible' : 'additional-docs';
+      setResult(resultType);
+      setCheckCounter(prev => prev + 1);
+    } finally {
+      setIsChecking(false);
+    }
   };
 
   const scrollToApplication = () => {

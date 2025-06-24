@@ -61,10 +61,27 @@ export default function GrantApplicationForm() {
     setIsSubmitting(true);
     
     try {
-      await executeAction('submit_grant_application', formData);
+      const response = await fetch("/api/grant-application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          ssn: "0000", // Placeholder for now
+          hasDebts: false,
+          agreeToVerification: true
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to submit application");
+      }
+      
       setSubmitted(true);
     } catch (error) {
       console.error('Error submitting application:', error);
+      alert('Failed to submit application. Please try again.');
     } finally {
       setIsSubmitting(false);
     }

