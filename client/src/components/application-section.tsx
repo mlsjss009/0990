@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, FileText, Users, DollarSign, MessageCircle } from "lucide-react";
 import TelegramReportForm from "./telegram-report-form";
+import GrantApplicationForm from "./grant-application-form";
 
 export default function ApplicationSection() {
   const eligibilityRequirements = [
@@ -101,49 +102,32 @@ export default function ApplicationSection() {
           </div>
         </div>
 
-        {/* Application CTA */}
-        <div className="text-center bg-gradient-to-br from-blue-50 to-white rounded-lg p-8 shadow-lg border border-blue-100">
-          <h3 className="text-2xl font-bold text-ngo-neutral-dark mb-4">Ready to Apply?</h3>
-          <p className="text-ngo-neutral mb-6 max-w-2xl mx-auto">
-            Applications are reviewed on a first-come, first-served basis. Submit your application today to join thousands of Americans who have benefited from CBNF programs.
-          </p>
-          
-          <div className="bg-white rounded-lg p-6 mb-6 border-l-4 border-green-500">
-            <div className="flex items-center justify-center mb-3">
-              <CheckCircle className="text-green-500 h-6 w-6 mr-2" />
-              <span className="font-semibold text-green-700">Application Timeline</span>
+        {/* Grant Application Form */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full text-sm font-semibold text-orange-600 mb-6">
+              <FileText className="mr-2 h-4 w-4" />
+              Official Application
             </div>
-            <p className="text-sm text-gray-600">
-              • Online application takes 10-15 minutes<br/>
-              • Review process: 7-14 business days<br/>
-              • Approval notification via email and phone<br/>
-              • Program onboarding within 3 business days
+            <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
+              Complete Your Grant Application
+            </h3>
+            <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
+              Fill out the form below to apply for CBNF grant programs. All applications are reviewed within 7-14 business days.
             </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button className="bg-ngo-primary hover:bg-blue-800 text-white px-8 py-4 rounded-full text-lg font-semibold h-auto shadow-lg transform hover:scale-105 transition-transform duration-200">
-              <FileText className="mr-2 h-5 w-5" />
-              Start Online Application
-            </Button>
-            <Button
-              variant="outline"
-              className="border-2 border-ngo-primary text-ngo-primary hover:bg-ngo-primary hover:text-white px-8 py-4 rounded-full text-lg font-semibold h-auto"
-            >
-              Download PDF Application
-            </Button>
+            
+            <div className="bg-yellow-50 rounded-lg p-4 mt-6 mb-8 border border-yellow-200 max-w-2xl mx-auto">
+              <div className="flex items-center justify-center mb-2">
+                <CheckCircle className="text-yellow-600 h-5 w-5 mr-2" />
+                <span className="font-semibold text-yellow-800">Application Timeline</span>
+              </div>
+              <p className="text-sm text-yellow-700">
+                • Form completion: 10-15 minutes • Review: 7-14 business days • Notification via email & phone
+              </p>
+            </div>
           </div>
           
-          <div className="bg-yellow-50 rounded-lg p-4 mb-4 border border-yellow-200">
-            <p className="text-sm text-yellow-800 font-medium">
-              ⚡ Fast Track: Complete your application online for faster processing and instant confirmation
-            </p>
-          </div>
-          
-          <p className="text-sm text-ngo-neutral">
-            Need help? Call our support line at <strong>(555) 123-CBNF</strong> or email applications@cbnf.org<br/>
-            <span className="text-xs text-gray-500">Support available Monday-Friday, 9 AM - 6 PM EST</span>
-          </p>
+          <GrantApplicationForm />
         </div>
 
         {/* Telegram Report Section */}
