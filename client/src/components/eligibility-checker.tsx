@@ -142,9 +142,7 @@ export default function EligibilityChecker() {
                   <h5 className="font-semibold text-orange-800 mb-2">Required Additional Documents:</h5>
                   <ul className="text-sm text-orange-700 space-y-1">
                     <li>• Updated proof of residence</li>
-                    <li>• Income verification documents</li>
                     <li>• Government-issued photo ID</li>
-                    <li>• Bank statements (last 3 months)</li>
                   </ul>
                 </div>
               </div>

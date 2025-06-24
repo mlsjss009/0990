@@ -70,7 +70,6 @@ export default function ApplicationSection() {
                 <li>• Government-issued photo ID</li>
                 <li>• Proof of income (pay stubs, tax returns)</li>
                 <li>• Proof of residence (utility bills, lease agreement)</li>
-                <li>• Bank statements (last 3 months)</li>
                 <li>• Social Security cards for all household members</li>
               </ul>
             </div>
