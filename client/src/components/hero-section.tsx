@@ -33,7 +33,7 @@ export default function HeroSection() {
               <Button
                 onClick={() => executeAction('watch_video')}
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-10 py-6 rounded-full text-lg font-bold h-auto"
+                className="border-2 border-white bg-white/20 text-white hover:bg-white hover:text-blue-600 px-10 py-6 rounded-full text-lg font-bold h-auto shadow-lg backdrop-blur-sm"
               >
                 <Play className="mr-3 h-6 w-6" />
                 Watch Our Story
