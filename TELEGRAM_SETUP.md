@@ -1,67 +1,40 @@
-
 # Telegram Bot Setup Guide
 
-This guide will help you set up a Telegram bot for receiving application reports.
+## Required Environment Variables
 
-## Step 1: Create a Telegram Bot
+Your NGO website needs these two environment variables to send form submissions to Telegram:
 
-1. Open Telegram and search for `@BotFather`
-2. Start a conversation with BotFather
-3. Send `/newbot` command
-4. Follow the instructions to name your bot (e.g., "CBNF Support Bot")
-5. Choose a username for your bot (must end with "bot", e.g., "cbnf_support_bot")
-6. BotFather will provide you with a bot token - save this token
+### 1. TELEGRAM_BOT_TOKEN
+Format: `1234567890:ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi`
+- Get this from @BotFather on Telegram
+- Create a new bot with `/newbot` command
+- Choose a name and username for your bot
+- Copy the token provided
 
-## Step 2: Get Your Chat ID
+### 2. TELEGRAM_CHAT_ID  
+Format: `-1001234567890` (for groups) or `1234567890` (for private chats)
+- For group chats: Add your bot to the group, then get the chat ID
+- For private chats: Start a conversation with your bot, then get your user ID
 
-1. Add your bot to a group or channel where you want to receive reports
-2. Send a test message in the group/channel
+## How to Get Chat ID
+
+### Method 1: Using Telegram Web or App
+1. Add your bot to a group or start a private chat
+2. Send a message to the bot
 3. Visit: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
-4. Look for the "chat" object in the response and copy the "id" value
-5. This is your chat ID (it might be negative for groups)
+4. Look for "chat":{"id": number in the response
 
-## Step 3: Configure Environment Variables
+### Method 2: Using @userinfobot
+1. Forward any message from your group/chat to @userinfobot
+2. It will show you the chat ID
 
-Add these environment variables to your Replit Secrets:
+## Current Setup Status
+- ✓ Server code configured to use these environment variables
+- ✓ All forms will automatically send to Telegram when configured
+- ✓ Graceful fallback if credentials are missing (forms still work)
 
-```
-TELEGRAM_BOT_TOKEN=your_bot_token_here
-TELEGRAM_CHAT_ID=your_chat_id_here
-```
-
-## Step 4: Test the Bot
-
-1. Submit a test report through the application form
-2. Check your Telegram chat/channel for the formatted message
-3. The bot should send messages with application details formatted nicely
-
-## Message Format
-
-Reports will be sent in this format:
-```
-🟡 APPLICATION REPORT
-
-Applicant: John Doe
-Application ID: APP-2025-001
-Report Type: technical_problem
-Urgency: NORMAL
-Contact Email: john@example.com
-
-Details:
-Unable to upload required documents due to file size limit error.
-
-Timestamp: 2025-01-15T10:30:00.000Z
-```
-
-## Troubleshooting
-
-- **Bot not sending messages**: Check if bot token is correct and bot has permission to send messages
-- **Can't get chat ID**: Make sure the bot is added to the group/channel and has admin permissions
-- **Messages not formatted**: Ensure Markdown parsing is enabled in the bot settings
-
-## Security Notes
-
-- Keep your bot token secret and never share it publicly
-- Only add the bot to private groups/channels
-- Consider setting up webhook for real-time notifications
-- Regularly rotate your bot token for security
+## Form Types That Report to Telegram
+1. **Contact Form** (🟡) - Contact inquiries with full details
+2. **Grant Applications** (🟢) - Complete application data with personal/financial info  
+3. **Eligibility Checks** (🔍) - User eligibility verification submissions
+4. **Telegram Reports** (🟠/🔴) - Issue reports with urgency levels
