@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart } from "lucide-react";
+import { scrollToSection, executeAction } from "@/lib/actions";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,9 +84,12 @@ export default function Navigation() {
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0">
+              <Button 
+                onClick={() => executeAction('donate')}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0"
+              >
                 <Heart className="mr-2 h-4 w-4" />
-                Grant Now
+                Donate Now
               </Button>
             </div>
           </div>
@@ -144,9 +148,12 @@ export default function Navigation() {
                 Contact
               </button>
               <div className="px-4 py-3">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold">
+                <Button 
+                  onClick={() => executeAction('donate')}
+                  className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold"
+                >
                   <Heart className="mr-2 h-4 w-4" />
-                  Grant Now
+                  Donate Now
                 </Button>
               </div>
             </div>

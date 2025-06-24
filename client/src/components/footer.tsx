@@ -140,7 +140,10 @@ export default function Footer() {
                   placeholder="Enter your email"
                   className="px-4 py-2 bg-white/10 border border-gray-600 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-ngo-primary transition-colors backdrop-blur-sm"
                 />
-                <button className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold">
+                <button 
+                  onClick={() => executeAction('newsletter_subscribe')}
+                  className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold"
+                >
                   Subscribe
                 </button>
               </div>

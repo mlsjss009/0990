@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, ArrowRight, Newspaper } from "lucide-react";
+import { executeAction } from "@/lib/actions";
 
 export default function NewsSection() {
   const news = [
@@ -106,7 +107,10 @@ export default function NewsSection() {
         </div>
         
         <div className="text-center mt-16">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold">
+          <Button 
+            onClick={() => executeAction('view_news')}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-bold"
+          >
             <Newspaper className="mr-3 h-5 w-5" />
             View All News
           </Button>

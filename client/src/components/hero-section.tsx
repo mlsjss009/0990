@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Play, Sparkles, Globe } from "lucide-react";
+import { executeAction } from "@/lib/actions";
 
 export default function HeroSection() {
   return (
@@ -22,11 +23,15 @@ export default function HeroSection() {
               Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto">
+              <Button 
+                onClick={() => executeAction('donate')}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto"
+              >
                 <Heart className="mr-3 h-6 w-6" />
-                Make a Grant
+                Donate Now
               </Button>
               <Button
+                onClick={() => executeAction('watch_video')}
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-10 py-6 rounded-full text-lg font-bold h-auto"
               >
