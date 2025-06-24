@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Play, Sparkles, Globe } from "lucide-react";
+import { Heart, CheckCircle, Sparkles, Globe } from "lucide-react";
 import { executeAction } from "@/lib/actions";
 
 export default function HeroSection() {
@@ -31,12 +31,17 @@ export default function HeroSection() {
                 Apply for Grant
               </Button>
               <Button
-                onClick={() => executeAction('watch_video')}
+                onClick={() => {
+                  const element = document.getElementById('eligibility');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 variant="outline"
                 className="border-2 border-white bg-white/20 text-white hover:bg-white hover:text-blue-600 px-10 py-6 rounded-full text-lg font-bold h-auto shadow-lg backdrop-blur-sm"
               >
-                <Play className="mr-3 h-6 w-6" />
-                Watch Our Story
+                <CheckCircle className="mr-3 h-6 w-6" />
+                Check Eligibility
               </Button>
             </div>
             <div className="flex items-center space-x-8 mt-12">

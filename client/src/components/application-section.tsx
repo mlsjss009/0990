@@ -103,7 +103,7 @@ export default function ApplicationSection() {
         </div>
 
         {/* Eligibility Checker */}
-        <div className="mb-20">
+        <div id="eligibility" className="mb-20">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full text-sm font-semibold text-blue-600 mb-6">
               <CheckCircle className="mr-2 h-4 w-4" />
