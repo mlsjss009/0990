@@ -6,164 +6,164 @@ import { useState, useEffect } from "react";
 export default function TestimonialsSection() {
   const allTestimonials = [
     {
-      name: "Maria Santos",
-      role: "Community Leader, Guatemala",
+      name: "Emily Thompson",
+      role: "Community Organizer, Australia",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The microfinance program gave me the opportunity to start my own bakery. Now I employ five women from my community and we're all supporting our families with dignity.",
-      program: "Economic Empowerment",
-      location: "Guatemala City"
+      quote: "The community development program helped us establish a food bank that now serves over 500 families weekly. We've created a network of support that's transforming our neighborhood.",
+      program: "Community Development",
+      location: "Sydney, Australia"
     },
     {
-      name: "Ahmed Hassan",
-      role: "Program Beneficiary, Kenya",
+      name: "James Wilson",
+      role: "Veteran Support Coordinator, USA",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The education program helped me get my high school diploma at 28. Now I'm studying to become a teacher so I can give back to my community the way Hope Together gave to me.",
-      program: "Education Access",
-      location: "Nairobi, Kenya"
+      quote: "Working with homeless veterans through this program has been incredibly rewarding. We've helped 200+ veterans find stable housing and meaningful employment opportunities.",
+      program: "Veteran Support",
+      location: "Austin, Texas, USA"
     },
     {
-      name: "Priya Sharma",
-      role: "Women's Rights Advocate, India",
+      name: "Sarah Mitchell",
+      role: "Education Advocate, UK",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Through the women's empowerment program, I learned to read and write. Now I run a small textile business and teach other women in my village basic literacy skills.",
-      program: "Women's Empowerment",
-      location: "Mumbai, India"
+      quote: "The adult literacy program gave me the confidence to pursue my teaching certification. Now I run workshops for other adults who want to improve their reading and writing skills.",
+      program: "Education Access",
+      location: "Manchester, UK"
     },
     {
-      name: "Carlos Rodriguez",
-      role: "Farmer, Peru",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The sustainable farming techniques I learned tripled my crop yield. My family now has enough food and income to send all three of my children to school.",
-      program: "Agricultural Development",
-      location: "Cusco, Peru"
-    },
-    {
-      name: "Fatima Al-Zahra",
-      role: "Healthcare Worker, Jordan",
-      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Working with refugee families has shown me the incredible resilience of the human spirit. Every family we help rebuild their lives fills my heart with hope.",
-      program: "Refugee Support",
-      location: "Amman, Jordan"
-    },
-    {
-      name: "Jean-Baptiste Mbeki",
-      role: "Youth Leader, Democratic Republic of Congo",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The youth leadership program gave me confidence and skills to organize peace-building activities in my community. We've mediated conflicts and created job opportunities for young people.",
-      program: "Youth Development",
-      location: "Kinshasa, DRC"
-    },
-    {
-      name: "Elena Popovic",
-      role: "Social Worker, Serbia",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Volunteering with Hope Together opened my eyes to how small actions can create big changes. The children we work with inspire me every day with their determination to learn.",
-      program: "Volunteer Program",
-      location: "Belgrade, Serbia"
-    },
-    {
-      name: "Nguyen Thi Lan",
-      role: "Seamstress, Vietnam",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The vocational training program taught me professional sewing skills. I now work at a fair-trade cooperative and my family has moved out of poverty.",
-      program: "Vocational Training",
-      location: "Ho Chi Minh City, Vietnam"
-    },
-    {
-      name: "Kofi Asante",
-      role: "Clean Water Coordinator, Ghana",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Installing clean water systems in rural villages has dramatically reduced waterborne diseases in our region. Children can now attend school instead of walking hours for water.",
-      program: "Clean Water Initiative",
-      location: "Kumasi, Ghana"
-    },
-    {
-      name: "Isabella Silva",
-      role: "Environmental Activist, Brazil",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The environmental conservation program helped our community protect 500 hectares of rainforest while creating sustainable tourism jobs for local families.",
-      program: "Environmental Protection",
-      location: "Manaus, Brazil"
-    },
-    {
-      name: "Rashid Khan",
-      role: "Small Business Owner, Pakistan",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The microfinance loan allowed me to expand my carpet weaving business. I now employ 12 people and export to international markets.",
-      program: "Economic Empowerment",
-      location: "Lahore, Pakistan"
-    },
-    {
-      name: "Sophie Laurent",
-      role: "Volunteer Coordinator, France",
+      name: "Marie Dubois",
+      role: "Refugee Integration Specialist, France",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Coordinating volunteers across Europe has shown me how powerful collective action can be. Together, we've built schools, hospitals, and hope in communities worldwide.",
-      program: "Volunteer Program",
+      quote: "Helping refugee families integrate into French society has shown me the power of compassion and community. Every family we support brings unique strengths to our neighborhoods.",
+      program: "Refugee Support",
       location: "Lyon, France"
     },
     {
-      name: "Moses Mwangi",
-      role: "Teacher, Kenya",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The teacher training program equipped me with modern teaching methods. My students' test scores have improved by 40% and more girls are staying in school.",
-      program: "Education Access",
-      location: "Mombasa, Kenya"
-    },
-    {
-      name: "Ana Petrova",
-      role: "Healthcare Coordinator, Bulgaria",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our mobile healthcare units have brought medical care to remote mountain villages for the first time. We've vaccinated over 2,000 children and treated countless families.",
-      program: "Healthcare Access",
-      location: "Sofia, Bulgaria"
-    },
-    {
-      name: "Liu Wei",
-      role: "Community Organizer, China",
+      name: "Michael O'Brien",
+      role: "Environmental Coordinator, Australia",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The disaster preparedness training saved lives when floods hit our province. Our community was organized and ready, and we helped evacuate neighboring villages safely.",
-      program: "Emergency Relief",
-      location: "Guangzhou, China"
+      quote: "The coastal restoration project has planted over 10,000 native trees and restored 50 hectares of wetlands. Local wildlife populations have increased by 40% in just two years.",
+      program: "Environmental Protection",
+      location: "Melbourne, Australia"
     },
     {
-      name: "Amara Diallo",
-      role: "Midwife, Senegal",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The maternal health program trained me to safely deliver babies and care for new mothers. We've reduced infant mortality in our region by 60%.",
-      program: "Healthcare Access",
-      location: "Dakar, Senegal"
+      name: "Lisa Rodriguez",
+      role: "Small Business Owner, USA",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "The microfinance program enabled me to start my catering business during the pandemic. I now employ 8 people and we've catered over 300 community events.",
+      program: "Economic Empowerment",
+      location: "Denver, Colorado, USA"
     },
     {
-      name: "Ricardo Gutierrez",
-      role: "Agricultural Engineer, Mexico",
+      name: "David Clarke",
+      role: "Youth Mentor, UK",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Implementing drought-resistant farming techniques has helped farmers in our region adapt to climate change. Crop yields have increased despite irregular rainfall.",
-      program: "Agricultural Development",
-      location: "Oaxaca, Mexico"
+      quote: "Mentoring at-risk youth has been transformative for both them and me. We've seen a 70% reduction in school dropout rates among program participants over the past three years.",
+      program: "Youth Development",
+      location: "Birmingham, UK"
     },
     {
-      name: "Aisha Mohamed",
-      role: "Women's Cooperative Leader, Somalia",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our women's cooperative now produces and sells traditional crafts internationally. 80 women have steady income and their children attend school regularly.",
-      program: "Women's Empowerment",
-      location: "Mogadishu, Somalia"
+      name: "Isabelle Laurent",
+      role: "Healthcare Worker, France",
+      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Our mobile health clinic serves rural communities that previously had no access to healthcare. We've provided medical care to over 3,000 people in remote areas.",
+      program: "Healthcare Access",
+      location: "Toulouse, France"
     },
     {
-      name: "Dimitri Volkov",
-      role: "Youth Counselor, Ukraine",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Working with displaced youth has taught me about resilience and hope. Despite everything they've been through, these young people dream of rebuilding their communities.",
+      name: "Robert Taylor",
+      role: "Indigenous Rights Advocate, Australia",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Working to preserve Aboriginal culture and language has connected our community with its roots. We've established three cultural centers and trained 50 young people as cultural ambassadors.",
+      program: "Cultural Preservation",
+      location: "Alice Springs, Australia"
+    },
+    {
+      name: "Amanda Johnson",
+      role: "Disaster Relief Coordinator, USA",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Leading hurricane relief efforts has taught me about community resilience. We coordinated aid for 5,000 families and helped rebuild 200 homes after the last major storm.",
       program: "Emergency Relief",
-      location: "Lviv, Ukraine"
+      location: "New Orleans, Louisiana, USA"
     },
     {
-      name: "Sarah Johnson",
-      role: "Volunteer Coordinator, Canada",
+      name: "Thomas Brown",
+      role: "Mental Health Counselor, UK",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Providing mental health support during the pandemic showed me how crucial community care is. We've helped over 1,000 people access counseling services when they needed it most.",
+      program: "Mental Health Support",
+      location: "Edinburgh, Scotland, UK"
+    },
+    {
+      name: "Camille Moreau",
+      role: "Women's Rights Advocate, France",
+      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "The women's empowerment workshops have helped 300+ women start their own businesses. We've created a support network that's breaking barriers and changing lives across France.",
+      program: "Women's Empowerment",
+      location: "Paris, France"
+    },
+    {
+      name: "Jessica Davis",
+      role: "Food Security Coordinator, Australia",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Our urban farming initiative has created 20 community gardens and trained 500 families in sustainable food production. Food insecurity in our region has dropped by 35%.",
+      program: "Food Security",
+      location: "Brisbane, Australia"
+    },
+    {
+      name: "Christopher White",
+      role: "Senior Program Manager, USA",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Overseeing multiple community programs has shown me the interconnected nature of social challenges. Our holistic approach has improved outcomes for over 2,000 families.",
+      program: "Community Development",
+      location: "Portland, Oregon, USA"
+    },
+    {
+      name: "Grace Williams",
+      role: "Special Needs Educator, UK",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Creating inclusive education programs for children with disabilities has been my passion. We've integrated 150 special needs students into mainstream schools with remarkable success.",
+      program: "Inclusive Education",
+      location: "London, UK"
+    },
+    {
+      name: "Pierre Martin",
+      role: "Community Development Worker, France",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Revitalizing underserved neighborhoods has taught me about the power of grassroots organizing. We've established community centers in 10 areas and created 200 local jobs.",
+      program: "Urban Development",
+      location: "Marseille, France"
+    },
+    {
+      name: "Rachel Green",
+      role: "Senior Care Specialist, Australia",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Leading volunteer missions to remote communities has been life-changing. Every school we build, every well we dig, creates ripple effects of positive change that last generations.",
-      program: "Volunteer Program",
-      location: "Vancouver, Canada"
+      quote: "Our aging-in-place program has enabled 400 seniors to remain in their homes safely. We've created a support network that provides both practical help and meaningful social connections.",
+      program: "Elder Care",
+      location: "Perth, Australia"
+    },
+    {
+      name: "Kevin Anderson",
+      role: "Addiction Recovery Counselor, USA",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Working in addiction recovery has shown me the incredible strength of the human spirit. Our program has achieved a 65% long-term recovery rate and reunited countless families.",
+      program: "Addiction Recovery",
+      location: "Seattle, Washington, USA"
+    },
+    {
+      name: "Helen Smith",
+      role: "Domestic Violence Advocate, UK",
+      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Supporting survivors of domestic violence requires both compassion and systemic change. We've helped 250 women and children find safety and rebuild their lives with dignity.",
+      program: "Domestic Violence Support",
+      location: "Glasgow, Scotland, UK"
+    },
+    {
+      name: "Antoine Dubois",
+      role: "Climate Action Coordinator, France",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Leading climate action initiatives has mobilized 1,000+ volunteers across France. We've reduced community carbon emissions by 25% and installed solar panels on 100 public buildings.",
+      program: "Climate Action",
+      location: "Bordeaux, France"
     }
   ];
 
@@ -176,7 +176,15 @@ export default function TestimonialsSection() {
       return shuffled.slice(0, 6);
     };
 
+    // Set initial testimonials
     setDisplayedTestimonials(getRandomTestimonials());
+
+    // Auto-shuffle every 5 seconds
+    const interval = setInterval(() => {
+      setDisplayedTestimonials(getRandomTestimonials());
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -195,15 +203,15 @@ export default function TestimonialsSection() {
             Stories of Impact
           </h2>
           <p className="text-xl text-ngo-neutral max-w-3xl mx-auto leading-relaxed">
-            Hear from communities and individuals worldwide whose lives have been transformed through our programs and the volunteers who make it all possible.
+            Hear from communities and individuals across Australia, USA, UK, and France whose lives have been transformed through our programs and the volunteers who make it all possible.
           </p>
         </div>
         
         <div className="grid lg:grid-cols-3 xl:grid-cols-3 gap-8">
           {displayedTestimonials.map((testimonial, index) => (
             <Card 
-              key={index} 
-              className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl card-hover group overflow-hidden"
+              key={`${testimonial.name}-${index}`} 
+              className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl card-hover group overflow-hidden transition-all duration-500 ease-in-out"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-0">
