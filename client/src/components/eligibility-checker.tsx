@@ -12,7 +12,7 @@ interface EligibilityFormData {
   address: string;
 }
 
-type EligibilityResult = 'eligible' | 'additional-docs' | null;
+type EligibilityResult = 'eligible' | null;
 
 export default function EligibilityChecker() {
   const [formData, setFormData] = useState<EligibilityFormData>({
@@ -49,13 +49,12 @@ export default function EligibilityChecker() {
       }
       
       const data = await response.json();
-      setResult(data.result);
+      setResult('eligible');
       setCheckCounter(prev => prev + 1);
     } catch (error) {
       console.error('Error checking eligibility:', error);
       // Fallback to local simulation if API fails
-      const resultType: EligibilityResult = checkCounter % 2 === 0 ? 'eligible' : 'additional-docs';
-      setResult(resultType);
+      setResult('eligible');
       setCheckCounter(prev => prev + 1);
     } finally {
       setIsChecking(false);
@@ -78,103 +77,51 @@ export default function EligibilityChecker() {
     return (
       <Card className="bg-white shadow-xl border-0 rounded-3xl overflow-hidden max-w-2xl mx-auto">
         <CardContent className="p-8">
-          {result === 'eligible' ? (
-            // Eligible Response
-            <div className="text-center">
-              <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-              <h3 className="text-3xl font-bold text-green-700 mb-4">Wonderful News!</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                You're eligible to join our community of changemakers! Your application can help us build stronger, more resilient communities together.
-              </p>
-              
-              <div className="bg-green-50 rounded-2xl p-6 mb-8">
-                <h4 className="text-xl font-bold text-green-800 mb-3">Your Eligibility Prize Range</h4>
-                <div className="text-4xl font-bold text-green-600 mb-2">$300K - $4M</div>
-                <p className="text-green-700 text-sm">
-                  Final amount will be determined based on your complete application and project scope.
-                </p>
+          <div className="text-center">
+            <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
+            <h3 className="text-3xl font-bold text-green-700 mb-4">Wonderful News!</h3>
+            <p className="text-lg text-gray-700 mb-6">
+              You're eligible to join our community of changemakers! Your application can help us build stronger, more resilient communities together.
+            </p>
+            
+            <div className="bg-green-50 rounded-2xl p-6 mb-8">
+              <h4 className="text-xl font-bold text-green-800 mb-3">Estimated Prize Range</h4>
+              <div className="text-4xl font-bold text-green-600 mb-2">
+                {checkCounter % 3 === 0 ? '$300K - $1M' : 
+                 checkCounter % 3 === 1 ? '$1M - $2.5M' : '$2.5M - $4M'}
               </div>
+              <p className="text-green-700 text-sm">
+                Final amount will be determined based on your complete application and project scope.
+              </p>
+            </div>
 
-              <div className="space-y-4">
+            <div className="space-y-4">
+              <Button
+                onClick={scrollToApplication}
+                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-bold w-full"
+              >
+                <FileText className="mr-3 h-5 w-5" />
+                Continue with Full Application
+                <ExternalLink className="ml-3 h-4 w-4" />
+              </Button>
+              
+              <div className="flex space-x-4">
                 <Button
-                  onClick={scrollToApplication}
-                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-bold w-full"
+                  onClick={resetForm}
+                  variant="outline"
+                  className="flex-1"
                 >
-                  <FileText className="mr-3 h-5 w-5" />
-                  Continue with Full Application
-                  <ExternalLink className="ml-3 h-4 w-4" />
+                  Check Another Person's Eligibility
                 </Button>
-                
-                <div className="flex space-x-4">
-                  <Button
-                    onClick={resetForm}
-                    variant="outline"
-                    className="flex-1"
-                  >
-                    Check Another Person's Eligibility
-                  </Button>
-                  <Button
-                    onClick={() => window.location.href = '/'}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white"
-                  >
-                    Return to Homepage
-                  </Button>
-                </div>
+                <Button
+                  onClick={() => window.location.href = '/'}
+                  className="flex-1 bg-blue-500 hover:bg-blue-600 text-white"
+                >
+                  Return to Homepage
+                </Button>
               </div>
             </div>
-          ) : (
-            // Additional Documents Required Response
-            <div className="text-center">
-              <AlertCircle className="h-16 w-16 text-orange-500 mx-auto mb-6" />
-              <h3 className="text-3xl font-bold text-orange-700 mb-4">We're Here to Help You Qualify!</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                Don't worry - you can still join our mission! We just need a few additional documents to complete your eligibility verification and get you started on your journey to community impact.
-              </p>
-              
-              <div className="bg-orange-50 rounded-2xl p-6 mb-8">
-                <h4 className="text-xl font-bold text-orange-800 mb-3">Potential Prize Range</h4>
-                <div className="text-4xl font-bold text-orange-600 mb-2">$300K - $4M</div>
-                <p className="text-orange-700 text-sm mb-4">
-                  Upon verification of additional documents, you may qualify for grants in this range.
-                </p>
-                
-                <div className="text-left">
-                  <h5 className="font-semibold text-orange-800 mb-2">Required Additional Documents:</h5>
-                  <ul className="text-sm text-orange-700 space-y-1">
-                    <li>• Updated proof of residence</li>
-                    <li>• Government-issued photo ID</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <Button
-                  onClick={scrollToApplication}
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-bold w-full"
-                >
-                  <FileText className="mr-3 h-5 w-5" />
-                  Continue with Full Application
-                  <ExternalLink className="ml-3 h-4 w-4" />
-                </Button>
-                
-                <div className="flex space-x-4">
-                  <Button
-                    onClick={resetForm}
-                    variant="outline"
-                    className="flex-1"
-                  >
-                    Check Another Person's Eligibility
-                  </Button>
-                  <Button
-                    onClick={() => window.location.href = '/'}
-                    className="flex-1 bg-orange-500 hover:bg-orange-600 text-white"
-                  >
-                    Return to Homepage
-                  </Button>
-                </div>
-              </div>
-            </div>
-          )}
+          </div>
         </CardContent>
       </Card>
     );
