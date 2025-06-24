@@ -37,38 +37,50 @@ export default function GrantSection() {
             </span>
           </h2>
           <p className="text-xl text-orange-100 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Every grant, no matter the size, helps us provide essential services to communities in need. 
-            Choose your grant level and join thousands of applicants making a real difference.
+            Transform your community project with substantial funding opportunities. 
+            Join thousands of successful applicants who have received grants to make lasting impact.
           </p>
         </div>
 
-        {/* Grant Amount Cards */}
-        <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4 mb-12">
-          {grantAmounts.map((amount, index) => {
-            const impact = grantImpacts.find(d => d.amount === amount);
-            return (
-              <Card 
-                key={amount} 
-                onClick={() => alert(`Selected $${amount} grant - would proceed to application`)}
-                className="bg-white/10 border-0 text-white hover:bg-white/20 transition-all cursor-pointer"
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold mb-2">${amount}</div>
-                  <div className="text-sm text-orange-100">{impact?.impact}</div>
-                </CardContent>
-              </Card>
-            );
-          })}
+        {/* 2025 Grant Information */}
+        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 mb-12 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/20 rounded-full text-sm font-bold mb-6">
+              <Zap className="mr-2 h-4 w-4 text-yellow-200" />
+              2025 Grant Program
+            </div>
+            <h3 className="text-3xl font-bold mb-6">Eligibility Prize Estimate</h3>
+            <div className="text-6xl font-bold text-yellow-200 mb-4">$300K - $4M</div>
+            <p className="text-lg text-orange-100 leading-relaxed">
+              Our 2025 grant program offers substantial funding opportunities for qualifying community projects. 
+              Awards range from $300,000 to $4,000,000 based on project scope, impact potential, and community need.
+            </p>
+          </div>
         </div>
 
-        {/* Features */}
-        <div className="flex justify-center items-center space-x-12 mb-12">
-          {features.map(({ icon: Icon, text }, index) => (
-            <div key={index} className="flex items-center space-x-3">
-              <Icon className="h-6 w-6 text-yellow-200" />
-              <span className="text-lg font-semibold">{text}</span>
+        {/* Grant Benefits */}
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Heart className="h-8 w-8 text-yellow-200" />
             </div>
-          ))}
+            <h4 className="text-xl font-bold mb-2">Community Impact</h4>
+            <p className="text-orange-100">Direct funding for projects that create lasting positive change</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Gift className="h-8 w-8 text-yellow-200" />
+            </div>
+            <h4 className="text-xl font-bold mb-2">Full Support</h4>
+            <p className="text-orange-100">Comprehensive assistance throughout the application process</p>
+          </div>
+          <div className="text-center">
+            <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Zap className="h-8 w-8 text-yellow-200" />
+            </div>
+            <h4 className="text-xl font-bold mb-2">Fast Processing</h4>
+            <p className="text-orange-100">Streamlined review process with quick decision turnaround</p>
+          </div>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
