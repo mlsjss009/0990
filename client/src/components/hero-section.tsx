@@ -23,13 +23,7 @@ export default function HeroSection() {
               Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
-              <Button 
-                onClick={() => executeAction('grant_application')}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-6 rounded-full text-lg font-bold h-auto"
-              >
-                <Heart className="mr-3 h-6 w-6" />
-                Apply for Grant
-              </Button>
+               
               <Button
                 onClick={() => {
                   const element = document.getElementById('eligibility');

@@ -8,11 +8,7 @@ import EligibilityChecker from "./eligibility-checker";
 export default function ApplicationSection() {
   const eligibilityRequirements = [
     "Must be a citizen or legal resident",
-    "Household income below 200% of federal poverty guidelines",
-    "Demonstration of financial need through documentation",
-    "Commitment to program participation and community involvement",
-    "No outstanding debt obligations to federal programs",
-    "Willingness to participate in follow-up assessments"
+    "Must have a Government approved Id",
   ];
 
   const applicationProcess = [
@@ -64,15 +60,7 @@ export default function ApplicationSection() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 p-6 bg-blue-50 rounded-lg">
-              <h4 className="font-semibold text-ngo-neutral-dark mb-2">Required Documents</h4>
-              <ul className="text-sm text-ngo-neutral space-y-1">
-                <li>• Government-issued photo ID</li>
-                <li>• Proof of income (pay stubs, tax returns)</li>
-                <li>• Proof of residence (utility bills, lease agreement)</li>
-                <li>• Social Security cards for all household members</li>
-              </ul>
-            </div>
+          
           </div>
 
           {/* Application Process */}
@@ -119,7 +107,7 @@ export default function ApplicationSection() {
           <EligibilityChecker />
         </div>
 
-        {/* Grant Application Form */}
+        {/* Application Form */}
         <div id="application" className="mb-20">
           <div className="text-center mb-12">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full text-sm font-semibold text-orange-600 mb-6">
@@ -127,7 +115,7 @@ export default function ApplicationSection() {
               Official Application
             </div>
             <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
-              Complete Your Grant Application
+              Complete Your  Application
             </h3>
             <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
               Fill out the form below to apply for CBNF grant programs. All applications are reviewed within 7-14 business days.

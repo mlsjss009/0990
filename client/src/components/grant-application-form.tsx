@@ -123,7 +123,7 @@ export default function GrantApplicationForm() {
       <CardHeader className="bg-gradient-to-r from-orange-500 to-orange-600 text-white">
         <CardTitle className="flex items-center text-3xl font-bold">
           <FileText className="mr-3 h-8 w-8" />
-          Grant Application Form
+          Application Form
         </CardTitle>
         <p className="text-orange-100 mt-2 text-lg">
           Complete all required fields to apply for CBNF grant programs
@@ -342,63 +342,9 @@ export default function GrantApplicationForm() {
             </div>
           </div>
 
-          {/* Grant Information */}
-          <div className="bg-purple-50 rounded-2xl p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-              <Calendar className="mr-2 h-5 w-5 text-purple-500" />
-              Grant Information
-            </h3>
-            <div className="grid gap-6">
-              <div>
-                <Label htmlFor="grantType" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Grant Type *
-                </Label>
-                <Select value={formData.grantType} onValueChange={(value) => handleInputChange("grantType", value)}>
-                  <SelectTrigger className="rounded-xl border-2 border-gray-200 focus:border-purple-500">
-                    <SelectValue placeholder="Select grant type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="emergency">Emergency Assistance</SelectItem>
-                    <SelectItem value="housing">Housing Support</SelectItem>
-                    <SelectItem value="education">Education Grant</SelectItem>
-                    <SelectItem value="healthcare">Healthcare Assistance</SelectItem>
-                    <SelectItem value="business">Small Business Support</SelectItem>
-                    <SelectItem value="monthly">Monthly Program</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+        
 
-              <div>
-                <Label htmlFor="requestedAmount" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Requested Amount *
-                </Label>
-                <Input
-                  id="requestedAmount"
-                  type="number"
-                  value={formData.requestedAmount}
-                  onChange={(e) => handleInputChange("requestedAmount", e.target.value)}
-                  placeholder="$5,000"
-                  className="rounded-xl border-2 border-gray-200 focus:border-purple-500"
-                  required
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="purpose" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Purpose of Grant (Explain how you will use the funds) *
-                </Label>
-                <Textarea
-                  id="purpose"
-                  value={formData.purpose}
-                  onChange={(e) => handleInputChange("purpose", e.target.value)}
-                  rows={4}
-                  className="rounded-xl border-2 border-gray-200 focus:border-purple-500"
-                  placeholder="Please explain how you plan to use the grant funds and how it will help your situation..."
-                  required
-                />
-              </div>
-            </div>
-          </div>
+           
 
           {/* Agreements */}
           <div className="bg-gray-50 rounded-2xl p-6">

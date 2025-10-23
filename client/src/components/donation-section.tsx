@@ -25,35 +25,39 @@ export default function GrantSection() {
   return (
     <section id="grant-section" className="py-24 bg-orange-500 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-sm font-medium mb-8">
-            <Heart className="mr-2 h-4 w-4" />
-            Apply for Grants Today
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Your Grant Application Changes{" "}
-            <span className="text-yellow-200">
-              Everything
-            </span>
-          </h2>
-          <p className="text-xl text-orange-100 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Transform your community project with substantial funding opportunities. 
-            Join thousands of successful applicants who have received grants to make lasting impact.
-          </p>
-        </div>
+      
 
         {/* 2025 Grant Information */}
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-12 mb-12 max-w-4xl mx-auto">
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 bg-yellow-400/20 rounded-full text-sm font-bold mb-6">
               <Zap className="mr-2 h-4 w-4 text-yellow-200" />
-              2025 Grant Program
+              2025 CBNF Program
             </div>
-            <h3 className="text-3xl font-bold mb-6">Eligibility Prize Estimate</h3>
-            <div className="text-6xl font-bold text-yellow-200 mb-4">$300K - $4M</div>
+           
+            
             <p className="text-lg text-orange-100 leading-relaxed">
-              Our 2025 grant program offers substantial funding opportunities for qualifying community projects. 
-              Awards range from $300,000 to $4,000,000 based on project scope, impact potential, and community need.
+              Transform Your Community Project with Substantial Funding Opportunities
+
+              Bring your vision to life and make a real difference in your community. Our 2025 CBNF Program offers substantial funding opportunities for qualifying community projects. Funds raised by our supported sponsors now total $900,000,000, dedicated to initiatives that demonstrate strong project scope, measurable impact potential, and clear community need.
+
+              Community Impact
+              We believe in empowering individuals and organizations to create lasting positive change. Whether you’re improving local infrastructure, supporting youth development, enhancing healthcare, or promoting environmental sustainability, our funding can help turn your ideas into reality.
+
+              Full Support
+              You’re not alone in the process. Our team provides comprehensive assistance throughout the entire application journey — from proposal preparation to project execution. We offer personalized guidance, expert review, and ongoing support to help you achieve success.
+
+              Why Apply?
+
+              Access to a share of $900 million in available funding for eligible projects
+
+              Opportunities to collaborate with local and international partners
+
+              Professional mentorship and administrative support from start to finish
+
+              The ability to make a measurable, lasting difference in your community
+
+              Take the next step toward building a better future. Apply today and join the 2025 CBNF Program in driving meaningful, sustainable community transformation.
             </p>
           </div>
         </div>
@@ -71,51 +75,21 @@ export default function GrantSection() {
             <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Gift className="h-8 w-8 text-yellow-200" />
             </div>
-            <h4 className="text-xl font-bold mb-2">Full Support</h4>
-            <p className="text-orange-100">Comprehensive assistance throughout the application process</p>
+            <h4 className="text-xl font-bold mb-2">Environmental and Sustainability Efforts</h4>
+            <p className="text-orange-100">Grants can help fund renewable energy projects, conservation programs, or research aimed at protecting the environment.</p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Zap className="h-8 w-8 text-yellow-200" />
             </div>
-            <h4 className="text-xl font-bold mb-2">Fast Processing</h4>
-            <p className="text-orange-100">Streamlined review process with quick decision turnaround</p>
+            <h4 className="text-xl font-bold mb-2">Emergency or Recovery Assistance</h4>
+            <p className="text-orange-100">Individuals or businesses affected by disasters (natural or economic) may apply for grants to rebuild and recover.</p>
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          <Button 
-            onClick={() => {
-              const element = document.getElementById('application');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            className="bg-white text-orange-600 hover:bg-gray-100 px-12 py-6 rounded-full text-xl font-bold h-auto"
-          >
-            <Heart className="mr-3 h-6 w-6" />
-            Apply for Grant
-          </Button>
-          <Button 
-            onClick={() => {
-              const element = document.getElementById('application');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-            variant="outline"
-            className="border-2 border-white bg-white/20 text-white hover:bg-white hover:text-orange-500 px-12 py-6 rounded-full text-xl font-bold h-auto shadow-lg backdrop-blur-sm"
-          >
-            <Calendar className="mr-3 h-6 w-6" />
-            Apply for Grant Monthly Program
-          </Button>
-        </div>
+       
 
-        <div className="text-center">
-          <p className="text-orange-100 text-sm">
-            Grant applications are secure and tracked. You will receive confirmation for your records.
-          </p>
-        </div>
+       
       </div>
     </section>
   );

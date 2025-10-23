@@ -81,7 +81,7 @@ export default function Navigation() {
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0"
               >
                 <Heart className="mr-2 h-4 w-4" />
-                Apply for Grant
+                Apply & Check Eligibility
               </Button>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function Navigation() {
                   className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold"
                 >
                   <Heart className="mr-2 h-4 w-4" />
-                  Apply for Grant
+                  Apply & Check Eligibility
                 </Button>
               </div>
             </div>
