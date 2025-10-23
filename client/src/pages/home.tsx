@@ -14,7 +14,7 @@ import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-ngo-neutral-dark">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-ngo-neutral-dark">
       <Navigation />
       <HeroSection />
       <ImpactMetrics />

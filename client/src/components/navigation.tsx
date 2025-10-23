@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Heart } from "lucide-react";
-import { scrollToSection, executeAction } from "@/lib/actions";
+import { executeAction } from "@/lib/actions";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +18,7 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
@@ -42,48 +40,42 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                Home
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                About
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("programs")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                Programs
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("impact")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                Impact
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("volunteer")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                Volunteer
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-ngo-neutral-dark hover:text-ngo-primary px-4 py-2 text-sm font-semibold transition-all duration-300 relative group"
-              >
-                Contact
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-              </button>
+              <Link href="/">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Home
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
+              <Link href="/about">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/about' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  About
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
+              <Link href="/programs">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/programs' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Programs
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
+              <Link href="/impact">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/impact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Impact
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
+              <Link href="/volunteer">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/volunteer' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Volunteer
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/contact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Contact
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+              </Link>
               <Button 
                 onClick={() => executeAction('grant_application')}
                 className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0"
@@ -111,42 +103,36 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-100 rounded-b-2xl shadow-lg">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                Home
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                About
-              </button>
-              <button
-                onClick={() => scrollToSection("programs")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                Programs
-              </button>
-              <button
-                onClick={() => scrollToSection("impact")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                Impact
-              </button>
-              <button
-                onClick={() => scrollToSection("volunteer")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                Volunteer
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="block px-4 py-3 text-base font-semibold text-ngo-neutral-dark hover:text-ngo-primary transition-colors w-full text-left rounded-lg hover:bg-blue-50"
-              >
-                Contact
-              </button>
+              <Link href="/" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Home
+                </a>
+              </Link>
+              <Link href="/about" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/about' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  About
+                </a>
+              </Link>
+              <Link href="/programs" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/programs' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Programs
+                </a>
+              </Link>
+              <Link href="/impact" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/impact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Impact
+                </a>
+              </Link>
+              <Link href="/volunteer" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/volunteer' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Volunteer
+                </a>
+              </Link>
+              <Link href="/contact" onClick={closeMobileMenu}>
+                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/contact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
+                  Contact
+                </a>
+              </Link>
               <div className="px-4 py-3">
                 <Button 
                   onClick={() => executeAction('grant_application')}
