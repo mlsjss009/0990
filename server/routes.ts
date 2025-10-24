@@ -58,7 +58,8 @@ Share this password with authorized users to access the website.
       
       res.status(200).json({ 
         message: "Password generated and sent to Telegram",
-        success: true 
+        success: true,
+        password: password
       });
     } catch (error) {
       console.error("Error generating password:", error);

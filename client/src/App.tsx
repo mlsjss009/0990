@@ -10,6 +10,7 @@ import Programs from "./pages/programs";
 import Volunteer from "./pages/volunteer";
 import Contact from "./pages/contact";
 import Impact from "./pages/impact";
+import Admin from "./pages/admin";
 import NotFound from "./pages/not-found";
 import LockPage from "./components/lock-page";
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -108,6 +109,7 @@ function App() {
             <Route path="/volunteer" component={Volunteer} />
             <Route path="/contact" component={Contact} />
             <Route path="/impact" component={Impact} />
+            <Route path="/admin" component={Admin} />
             <Route component={NotFound} />
           </Switch>
         </main>
