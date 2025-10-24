@@ -82,7 +82,7 @@ export default function HeroSection() {
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
                 <img
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                  src="/attached_assets/IMG_1070_1761291347959.jpg"
                   alt="Community volunteers making a difference"
                   className="w-full h-auto"
                   data-testid="img-hero"
