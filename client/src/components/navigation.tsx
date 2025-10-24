@@ -11,7 +11,7 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -22,63 +22,55 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/programs", label: "Programs" },
+    { href: "/impact", label: "Impact" },
+    { href: "/volunteer", label: "Volunteer" },
+    { href: "/contact", label: "Contact" }
+  ];
+
   return (
-    <nav className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-      isScrolled ? "bg-white/95 backdrop-blur-md shadow-xl" : "bg-white/95 backdrop-blur-md shadow-xl"
+    <nav className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? "bg-white/90 backdrop-blur-xl shadow-lg border-b border-gray-100" 
+        : "bg-white/95 backdrop-blur-md shadow-sm"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+          <Link href="/">
+            <div className="flex items-center space-x-3 cursor-pointer group">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg">
                 <Heart className="text-white h-6 w-6" />
               </div>
-              <h1 className="text-3xl font-bold text-blue-600">Hope Together</h1>
+              <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Hope Together
+              </h1>
             </div>
-          </div>
+          </Link>
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <Link href="/">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Home
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
-              <Link href="/about">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/about' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  About
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
-              <Link href="/programs">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/programs' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Programs
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
-              <Link href="/impact">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/impact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Impact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
-              <Link href="/volunteer">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/volunteer' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Volunteer
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
-              <Link href="/contact">
-                <a className={`px-4 py-2 text-sm font-semibold transition-all duration-300 relative group ${location === '/contact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-ngo-primary transition-all duration-300 group-hover:w-full"></span>
-                </a>
-              </Link>
+            <div className="ml-10 flex items-baseline space-x-1">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span className={`px-4 py-2 text-sm font-semibold rounded-xl transition-all duration-300 cursor-pointer relative group ${
+                    location === link.href 
+                      ? 'text-indigo-600 bg-indigo-50' 
+                      : 'text-gray-700 hover:text-indigo-600 hover:bg-indigo-50'
+                  }`} data-testid={`link-${link.label.toLowerCase()}`}>
+                    {link.label}
+                    <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 transition-all duration-300 ${
+                      location === link.href ? 'w-8' : 'w-0 group-hover:w-8'
+                    }`}></span>
+                  </span>
+                </Link>
+              ))}
               <Button 
                 onClick={() => executeAction('grant_application')}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-sm font-bold border-0"
+                className="bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 hover:from-orange-600 hover:via-pink-600 hover:to-rose-600 text-white px-6 py-3 rounded-xl text-sm font-bold border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                data-testid="button-apply-eligibility"
               >
                 <Heart className="mr-2 h-4 w-4" />
                 Apply & Check Eligibility
@@ -92,51 +84,41 @@ export default function Navigation() {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2"
+              className="p-2 hover:bg-indigo-50"
+              data-testid="button-mobile-menu"
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="h-6 w-6 text-indigo-600" /> : <Menu className="h-6 w-6 text-indigo-600" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-100 rounded-b-2xl shadow-lg">
-              <Link href="/" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Home
-                </a>
-              </Link>
-              <Link href="/about" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/about' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  About
-                </a>
-              </Link>
-              <Link href="/programs" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/programs' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Programs
-                </a>
-              </Link>
-              <Link href="/impact" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/impact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Impact
-                </a>
-              </Link>
-              <Link href="/volunteer" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/volunteer' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Volunteer
-                </a>
-              </Link>
-              <Link href="/contact" onClick={closeMobileMenu}>
-                <a className={`block px-4 py-3 text-base font-semibold transition-colors w-full text-left rounded-lg hover:bg-blue-50 ${location === '/contact' ? 'text-ngo-primary' : 'text-ngo-neutral-dark hover:text-ngo-primary'}`}>
-                  Contact
-                </a>
-              </Link>
-              <div className="px-4 py-3">
+          <div className="md:hidden pb-4">
+            <div className="px-2 pt-2 pb-3 space-y-2 bg-white/95 backdrop-blur-md border-t border-gray-100 rounded-b-3xl shadow-xl">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href}>
+                  <span 
+                    onClick={closeMobileMenu}
+                    className={`block px-4 py-3 text-base font-semibold transition-all cursor-pointer w-full text-left rounded-xl ${
+                      location === link.href 
+                        ? 'text-indigo-600 bg-indigo-50' 
+                        : 'text-gray-700 hover:text-indigo-600 hover:bg-indigo-50'
+                    }`}
+                    data-testid={`link-mobile-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </span>
+                </Link>
+              ))}
+              <div className="px-2 pt-2">
                 <Button 
-                  onClick={() => executeAction('grant_application')}
-                  className="bg-orange-500 hover:bg-orange-600 text-white w-full rounded-full font-bold"
+                  onClick={() => {
+                    executeAction('grant_application');
+                    closeMobileMenu();
+                  }}
+                  className="bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 hover:from-orange-600 hover:via-pink-600 hover:to-rose-600 text-white w-full rounded-xl font-bold shadow-lg"
+                  data-testid="button-mobile-apply"
                 >
                   <Heart className="mr-2 h-4 w-4" />
                   Apply & Check Eligibility
