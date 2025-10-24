@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
+import { generatePassword, addPassword, validatePassword } from "./auth";
 
 // Helper function to send messages to Telegram
 async function sendToTelegram(message: string) {
@@ -37,6 +38,56 @@ async function sendToTelegram(message: string) {
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Generate new password and send to Telegram
+  app.post("/api/generate-password", async (req, res) => {
+    try {
+      const password = generatePassword();
+      addPassword(password);
+      
+      const telegramMessage = `
+🔐 *NEW ACCESS PASSWORD GENERATED*
+
+*Password:* \`${password}\`
+*Valid for:* 24 hours
+*Generated at:* ${new Date().toISOString()}
+
+Share this password with authorized users to access the website.
+      `.trim();
+
+      await sendToTelegram(telegramMessage);
+      
+      res.status(200).json({ 
+        message: "Password generated and sent to Telegram",
+        success: true 
+      });
+    } catch (error) {
+      console.error("Error generating password:", error);
+      res.status(500).json({ message: "Failed to generate password" });
+    }
+  });
+
+  // Validate password
+  app.post("/api/validate-password", async (req, res) => {
+    try {
+      const { password } = req.body;
+      
+      if (!password) {
+        return res.status(400).json({ valid: false, message: "Password required" });
+      }
+      
+      const isValid = validatePassword(password);
+      
+      if (isValid) {
+        res.json({ valid: true, message: "Access granted" });
+      } else {
+        res.json({ valid: false, message: "Invalid or expired password" });
+      }
+    } catch (error) {
+      console.error("Error validating password:", error);
+      res.status(500).json({ valid: false, message: "Validation error" });
+    }
+  });
+
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
