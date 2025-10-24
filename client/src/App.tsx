@@ -10,6 +10,11 @@ import Programs from "./pages/programs";
 import Volunteer from "./pages/volunteer";
 import Contact from "./pages/contact";
 import Impact from "./pages/impact";
+import Donate from "./pages/donate";
+import News from "./pages/news";
+import Apply from "./pages/apply";
+import Testimonials from "./pages/testimonials";
+import Partners from "./pages/partners";
 import NotFound from "./pages/not-found";
 import LockPage from "./components/lock-page";
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -108,6 +113,11 @@ function App() {
             <Route path="/volunteer" component={Volunteer} />
             <Route path="/contact" component={Contact} />
             <Route path="/impact" component={Impact} />
+            <Route path="/donate" component={Donate} />
+            <Route path="/news" component={News} />
+            <Route path="/apply" component={Apply} />
+            <Route path="/testimonials" component={Testimonials} />
+            <Route path="/partners" component={Partners} />
             <Route component={NotFound} />
           </Switch>
         </main>
