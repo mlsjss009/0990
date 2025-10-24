@@ -7,162 +7,162 @@ export default function TestimonialsSection() {
   const allTestimonials = [
     {
       name: "Jennifer Martinez",
-      role: "Community Center Director",
+      role: "Single Mother & Student",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The CBNF grant allowed us to build a new community center that serves over 500 families. The application process was straightforward and the support team was incredible.",
-      program: "Community Development Grant",
+      quote: "The CBNF grant changed my life. As a single mom going back to school, I was struggling to pay for childcare and tuition. This support allowed me to finish my degree and now I have a career in nursing.",
+      program: "Education Assistance Grant",
       location: "Portland, Oregon, USA"
     },
     {
       name: "Michael Thompson",
-      role: "Youth Program Coordinator",
+      role: "Former Homeless Veteran",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our after-school program was struggling until we received CBNF funding. Now we're helping 200 kids stay off the streets and build their futures.",
-      program: "Youth Development Grant",
+      quote: "After serving my country, I found myself on the streets with nowhere to turn. CBNF gave me housing assistance and helped me get back on my feet. Today, I have my own apartment and a stable job.",
+      program: "Housing Support Grant",
       location: "Chicago, Illinois, USA"
     },
     {
       name: "Sarah Williams",
-      role: "Environmental Project Lead",
+      role: "Small Business Owner",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Thanks to CBNF, we installed solar panels on 50 low-income homes. It's making a real difference in our community's carbon footprint and energy costs.",
-      program: "Environmental Sustainability Grant",
+      quote: "I had a dream to start my own bakery but no capital. CBNF's small business grant gave me the startup funds I needed. Two years later, my bakery is thriving and I've hired three employees.",
+      program: "Small Business Development Grant",
       location: "San Francisco, California, USA"
     },
     {
       name: "David Johnson",
-      role: "Healthcare Initiative Director",
+      role: "Cancer Survivor",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The mobile health clinic we funded through CBNF has provided free healthcare to over 1,000 underserved residents in our rural community.",
-      program: "Healthcare Access Grant",
+      quote: "When I was diagnosed with cancer, the medical bills piled up fast. CBNF's healthcare assistance grant covered my treatment costs and allowed me to focus on beating cancer instead of worrying about bankruptcy.",
+      program: "Medical Assistance Grant",
       location: "Rural Montana, USA"
     },
     {
       name: "Patricia Anderson",
-      role: "Small Business Development",
+      role: "Career Transition Professional",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "CBNF's economic empowerment grant helped me launch a training program that's taught 150 women valuable job skills. Many are now employed.",
-      program: "Economic Empowerment Grant",
+      quote: "At 45, I lost my job and felt too old to start over. CBNF's job training grant helped me learn coding skills. Now I work as a web developer earning more than ever before.",
+      program: "Workforce Retraining Grant",
       location: "Detroit, Michigan, USA"
     },
     {
       name: "Robert Davis",
-      role: "Education Program Manager",
+      role: "College Graduate",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "With CBNF support, we provided laptops and internet access to 300 students from low-income families. Education equity is becoming a reality.",
-      program: "Education Access Grant",
+      quote: "Growing up in poverty, college seemed impossible. CBNF's scholarship grant paid for my tuition and books. I just graduated with honors and have a job offer as an engineer.",
+      program: "Higher Education Grant",
       location: "Houston, Texas, USA"
     },
     {
       name: "Linda Wilson",
-      role: "Food Security Coordinator",
+      role: "Disability Rights Advocate",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our community garden project, funded by CBNF, now feeds 75 families year-round. We've created a sustainable food source for our neighborhood.",
-      program: "Food Security Grant",
+      quote: "Living with a disability, I faced constant barriers to employment. CBNF funded adaptive equipment for my home office. Now I run a successful consulting business from home.",
+      program: "Disability Support Grant",
       location: "Seattle, Washington, USA"
     },
     {
       name: "James Miller",
-      role: "Emergency Relief Director",
+      role: "Flood Survivor",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "When the floods hit, CBNF's emergency grant helped us provide shelter and supplies to 400 displaced families. Their response was incredibly fast.",
+      quote: "I lost everything in the floods - my home, my belongings, my savings. CBNF's emergency relief grant provided immediate shelter and helped me rebuild. Their fast response saved my life.",
       program: "Emergency Relief Grant",
       location: "New Orleans, Louisiana, USA"
     },
     {
       name: "Mary Garcia",
-      role: "Senior Care Program Lead",
+      role: "Elderly Care Recipient",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The CBNF grant enabled us to provide in-home care services for 100 elderly residents, allowing them to age with dignity in their own homes.",
+      quote: "At 78, I wanted to stay in my own home but needed help with daily tasks. CBNF's senior care grant pays for a caregiver who visits me daily. I'm aging with dignity and independence.",
       program: "Elder Care Grant",
       location: "Miami, Florida, USA"
     },
     {
       name: "Christopher Brown",
-      role: "Housing Initiative Director",
+      role: "First-Time Homeowner",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "CBNF funding helped us renovate 25 affordable housing units. Families who were on the brink of homelessness now have safe, stable homes.",
-      program: "Affordable Housing Grant",
+      quote: "I was paying outrageous rent with nothing to show for it. CBNF's down payment assistance grant helped me buy my first home. It's incredible to finally have something that's mine.",
+      program: "Homeownership Grant",
       location: "Boston, Massachusetts, USA"
     },
     {
       name: "Thomas Brown",
-      role: "Mental Health Counselor",
+      role: "Mental Health Recovery",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our free mental health clinic, funded by CBNF, has provided counseling to 500 people. We're breaking down barriers to mental healthcare.",
+      quote: "I struggled with depression for years but couldn't afford therapy. CBNF's mental health grant covered my counseling sessions. I'm finally getting the help I need and my life has turned around.",
       program: "Mental Health Support Grant",
       location: "Edinburgh, Scotland, UK"
     },
     {
       name: "Camille Moreau",
-      role: "Women's Rights Advocate",
+      role: "Domestic Violence Survivor",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Thanks to CBNF, we opened a women's resource center offering job training, legal aid, and childcare. It's transformed lives in our community.",
-      program: "Women's Empowerment Grant",
+      quote: "Escaping an abusive relationship left me with nothing. CBNF's survivor support grant gave me a fresh start with temporary housing and job training. I'm now independent and thriving.",
+      program: "Survivor Support Grant",
       location: "Paris, France"
     },
     {
       name: "Jessica Davis",
-      role: "Food Security Coordinator",
+      role: "Organic Farmer",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our urban farming project with CBNF support produces fresh vegetables for 200 families while teaching sustainable agriculture practices.",
-      program: "Food Security Grant",
+      quote: "I wanted to start an urban farm but lacked the resources. CBNF's agricultural grant provided seeds, tools, and training. Now I grow fresh produce that I sell at local markets and it's my full-time income.",
+      program: "Agricultural Development Grant",
       location: "Brisbane, Australia"
     },
     {
       name: "Christopher White",
-      role: "Community Organizer",
+      role: "Green Energy Technician",
       image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "CBNF's grant helped us create a job placement program that's connected 150 unemployed residents with sustainable careers in green energy.",
-      program: "Workforce Development Grant",
+      quote: "I was unemployed for 18 months before CBNF's job training grant taught me solar panel installation. Within weeks of completing the program, I had a well-paying job in renewable energy.",
+      program: "Green Jobs Training Grant",
       location: "Portland, Oregon, USA"
     },
     {
       name: "Grace Williams",
-      role: "Special Needs Educator",
+      role: "Parent of Child with Autism",
       image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "With CBNF funding, we launched an inclusive education program serving 80 children with special needs. Every child deserves quality education.",
-      program: "Inclusive Education Grant",
+      quote: "My son needed specialized therapy that insurance wouldn't cover. CBNF's special needs grant made it possible. He's making incredible progress and I finally have hope for his future.",
+      program: "Special Needs Support Grant",
       location: "London, UK"
     },
     {
       name: "Pierre Martin",
-      role: "Urban Development Worker",
+      role: "Youth Sports Coach",
       image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The CBNF grant transformed our neglected neighborhood park into a thriving community space with playgrounds, gardens, and sports facilities.",
-      program: "Urban Development Grant",
+      quote: "I grew up in a rough neighborhood and sports saved my life. CBNF's youth program grant let me start a free basketball program for at-risk teens. I'm giving back what was given to me.",
+      program: "Youth Development Grant",
       location: "Marseille, France"
     },
     {
       name: "Rachel Green",
-      role: "Senior Care Specialist",
+      role: "Retirement on Fixed Income",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "CBNF funding allowed us to provide meal delivery and companionship services to 120 isolated seniors. It's restored their quality of life.",
-      program: "Elder Care Grant",
+      quote: "My pension barely covers rent, let alone food and medicine. CBNF's senior assistance grant helps with my medications and groceries. I don't have to choose between pills and meals anymore.",
+      program: "Senior Financial Assistance Grant",
       location: "Perth, Australia"
     },
     {
       name: "Kevin Anderson",
-      role: "Addiction Recovery Counselor",
+      role: "Recovering Addict",
       image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our addiction recovery center, supported by CBNF, has helped 200 individuals reclaim their lives. Recovery is possible with the right support.",
+      quote: "Addiction destroyed my life and I had nowhere to turn. CBNF's recovery grant paid for my rehab program. I've been sober for 2 years now and have rebuilt my relationship with my kids.",
       program: "Addiction Recovery Grant",
       location: "Seattle, Washington, USA"
     },
     {
       name: "Helen Smith",
-      role: "Domestic Violence Advocate",
+      role: "Single Parent",
       image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Thanks to CBNF, we opened a safe house that's provided refuge for 75 domestic violence survivors and their children. We're saving lives.",
-      program: "Domestic Violence Support Grant",
+      quote: "Working two jobs to support my three kids meant I never saw them. CBNF's childcare grant pays for after-school care so I can work one good job and actually be present as a parent.",
+      program: "Childcare Assistance Grant",
       location: "Glasgow, Scotland, UK"
     },
     {
       name: "Antoine Dubois",
-      role: "Climate Action Coordinator",
+      role: "Environmental Activist",
       image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "CBNF's climate action grant funded our community recycling program. We've diverted 50 tons of waste from landfills in just six months.",
-      program: "Climate Action Grant",
+      quote: "I wanted to make a difference but couldn't afford to volunteer. CBNF's activist stipend grant lets me work full-time on climate initiatives. I'm finally doing work that matters.",
+      program: "Environmental Activism Grant",
       location: "Bordeaux, France"
     }
   ];
