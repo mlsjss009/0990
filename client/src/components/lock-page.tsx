@@ -53,11 +53,9 @@ export default function LockPage({ onUnlock }: LockPageProps) {
           <div className="mx-auto w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
             <Lock className="h-10 w-10 text-white" />
           </div>
-          <CardTitle className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Access Required
-          </CardTitle>
+        
           <p className="text-gray-600 mt-2">
-            Enter the password sent via Telegram to access the site
+            Enter the password to access the site
           </p>
         </CardHeader>
 
