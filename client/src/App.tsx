@@ -10,7 +10,6 @@ import Programs from "./pages/programs";
 import Volunteer from "./pages/volunteer";
 import Contact from "./pages/contact";
 import Impact from "./pages/impact";
-import Admin from "./pages/admin";
 import Donate from "./pages/donate";
 import News from "./pages/news";
 import Apply from "./pages/apply";
@@ -114,7 +113,6 @@ function App() {
             <Route path="/volunteer" component={Volunteer} />
             <Route path="/contact" component={Contact} />
             <Route path="/impact" component={Impact} />
-            <Route path="/admin" component={Admin} />
             <Route path="/donate" component={Donate} />
             <Route path="/news" component={News} />
             <Route path="/apply" component={Apply} />
