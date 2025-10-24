@@ -6,84 +6,84 @@ import { useState, useEffect } from "react";
 export default function TestimonialsSection() {
   const allTestimonials = [
     {
-      name: "Emily Thompson",
-      role: "Community Organizer, Australia",
+      name: "Jennifer Martinez",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Starting our food bank changed everything. Now I see neighbors helping neighbors every single day.",
-      program: "Community Development",
-      location: "Sydney, Australia"
+      quote: "My family couldn't believe it when I showed them the approval letter. The CBNF Program gave me $175,000.00 for my community project. I was skeptical at first, but this truly works. My wife cried tears of joy. I'm proof that persistence pays off. Apply now and thank me later!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "James Wilson",
-      role: "Veteran Support Coordinator, USA",
+      name: "Michael Thompson",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Helping veterans find homes again reminds me why I do this work. Every success story matters.",
-      program: "Veteran Support",
-      location: "Austin, Texas, USA"
+      quote: "After three failed business attempts, I almost gave up on my dreams. Then CBNF came through with a $220,000.00 grant delivered right to my doorstep. My children finally saw their dad succeed. This program changed everything for our family. Don't wait - this is your chance!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Sarah Mitchell",
-      role: "Education Advocate, UK",
+      name: "Sarah Williams",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Learning to read as an adult changed my life. Now I help others find their voice too.",
-      program: "Education Access",
-      location: "Manchester, UK"
+      quote: "I kept telling myself it was too good to be true, but I applied anyway. Six weeks later, I received a $195,000.00 check in the mail. My husband said it was the best decision I ever made. The Funds gave us a fresh start we desperately needed. Everyone should look into this opportunity!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Marie Dubois",
-      role: "Refugee Integration Specialist, France",
+      name: "David Johnson",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Every refugee family I meet teaches me something new. Their resilience inspires me daily.",
-      program: "Refugee Support",
-      location: "Lyon, France"
+      quote: "When the $240,000.00 check arrived at my home, I had to pinch myself. My daughter screamed with excitement, and my spouse couldn't stop smiling. I'm living proof this program works. No matter how many times I doubted, I kept going. Apply today - you won't regret it!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Michael O'Brien",
-      role: "Environmental Coordinator, Australia",
+      name: "Patricia Anderson",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Watching our coastline come back to life has been incredible. Nature is healing, and we're part of it.",
-      program: "Environmental Protection",
-      location: "Melbourne, Australia"
+      quote: "Got my approval and received $188,000.00 delivered to my door. My partner and kids are so proud of me for not giving up. The CBNF truly transformed our lives overnight. This is a legitimate lifetime opportunity. I strongly encourage everyone to apply and witness the change!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Lisa Rodriguez",
-      role: "Small Business Owner, USA",
+      name: "Robert Davis",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "This loan gave me a chance when no one else would. Now I'm employing people from my own community.",
-      program: "Economic Empowerment",
-      location: "Denver, Colorado, USA"
+      quote: "After months of struggling, I received a $265,000.00 grant from The Funds. My husband told everyone at his workplace about our success. My daughter got to see her mom win for once. I'm incredibly proud of myself for pushing through. This program is real - take action now!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "David Clarke",
-      role: "Youth Mentor, UK",
+      name: "Linda Wilson",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "These kids just needed someone to believe in them. Seeing them graduate fills my heart.",
-      program: "Youth Development",
-      location: "Birmingham, UK"
+      quote: "The day that $210,000.00 check came to my mailbox, everything changed. My family celebrated like never before, but the proudest person was me. No matter how difficult things got, The Funds pulled through. This is an excellent opportunity you can't miss. Apply and thank me later!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Isabelle Laurent",
-      role: "Healthcare Worker, France",
+      name: "James Miller",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Bringing healthcare to remote villages reminds me why I became a nurse. Everyone deserves care.",
-      program: "Healthcare Access",
-      location: "Toulouse, France"
+      quote: "I received a $198,000.00 grant delivered straight to my home address. My spouse and children were amazed, but I'm most proud of my own determination. The CBNF Program genuinely changed my entire life trajectory. This is a once-in-a-lifetime chance. Everyone needs to explore this program immediately!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Robert Taylor",
-      role: "Indigenous Rights Advocate, Australia",
+      name: "Mary Garcia",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Preserving our culture for the next generation is everything to me. Our language lives on.",
-      program: "Cultural Preservation",
-      location: "Alice Springs, Australia"
+      quote: "When $230,000.00 arrived at my doorstep, my family couldn't stop celebrating. My husband said he always believed in me, but deep down, I'm proudest of myself for never quitting. The Funds truly delivered on their promise. This is an outstanding lifetime opportunity. I advise everyone to look into this!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
-      name: "Amanda Johnson",
-      role: "Disaster Relief Coordinator, USA",
+      name: "Christopher Brown",
+      role: "Grant Recipient",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "When disaster strikes, communities come together. I'm honored to be part of that.",
-      program: "Emergency Relief",
-      location: "New Orleans, Louisiana, USA"
+      quote: "My spouse and my kids were overjoyed when I got the $182,000.00 check at home. But honestly, I'm most proud that I didn't give up when times were tough. The CBNF Program genuinely transformed my life forever. This is an exceptional opportunity that really works. Apply now and thank me later!",
+      program: "CBNF Grant",
+      location: "USA"
     },
     {
       name: "Thomas Brown",
