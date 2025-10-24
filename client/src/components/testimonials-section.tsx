@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -6,163 +5,163 @@ import { useState, useEffect } from "react";
 export default function TestimonialsSection() {
   const allTestimonials = [
     {
-      name: "Jennifer Martinez",
-      role: "Single Mother & Student",
+      name: "Emily Thompson",
+      role: "Community Organizer, Australia",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "The CBNF grant changed my life. As a single mom going back to school, I was struggling to pay for childcare and tuition. This support allowed me to finish my degree and now I have a career in nursing.",
-      program: "Education Assistance Grant",
-      location: "Portland, Oregon, USA"
+      quote: "Starting our food bank changed everything. Now I see neighbors helping neighbors every single day.",
+      program: "Community Development",
+      location: "Sydney, Australia"
     },
     {
-      name: "Michael Thompson",
-      role: "Former Homeless Veteran",
+      name: "James Wilson",
+      role: "Veteran Support Coordinator, USA",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "After serving my country, I found myself on the streets with nowhere to turn. CBNF gave me housing assistance and helped me get back on my feet. Today, I have my own apartment and a stable job.",
-      program: "Housing Support Grant",
-      location: "Chicago, Illinois, USA"
+      quote: "Helping veterans find homes again reminds me why I do this work. Every success story matters.",
+      program: "Veteran Support",
+      location: "Austin, Texas, USA"
     },
     {
-      name: "Sarah Williams",
-      role: "Small Business Owner",
+      name: "Sarah Mitchell",
+      role: "Education Advocate, UK",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I had a dream to start my own bakery but no capital. CBNF's small business grant gave me the startup funds I needed. Two years later, my bakery is thriving and I've hired three employees.",
-      program: "Small Business Development Grant",
-      location: "San Francisco, California, USA"
+      quote: "Learning to read as an adult changed my life. Now I help others find their voice too.",
+      program: "Education Access",
+      location: "Manchester, UK"
     },
     {
-      name: "David Johnson",
-      role: "Cancer Survivor",
+      name: "Marie Dubois",
+      role: "Refugee Integration Specialist, France",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "When I was diagnosed with cancer, the medical bills piled up fast. CBNF's healthcare assistance grant covered my treatment costs and allowed me to focus on beating cancer instead of worrying about bankruptcy.",
-      program: "Medical Assistance Grant",
-      location: "Rural Montana, USA"
+      quote: "Every refugee family I meet teaches me something new. Their resilience inspires me daily.",
+      program: "Refugee Support",
+      location: "Lyon, France"
     },
     {
-      name: "Patricia Anderson",
-      role: "Career Transition Professional",
+      name: "Michael O'Brien",
+      role: "Environmental Coordinator, Australia",
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "At 45, I lost my job and felt too old to start over. CBNF's job training grant helped me learn coding skills. Now I work as a web developer earning more than ever before.",
-      program: "Workforce Retraining Grant",
-      location: "Detroit, Michigan, USA"
+      quote: "Watching our coastline come back to life has been incredible. Nature is healing, and we're part of it.",
+      program: "Environmental Protection",
+      location: "Melbourne, Australia"
     },
     {
-      name: "Robert Davis",
-      role: "College Graduate",
+      name: "Lisa Rodriguez",
+      role: "Small Business Owner, USA",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Growing up in poverty, college seemed impossible. CBNF's scholarship grant paid for my tuition and books. I just graduated with honors and have a job offer as an engineer.",
-      program: "Higher Education Grant",
-      location: "Houston, Texas, USA"
+      quote: "This loan gave me a chance when no one else would. Now I'm employing people from my own community.",
+      program: "Economic Empowerment",
+      location: "Denver, Colorado, USA"
     },
     {
-      name: "Linda Wilson",
-      role: "Disability Rights Advocate",
+      name: "David Clarke",
+      role: "Youth Mentor, UK",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Living with a disability, I faced constant barriers to employment. CBNF funded adaptive equipment for my home office. Now I run a successful consulting business from home.",
-      program: "Disability Support Grant",
-      location: "Seattle, Washington, USA"
+      quote: "These kids just needed someone to believe in them. Seeing them graduate fills my heart.",
+      program: "Youth Development",
+      location: "Birmingham, UK"
     },
     {
-      name: "James Miller",
-      role: "Flood Survivor",
+      name: "Isabelle Laurent",
+      role: "Healthcare Worker, France",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I lost everything in the floods - my home, my belongings, my savings. CBNF's emergency relief grant provided immediate shelter and helped me rebuild. Their fast response saved my life.",
-      program: "Emergency Relief Grant",
+      quote: "Bringing healthcare to remote villages reminds me why I became a nurse. Everyone deserves care.",
+      program: "Healthcare Access",
+      location: "Toulouse, France"
+    },
+    {
+      name: "Robert Taylor",
+      role: "Indigenous Rights Advocate, Australia",
+      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "Preserving our culture for the next generation is everything to me. Our language lives on.",
+      program: "Cultural Preservation",
+      location: "Alice Springs, Australia"
+    },
+    {
+      name: "Amanda Johnson",
+      role: "Disaster Relief Coordinator, USA",
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      quote: "When disaster strikes, communities come together. I'm honored to be part of that.",
+      program: "Emergency Relief",
       location: "New Orleans, Louisiana, USA"
     },
     {
-      name: "Mary Garcia",
-      role: "Elderly Care Recipient",
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "At 78, I wanted to stay in my own home but needed help with daily tasks. CBNF's senior care grant pays for a caregiver who visits me daily. I'm aging with dignity and independence.",
-      program: "Elder Care Grant",
-      location: "Miami, Florida, USA"
-    },
-    {
-      name: "Christopher Brown",
-      role: "First-Time Homeowner",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I was paying outrageous rent with nothing to show for it. CBNF's down payment assistance grant helped me buy my first home. It's incredible to finally have something that's mine.",
-      program: "Homeownership Grant",
-      location: "Boston, Massachusetts, USA"
-    },
-    {
       name: "Thomas Brown",
-      role: "Mental Health Recovery",
+      role: "Mental Health Counselor, UK",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I struggled with depression for years but couldn't afford therapy. CBNF's mental health grant covered my counseling sessions. I'm finally getting the help I need and my life has turned around.",
-      program: "Mental Health Support Grant",
+      quote: "Talking openly about mental health saves lives. I've seen it happen over and over.",
+      program: "Mental Health Support",
       location: "Edinburgh, Scotland, UK"
     },
     {
       name: "Camille Moreau",
-      role: "Domestic Violence Survivor",
+      role: "Women's Rights Advocate, France",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Escaping an abusive relationship left me with nothing. CBNF's survivor support grant gave me a fresh start with temporary housing and job training. I'm now independent and thriving.",
-      program: "Survivor Support Grant",
+      quote: "Watching women build their dreams from scratch is pure joy. We lift each other up.",
+      program: "Women's Empowerment",
       location: "Paris, France"
     },
     {
       name: "Jessica Davis",
-      role: "Organic Farmer",
+      role: "Food Security Coordinator, Australia",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I wanted to start an urban farm but lacked the resources. CBNF's agricultural grant provided seeds, tools, and training. Now I grow fresh produce that I sell at local markets and it's my full-time income.",
-      program: "Agricultural Development Grant",
+      quote: "Growing food together brought our neighborhood back to life. It's about more than vegetables.",
+      program: "Food Security",
       location: "Brisbane, Australia"
     },
     {
       name: "Christopher White",
-      role: "Green Energy Technician",
+      role: "Senior Program Manager, USA",
       image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I was unemployed for 18 months before CBNF's job training grant taught me solar panel installation. Within weeks of completing the program, I had a well-paying job in renewable energy.",
-      program: "Green Jobs Training Grant",
+      quote: "Real change happens when we work together. I see it in every family we support.",
+      program: "Community Development",
       location: "Portland, Oregon, USA"
     },
     {
       name: "Grace Williams",
-      role: "Parent of Child with Autism",
+      role: "Special Needs Educator, UK",
       image: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "My son needed specialized therapy that insurance wouldn't cover. CBNF's special needs grant made it possible. He's making incredible progress and I finally have hope for his future.",
-      program: "Special Needs Support Grant",
+      quote: "Every child deserves to learn. Seeing these kids thrive makes everything worth it.",
+      program: "Inclusive Education",
       location: "London, UK"
     },
     {
       name: "Pierre Martin",
-      role: "Youth Sports Coach",
+      role: "Community Development Worker, France",
       image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I grew up in a rough neighborhood and sports saved my life. CBNF's youth program grant let me start a free basketball program for at-risk teens. I'm giving back what was given to me.",
-      program: "Youth Development Grant",
+      quote: "Our neighborhood went from forgotten to thriving. People have hope again.",
+      program: "Urban Development",
       location: "Marseille, France"
     },
     {
       name: "Rachel Green",
-      role: "Retirement on Fixed Income",
+      role: "Senior Care Specialist, Australia",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "My pension barely covers rent, let alone food and medicine. CBNF's senior assistance grant helps with my medications and groceries. I don't have to choose between pills and meals anymore.",
-      program: "Senior Financial Assistance Grant",
+      quote: "Helping seniors stay home with dignity is sacred work. They've earned it.",
+      program: "Elder Care",
       location: "Perth, Australia"
     },
     {
       name: "Kevin Anderson",
-      role: "Recovering Addict",
+      role: "Addiction Recovery Counselor, USA",
       image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Addiction destroyed my life and I had nowhere to turn. CBNF's recovery grant paid for my rehab program. I've been sober for 2 years now and have rebuilt my relationship with my kids.",
-      program: "Addiction Recovery Grant",
+      quote: "Recovery is possible, and it's beautiful. These families are my heroes.",
+      program: "Addiction Recovery",
       location: "Seattle, Washington, USA"
     },
     {
       name: "Helen Smith",
-      role: "Single Parent",
+      role: "Domestic Violence Advocate, UK",
       image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Working two jobs to support my three kids meant I never saw them. CBNF's childcare grant pays for after-school care so I can work one good job and actually be present as a parent.",
-      program: "Childcare Assistance Grant",
+      quote: "Seeing survivors reclaim their power never gets old. They're the bravest people I know.",
+      program: "Domestic Violence Support",
       location: "Glasgow, Scotland, UK"
     },
     {
       name: "Antoine Dubois",
-      role: "Environmental Activist",
+      role: "Climate Action Coordinator, France",
       image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "I wanted to make a difference but couldn't afford to volunteer. CBNF's activist stipend grant lets me work full-time on climate initiatives. I'm finally doing work that matters.",
-      program: "Environmental Activism Grant",
+      quote: "Fighting climate change starts at home. Together, we're making a real difference.",
+      program: "Climate Action",
       location: "Bordeaux, France"
     }
   ];
@@ -170,16 +169,13 @@ export default function TestimonialsSection() {
   const [displayedTestimonials, setDisplayedTestimonials] = useState<typeof allTestimonials>([]);
 
   useEffect(() => {
-    // Function to get 6 random testimonials
     const getRandomTestimonials = () => {
       const shuffled = [...allTestimonials].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, 6);
     };
 
-    // Set initial testimonials
     setDisplayedTestimonials(getRandomTestimonials());
 
-    // Auto-shuffle every 5 seconds
     const interval = setInterval(() => {
       setDisplayedTestimonials(getRandomTestimonials());
     }, 5000);
@@ -188,64 +184,74 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-100/50 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-blue-100/50 to-transparent rounded-full blur-3xl"></div>
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+      {/* Animated Background */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-300/20 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-300/20 to-transparent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-indigo-100 rounded-full text-sm font-semibold text-ngo-primary mb-6">
-            <Quote className="mr-2 h-4 w-4" />
-            Real Stories, Real Impact
+        {/* Header */}
+        <div className="text-center mb-20 animate-fade-in-up">
+          <div className="inline-flex items-center px-6 py-3 bg-white shadow-lg rounded-full text-sm font-bold mb-6 border border-purple-100" data-testid="badge-real-stories">
+            <Quote className="mr-2 h-5 w-5 text-purple-600" />
+            <span className="gradient-text">Real Stories, Real Impact</span>
           </div>
-          <h2 className="text-5xl font-bold text-ngo-neutral-dark mb-6 section-divider pb-4">
-            Stories of Impact
+          <h2 className="text-5xl lg:text-6xl font-bold mb-6 section-divider pb-6" data-testid="heading-stories">
+            <span className="gradient-text">Stories of Impact</span>
           </h2>
-          <p className="text-xl text-ngo-neutral max-w-3xl mx-auto leading-relaxed">
-            Hear from grant recipients and community leaders who are making a real difference with CBNF funding across the USA, UK, France, and Australia.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed" data-testid="text-stories-description">
+            Hear from communities and individuals whose lives have been transformed through our programs and the volunteers who make it all possible.
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-3 xl:grid-cols-3 gap-8">
+        {/* Testimonials Grid */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {displayedTestimonials.map((testimonial, index) => (
             <Card 
               key={`${testimonial.name}-${index}`} 
-              className="bg-white/80 backdrop-blur-sm shadow-xl border-0 rounded-3xl card-hover group overflow-hidden transition-all duration-500 ease-in-out"
+              className="bg-white shadow-xl border-0 rounded-3xl overflow-hidden group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.1}s` }}
+              data-testid={`card-testimonial-${index}`}
             >
               <CardContent className="p-0">
-                {/* Header with quote icon */}
-                <div className="bg-gradient-to-r from-ngo-primary to-indigo-600 p-6 relative">
-                  <Quote className="h-8 w-8 text-white/60 absolute top-4 right-4" />
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.image}
-                      alt={`${testimonial.name} portrait`}
-                      className="w-16 h-16 rounded-full object-cover border-4 border-white/20"
-                    />
+                {/* Header with gradient */}
+                <div className="bg-gradient-to-br from-purple-600 via-pink-600 to-rose-600 p-6 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+                  <Quote className="h-10 w-10 text-white/40 absolute top-4 right-4" />
+                  <div className="flex items-center space-x-4 relative z-10">
+                    <div className="relative">
+                      <img
+                        src={testimonial.image}
+                        alt={`${testimonial.name} portrait`}
+                        className="w-16 h-16 rounded-2xl object-cover border-4 border-white/30 shadow-lg"
+                        data-testid={`img-testimonial-${index}`}
+                      />
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center">
+                        <Star className="h-3 w-3 text-yellow-500 fill-current" />
+                      </div>
+                    </div>
                     <div>
-                      <h4 className="font-bold text-white text-lg">{testimonial.name}</h4>
-                      <p className="text-blue-100 text-sm">{testimonial.role}</p>
+                      <h4 className="font-bold text-white text-lg" data-testid={`text-name-${index}`}>{testimonial.name}</h4>
+                      <p className="text-white/90 text-sm" data-testid={`text-role-${index}`}>{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-8">
-                  <p className="text-ngo-neutral italic mb-6 text-lg leading-relaxed">
+                  <p className="text-gray-700 italic mb-6 text-lg leading-relaxed" data-testid={`text-quote-${index}`}>
                     "{testimonial.quote}"
                   </p>
                   
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                     <div className="flex text-yellow-400">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 fill-current" />
+                        <Star key={i} className="h-4 w-4 fill-current" />
                       ))}
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-semibold text-ngo-primary">{testimonial.program}</div>
-                      <div className="text-xs text-ngo-neutral">{testimonial.location}</div>
+                      <div className="text-sm font-bold gradient-text" data-testid={`text-program-${index}`}>{testimonial.program}</div>
+                      <div className="text-xs text-gray-500" data-testid={`text-location-${index}`}>{testimonial.location}</div>
                     </div>
                   </div>
                 </div>
@@ -254,21 +260,29 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center space-x-8 bg-white/60 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-lg">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-ngo-primary">4.9/5</div>
-              <div className="text-sm text-ngo-neutral">Grant Recipient Satisfaction</div>
+        {/* Stats Section */}
+        <div className="mt-20">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center border border-purple-100" data-testid="stat-satisfaction">
+              <div className="text-5xl font-bold gradient-text mb-2">4.9/5</div>
+              <div className="text-gray-600 font-medium">Satisfaction Rate</div>
+              <div className="flex justify-center mt-4 text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-current" />
+                ))}
+              </div>
             </div>
-            <div className="w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-ngo-accent">5,000+</div>
-              <div className="text-sm text-ngo-neutral">Funded Projects</div>
+            
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center border border-purple-100" data-testid="stat-success-stories">
+              <div className="text-5xl font-bold gradient-text-warm mb-2">5,000+</div>
+              <div className="text-gray-600 font-medium">Success Stories</div>
+              <div className="text-purple-600 text-sm mt-2">And growing every day</div>
             </div>
-            <div className="w-px h-12 bg-gray-300"></div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-ngo-secondary">95%</div>
-              <div className="text-sm text-ngo-neutral">Project Success Rate</div>
+            
+            <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center border border-purple-100" data-testid="stat-completion">
+              <div className="text-5xl font-bold gradient-text mb-2">95%</div>
+              <div className="text-gray-600 font-medium">Program Completion</div>
+              <div className="text-purple-600 text-sm mt-2">Committed to success</div>
             </div>
           </div>
         </div>
