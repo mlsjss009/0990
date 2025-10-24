@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, CheckCircle, Sparkles, Globe, Users, TrendingUp, Award } from "lucide-react";
 import { executeAction } from "@/lib/actions";
+import heroImage from "@assets/IMG_1070_1761291347959.jpg";
 
 export default function HeroSection() {
   return (
@@ -82,7 +83,7 @@ export default function HeroSection() {
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
                 <img
-                  src="/attached_assets/IMG_1070_1761291347959.jpg"
+                  src={heroImage}
                   alt="Community volunteers making a difference"
                   className="w-full h-auto"
                   data-testid="img-hero"
