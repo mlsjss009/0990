@@ -31,8 +31,7 @@ export default function LockPage({ onUnlock }: LockPageProps) {
       const data = await response.json();
 
       if (data.valid) {
-        // Store authentication in sessionStorage
-        sessionStorage.setItem("authenticated", "true");
+        // Don't store in sessionStorage - unlock for this session only
         onUnlock();
       } else {
         setError(data.message || "Invalid password");

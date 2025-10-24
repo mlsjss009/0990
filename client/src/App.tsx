@@ -27,12 +27,12 @@ function App() {
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleLogout = useCallback(() => {
-    sessionStorage.removeItem("authenticated");
     setIsAuthenticated(false);
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
       inactivityTimerRef.current = null;
     }
+    console.log("Session locked due to inactivity");
   }, []);
 
   const resetInactivityTimer = useCallback(() => {
@@ -50,9 +50,8 @@ function App() {
   }, [isAuthenticated, handleLogout]);
 
   useEffect(() => {
-    // Check if user is already authenticated
-    const authenticated = sessionStorage.getItem("authenticated");
-    setIsAuthenticated(authenticated === "true");
+    // Don't persist authentication - always start locked
+    setIsAuthenticated(false);
     setIsChecking(false);
   }, []);
 
