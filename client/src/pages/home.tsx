@@ -1,7 +1,6 @@
 
 import HeroSection from "@/components/hero-section";
 import ImpactMetrics from "@/components/impact-metrics";
-import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, GraduationCap, Heart, Briefcase, HandHeart, Users, DollarSign, MessageCircle } from "lucide-react";
@@ -129,8 +128,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
