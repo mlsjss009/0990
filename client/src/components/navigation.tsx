@@ -71,15 +71,6 @@ export default function Navigation() {
                   </span>
                 </Link>
               ))}
-              <Link href="/apply">
-                <Button 
-                  className="bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 hover:from-orange-600 hover:via-pink-600 hover:to-rose-600 text-white px-6 py-3 rounded-xl text-sm font-bold border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                  data-testid="button-apply-eligibility"
-                >
-                  <Heart className="mr-2 h-4 w-4" />
-                  Apply & Check Eligibility
-                </Button>
-              </Link>
             </div>
           </div>
 
@@ -116,19 +107,6 @@ export default function Navigation() {
                   </span>
                 </Link>
               ))}
-              <div className="px-2 pt-2">
-                <Link href="/apply">
-                  <span onClick={closeMobileMenu} className="w-full">
-                    <Button 
-                      className="bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 hover:from-orange-600 hover:via-pink-600 hover:to-rose-600 text-white w-full rounded-xl font-bold shadow-lg"
-                      data-testid="button-mobile-apply"
-                    >
-                      <Heart className="mr-2 h-4 w-4" />
-                      Apply & Check Eligibility
-                    </Button>
-                  </span>
-                </Link>
-              </div>
             </div>
           </div>
         )}
