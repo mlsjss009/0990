@@ -36,10 +36,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-5 mb-12">
               <Button
                 onClick={() => {
-                  const element = document.getElementById('eligibility');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  window.location.href = '/apply#eligibility';
                 }}
                 className="btn-gradient text-white px-10 py-7 rounded-2xl text-lg font-bold h-auto shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-0"
                 data-testid="button-check-eligibility"
