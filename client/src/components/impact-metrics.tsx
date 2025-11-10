@@ -50,10 +50,10 @@ export default function ImpactMetrics() {
             Measurable Impact
           </div>
           <h2 className="text-5xl font-bold text-ngo-neutral-dark mb-6 section-divider pb-4">
-            Our Impact in Numbers
+            Our Impact on Communities
           </h2>
           <p className="text-xl text-ngo-neutral max-w-3xl mx-auto leading-relaxed">
-            Every donation and volunteer hour creates real, measurable change in communities around the world. See the difference we're making together.
+            We create measurable change in communities around the world. See the difference we are making together. Our initiatives empower individuals. We strive for sustainable solutions. We work for a brighter future.
           </p>
         </div>
         

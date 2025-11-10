@@ -23,14 +23,14 @@ export default function HeroSection() {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8" data-testid="heading-hero">
-              Transforming Lives Through{" "}
+              Transforming Lives of {" "}
               <span className="gradient-text-warm">
-                Community Action
+              Communities Around the World
               </span>
             </h1>
             
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl" data-testid="text-hero-description">
-              Join us in creating lasting change for vulnerable communities worldwide. Together, we can build a future where everyone has access to basic needs, education, and opportunities.
+              We provide essential resources, education, and opportunities directly to vulnerable communities, creating immediate and lasting improvements in their lives.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 mb-12">
