@@ -29,7 +29,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (location !== displayLocation) {
       setIsLoading(true);
-      
+
       // Simulate loading delay
       const timer = setTimeout(() => {
         setDisplayLocation(location);
@@ -138,29 +138,29 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="flex flex-col min-h-screen">
-        <Navigation />
-        <PageTransition>
-          <main className="flex-grow">
-            <Switch>
-              <Route path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/programs" component={Programs} />
-              <Route path="/volunteer" component={Volunteer} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/impact" component={Impact} />
-              <Route path="/donate" component={Donate} />
-              <Route path="/news" component={News} />
-              <Route path="/apply" component={Apply} />
-              <Route path="/testimonials" component={Testimonials} />
-              <Route path="/partners" component={Partners} />
-              <Route component={NotFound} />
-            </Switch>
-          </main>
-          <Footer />
-        </PageTransition>
-        <Toaster />
-      </div>
+        <div className="flex flex-col min-h-screen">
+          <Navigation />
+          <PageTransition>
+            <main className="flex-grow">
+              <Switch>
+                <Route path="/" component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/programs" component={Programs} />
+                <Route path="/volunteer" component={Volunteer} />
+                <Route path="/contact" component={Contact} />
+                <Route path="/impact" component={Impact} />
+                <Route path="/donate" component={Donate} />
+                <Route path="/news" component={News} />
+                <Route path="/apply" component={Apply} />
+                <Route path="/testimonials" component={Testimonials} />
+                <Route path="/partners" component={Partners} />
+                <Route component={NotFound} />
+              </Switch>
+            </main>
+            <Footer />
+          </PageTransition>
+          <Toaster />
+        </div>
     </QueryClientProvider>
   );
 }
