@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import PartnersSection from "@/components/partners-section";
-import Footer from "@/components/footer";
 import { Handshake, Globe, Building, Award } from "lucide-react";
 
 export default function Partners() {
@@ -46,7 +45,6 @@ export default function Partners() {
       </div>
       
       <PartnersSection />
-      <Footer />
     </div>
   );
 }

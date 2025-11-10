@@ -2,7 +2,6 @@
 import Navigation from "@/components/navigation";
 import ApplicationSection from "@/components/application-section";
 import EligibilityChecker from "@/components/eligibility-checker";
-import Footer from "@/components/footer";
 import { FileText, CheckCircle, ClipboardList, UserCheck } from "lucide-react";
 
 export default function Apply() {
@@ -48,7 +47,6 @@ export default function Apply() {
       
       <EligibilityChecker />
       <ApplicationSection />
-      <Footer />
     </div>
   );
 }

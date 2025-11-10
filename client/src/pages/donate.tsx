@@ -2,7 +2,6 @@
 import Navigation from "@/components/navigation";
 import DonationSection from "@/components/donation-section";
 import GrantCTA from "@/components/grant-cta";
-import Footer from "@/components/footer";
 import { DollarSign, Heart, Shield, Star } from "lucide-react";
 
 export default function Donate() {
@@ -48,7 +47,6 @@ export default function Donate() {
       
       <GrantCTA />
       <DonationSection />
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import TestimonialsSection from "@/components/testimonials-section";
-import Footer from "@/components/footer";
 import { Quote, Users, Heart, Star } from "lucide-react";
 
 export default function Testimonials() {
@@ -46,7 +45,6 @@ export default function Testimonials() {
       </div>
       
       <TestimonialsSection />
-      <Footer />
     </div>
   );
 }

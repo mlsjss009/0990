@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import AboutSection from "@/components/about-section";
-import Footer from "@/components/footer";
 import { Users, Globe, Heart, Award } from "lucide-react";
 
 export default function About() {
@@ -45,7 +44,6 @@ export default function About() {
       </div>
       
       <AboutSection />
-      <Footer />
     </div>
   );
 }

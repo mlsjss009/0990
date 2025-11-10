@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import VolunteerSection from "@/components/volunteer-section";
-import Footer from "@/components/footer";
 import { UserPlus, Heart, Globe, Clock } from "lucide-react";
 
 export default function Volunteer() {
@@ -46,7 +45,6 @@ export default function Volunteer() {
       </div>
       
       <VolunteerSection />
-      <Footer />
     </div>
   );
 }

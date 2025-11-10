@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import ProgramsSection from "@/components/programs-section";
-import Footer from "@/components/footer";
 import { GraduationCap, Heart, Briefcase, HandHeart } from "lucide-react";
 
 export default function Programs() {
@@ -46,7 +45,6 @@ export default function Programs() {
       </div>
       
       <ProgramsSection />
-      <Footer />
     </div>
   );
 }

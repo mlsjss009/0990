@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import NewsSection from "@/components/news-section";
-import Footer from "@/components/footer";
 import { Newspaper, Calendar, TrendingUp, Globe } from "lucide-react";
 
 export default function News() {
@@ -47,7 +46,6 @@ export default function News() {
       </div>
       
       <NewsSection />
-      <Footer />
     </div>
   );
 }

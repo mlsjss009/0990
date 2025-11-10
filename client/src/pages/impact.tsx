@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import ImpactMetrics from "@/components/impact-metrics";
-import Footer from "@/components/footer";
 import { TrendingUp, Target, Sparkles, Users } from "lucide-react";
 
 export default function Impact() {
@@ -47,7 +46,6 @@ export default function Impact() {
       </div>
       
       <ImpactMetrics />
-      <Footer />
     </div>
   );
 }
