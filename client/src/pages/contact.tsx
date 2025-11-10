@@ -6,20 +6,20 @@ import { MessageCircle, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 text-ngo-neutral-dark">
+    <div className="min-h-screen bg-page-teal text-ngo-neutral-dark">
       <Navigation />
       
       {/* Hero Header */}
       <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-96 h-96" style={{background: 'radial-gradient(circle, hsl(var(--teal-light) / 0.15), transparent)'}}></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80" style={{background: 'radial-gradient(circle, hsl(var(--navy-light) / 0.12), transparent)'}}></div>
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold text-ngo-primary mb-8 shadow-lg">
+          <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold mb-8 shadow-lg" style={{color: 'hsl(var(--teal-dark))'}}>
             <MessageCircle className="mr-2 h-5 w-5" />
             Let's Connect
           </div>
-          <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 gradient-text-cool">
             Get in Touch
           </h1>
           <p className="text-xl md:text-2xl text-ngo-neutral max-w-4xl mx-auto leading-relaxed mb-12">
