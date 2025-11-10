@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
@@ -20,6 +20,42 @@ import LockPage from "./components/lock-page";
 import { useState, useEffect, useCallback, useRef } from "react";
 
 const INACTIVITY_TIMEOUT = 10 * 60 * 1000; // 10 minutes in milliseconds
+
+function PageTransition({ children }: { children: React.ReactNode }) {
+  const [location] = useLocation();
+  const [isLoading, setIsLoading] = useState(false);
+  const [displayLocation, setDisplayLocation] = useState(location);
+
+  useEffect(() => {
+    if (location !== displayLocation) {
+      setIsLoading(true);
+      
+      // Simulate loading delay
+      const timer = setTimeout(() => {
+        setDisplayLocation(location);
+        setIsLoading(false);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [location, displayLocation]);
+
+  return (
+    <>
+      {isLoading && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/80 backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-16 h-16 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
+            <p className="text-lg font-semibold text-indigo-600">Loading...</p>
+          </div>
+        </div>
+      )}
+      <div className={`transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        {children}
+      </div>
+    </>
+  );
+}
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -104,23 +140,25 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="flex flex-col min-h-screen">
         <Navigation />
-        <main className="flex-grow">
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/programs" component={Programs} />
-            <Route path="/volunteer" component={Volunteer} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/impact" component={Impact} />
-            <Route path="/donate" component={Donate} />
-            <Route path="/news" component={News} />
-            <Route path="/apply" component={Apply} />
-            <Route path="/testimonials" component={Testimonials} />
-            <Route path="/partners" component={Partners} />
-            <Route component={NotFound} />
-          </Switch>
-        </main>
-        <Footer />
+        <PageTransition>
+          <main className="flex-grow">
+            <Switch>
+              <Route path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/programs" component={Programs} />
+              <Route path="/volunteer" component={Volunteer} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/impact" component={Impact} />
+              <Route path="/donate" component={Donate} />
+              <Route path="/news" component={News} />
+              <Route path="/apply" component={Apply} />
+              <Route path="/testimonials" component={Testimonials} />
+              <Route path="/partners" component={Partners} />
+              <Route component={NotFound} />
+            </Switch>
+          </main>
+          <Footer />
+        </PageTransition>
         <Toaster />
       </div>
     </QueryClientProvider>
