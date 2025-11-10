@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/navigation";
 import ApplicationSection from "@/components/application-section";
-import EligibilityChecker from "@/components/eligibility-checker";
 import { FileText, CheckCircle, ClipboardList, UserCheck } from "lucide-react";
 
 export default function Apply() {
@@ -45,9 +44,6 @@ export default function Apply() {
         </div>
       </div>
       
-      <div id="eligibility" className="py-12 px-4 sm:px-6 lg:px-8">
-        <EligibilityChecker />
-      </div>
       <ApplicationSection />
     </div>
   );
