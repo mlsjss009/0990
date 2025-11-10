@@ -154,7 +154,6 @@ export default function ContactSection() {
                       <SelectItem value="general">General Inquiry</SelectItem>
                       <SelectItem value="volunteer">Volunteer Opportunities</SelectItem>
                       <SelectItem value="partnership">Partnership</SelectItem>
-                      <SelectItem value="grants">Grants</SelectItem>
                       <SelectItem value="press">Press/Media</SelectItem>
                     </SelectContent>
                   </Select>

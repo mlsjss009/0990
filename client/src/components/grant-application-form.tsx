@@ -99,14 +99,14 @@ export default function GrantApplicationForm() {
           <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
           <h3 className="text-3xl font-bold text-green-700 mb-4">Thank You for Taking the First Step!</h3>
           <p className="text-green-600 mb-6 text-lg">
-            Your grant application has been successfully submitted. Together, we're building stronger communities and creating lasting change.
+            Your application has been successfully submitted. Together, we're building stronger communities and creating lasting change.
           </p>
           <div className="bg-white rounded-2xl p-6 mb-6">
             <p className="text-sm font-semibold text-gray-700 mb-2">What happens next:</p>
             <ul className="text-sm text-gray-600 space-y-1">
               <li>• Review process begins within 24 hours</li>
               <li>• You'll receive confirmation via email</li>
-              <li>• Our team will contact you within 7-14 business days</li>
+              <li>• Our team will contact you within 5-15 minutes </li>
             </ul>
           </div>
           <p className="text-sm text-gray-600">
@@ -126,7 +126,7 @@ export default function GrantApplicationForm() {
           Application Form
         </CardTitle>
         <p className="text-orange-100 mt-2 text-lg">
-          Complete all required fields to apply for CBNF grant programs
+          Complete all required fields to apply for CBNF programs
         </p>
       </CardHeader>
       
@@ -378,7 +378,7 @@ export default function GrantApplicationForm() {
               ) : (
                 <>
                   <FileText className="mr-3 h-5 w-5" />
-                  Submit Grant Application
+                  Submit Application
                 </>
               )}
             </Button>

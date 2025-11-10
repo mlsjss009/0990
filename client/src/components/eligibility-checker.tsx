@@ -135,7 +135,7 @@ export default function EligibilityChecker() {
           Check Your Eligibility
         </CardTitle>
         <p className="text-blue-100 mt-2">
-          Verify your eligibility for our grant program in just a few steps
+          Verify your eligibility for our program in just a few steps
         </p>
       </CardHeader>
       

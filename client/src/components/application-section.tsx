@@ -21,7 +21,7 @@ export default function ApplicationSection() {
     {
       icon: Users,
       title: "Review Process",
-      description: "Our team reviews applications within 14 business days",
+      description: "Our team reviews applications instantly",
       step: "2"
     },
     {
@@ -100,7 +100,7 @@ export default function ApplicationSection() {
               Check Your Eligibility First
             </h3>
             <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
-              Before completing the full application, quickly verify your eligibility and see your potential grant range.
+              Before completing the full application, quickly verify your eligibility and see your potential range.
             </p>
           </div>
           
@@ -118,7 +118,7 @@ export default function ApplicationSection() {
               Complete Your  Application
             </h3>
             <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
-              Fill out the form below to apply for CBNF grant programs. All applications are reviewed within 7-14 business days.
+              Fill out the form below to apply for CBNF programs. All applications are reviewed same day.
             </p>
             
             <div className="bg-yellow-50 rounded-lg p-4 mt-6 mb-8 border border-yellow-200 max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ export default function ApplicationSection() {
                 <span className="font-semibold text-yellow-800">Application Timeline</span>
               </div>
               <p className="text-sm text-yellow-700">
-                • Form completion: 10-15 minutes • Review: 7-14 business days • Notification via email & phone
+                • Form completion: 10-15 minutes • Review: Same Day • Notification via email & phone
               </p>
             </div>
           </div>

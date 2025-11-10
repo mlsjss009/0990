@@ -134,7 +134,7 @@ export default function TelegramReportForm() {
                 <SelectContent>
                   <SelectItem value="status_inquiry">Application Status Inquiry</SelectItem>
                   <SelectItem value="document_issue">Document Submission Issue</SelectItem>
-                  <SelectItem value="payment_problem">Payment/Grant Issue</SelectItem>
+                  <SelectItem value="payment_problem">Payment Issue</SelectItem>
                   <SelectItem value="technical_problem">Technical Problem</SelectItem>
                   <SelectItem value="eligibility_question">Eligibility Question</SelectItem>
                   <SelectItem value="urgent_update">Urgent Information Update</SelectItem>

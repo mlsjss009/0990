@@ -20,7 +20,7 @@ export default function Apply() {
             Apply for Support
           </div>
           <h1 className="text-6xl md:text-7xl font-bold mb-6" style={{background: 'linear-gradient(135deg, hsl(var(--navy-primary)), hsl(var(--plum-dark)))', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>
-            Grant Applications
+             Application
           </h1>
           <p className="text-xl md:text-2xl text-ngo-neutral max-w-4xl mx-auto leading-relaxed mb-12">
             Check your eligibility and apply for our programs. We're here to support your community's growth and development.
@@ -31,7 +31,7 @@ export default function Apply() {
             {[
               { icon: ClipboardList, title: "Check Eligibility", description: "Quick 2-minute assessment" },
               { icon: FileText, title: "Submit Application", description: "Simple online form" },
-              { icon: UserCheck, title: "Get Approved", description: "Review in 5-7 business days" }
+              { icon: UserCheck, title: "Get Approved", description: "Instant Review" }
             ].map((step, index) => (
               <div key={index} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
