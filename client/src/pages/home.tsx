@@ -36,13 +36,7 @@ export default function Home() {
       link: "/volunteer",
       color: "from-green-500 to-emerald-500"
     },
-    {
-      title: "Grant Funding",
-      description: "Access substantial funding opportunities for community projects.",
-      icon: DollarSign,
-      link: "/donate",
-      color: "from-purple-500 to-pink-500"
-    },
+     
     {
       title: "Get in Touch",
       description: "Have questions? We'd love to hear from you and explore how we can help.",
