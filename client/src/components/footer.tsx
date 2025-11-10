@@ -11,10 +11,7 @@ export default function Footer() {
   ];
 
   const supportLinks = [
-    { label: "Donate", href: "#" },
-    { label: "Monthly Giving", href: "#" },
     { label: "Corporate Partnerships", href: "#" },
-    { label: "Legacy Giving", href: "#" },
     { label: "FAQ", href: "#" },
   ];
 

@@ -22,22 +22,6 @@ export interface ActionFlow {
 }
 
 export const actionFlows: Record<ActionType, ActionFlow> = {
-  donate: {
-    id: 'donate',
-    title: 'Make a Donation',
-    description: 'Support our mission to transform lives through community action',
-    primaryAction: 'Donate Now',
-    secondaryAction: 'Monthly Giving',
-    steps: [
-      'Choose donation amount',
-      'Select payment method',
-      'Complete secure payment',
-      'Receive confirmation'
-    ],
-    redirectUrl: '#donate-form',
-    requiresForm: true
-  },
-  
   volunteer_register: {
     id: 'volunteer_register',
     title: 'Become a Volunteer',
@@ -94,6 +78,19 @@ export const actionFlows: Record<ActionType, ActionFlow> = {
       'Submit for review'
     ],
     redirectUrl: '#grant-form',
+    requiresForm: true
+  },
+
+  submit_grant_application: {
+    id: 'submit_grant_application',
+    title: 'Submit Grant Application',
+    description: 'Complete and submit your grant application',
+    primaryAction: 'Submit Application',
+    steps: [
+      'Review application details',
+      'Confirm submission',
+      'Receive confirmation'
+    ],
     requiresForm: true
   },
   
@@ -174,17 +171,6 @@ const handleGrantApplicationAction = (data?: any) => {
   }
   console.log('Grant application flow initiated', data);
 };
-const handleDonateAction = (data?: any) => {
-  // Scroll to donation section
-  const element = document.getElementById('donate-section');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  } else {
-    // Fallback: scroll to contact section if donation section not found
-    scrollToSection('contact');
-  }
-};
-
 const handleVolunteerAction = (data?: any) => {
   // Scroll to volunteer section
   const element = document.getElementById('volunteer');

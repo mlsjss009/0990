@@ -31,7 +31,6 @@ export default function Navigation() {
     { href: "/partners", label: "Partners" },
     { href: "/testimonials", label: "Stories" },
     { href: "/news", label: "News" },
-    { href: "/donate", label: "Donate" },
     { href: "/contact", label: "Contact" }
   ];
 
