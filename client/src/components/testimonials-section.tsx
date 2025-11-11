@@ -1,13 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
+import testimonial1 from "@assets/44027744_304511600367955_2819448633127075840_n_1762839339439.jpg";
+import testimonial2 from "@assets/480528755_1725776954952983_8569738689432633017_n_1762839339443.jpg";
+import testimonial3 from "@assets/51771353_315672362630123_7144159342156054528_n_1762839339446.jpg";
+import testimonial4 from "@assets/537428585_10161262582146078_1721140242684191870_n_1762839339457.jpg";
+import testimonial5 from "@assets/503597416_10226390344936336_6006097557636922140_n_1762839339461.jpg";
 
 export default function TestimonialsSection() {
   const allTestimonials = [
     {
       name: "Emily Thompson",
       role: "Community Organizer, Australia",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: testimonial1,
       quote: "Starting our food bank changed everything. Now I see neighbors helping neighbors every single day.",
       program: "Community Development",
       location: "Sydney, Australia"
@@ -15,7 +20,7 @@ export default function TestimonialsSection() {
     {
       name: "James Wilson",
       role: "Veteran Support Coordinator, USA",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: testimonial2,
       quote: "Helping veterans find homes again reminds me why I do this work. Every success story matters.",
       program: "Veteran Support",
       location: "Austin, Texas, USA"
@@ -23,7 +28,7 @@ export default function TestimonialsSection() {
     {
       name: "Sarah Mitchell",
       role: "Education Advocate, UK",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: testimonial3,
       quote: "Learning to read as an adult changed my life. Now I help others find their voice too.",
       program: "Education Access",
       location: "Manchester, UK"
@@ -31,7 +36,7 @@ export default function TestimonialsSection() {
     {
       name: "Marie Dubois",
       role: "Refugee Integration Specialist, France",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: testimonial4,
       quote: "Every refugee family I meet teaches me something new. Their resilience inspires me daily.",
       program: "Refugee Support",
       location: "Lyon, France"
@@ -39,7 +44,7 @@ export default function TestimonialsSection() {
     {
       name: "Michael O'Brien",
       role: "Environmental Coordinator, Australia",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
+      image: testimonial5,
       quote: "Watching our coastline come back to life has been incredible. Nature is healing, and we're part of it.",
       program: "Environmental Protection",
       location: "Melbourne, Australia"
