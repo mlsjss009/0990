@@ -104,7 +104,7 @@ export default function Home() {
             Ready to Make a Difference?
           </h2>
           <p className="text-2xl text-white/90 mb-12 leading-relaxed">
-            Whether you want to volunteer, apply for support, or learn more about our work, we're here to help.
+            Whether you want to volunteer, apply for support, check if you're part of the randomly selected, or learn more about our work, we're here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link href="/apply">

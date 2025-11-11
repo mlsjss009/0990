@@ -281,67 +281,6 @@ export default function GrantApplicationForm() {
             </div>
           </div>
 
-          {/* Financial Information */}
-          <div className="bg-green-50 rounded-2xl p-6">
-            <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center">
-              <DollarSign className="mr-2 h-5 w-5 text-green-500" />
-              Financial Information
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <Label htmlFor="householdSize" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Household Size *
-                </Label>
-                <Select value={formData.householdSize} onValueChange={(value) => handleInputChange("householdSize", value)}>
-                  <SelectTrigger className="rounded-xl border-2 border-gray-200 focus:border-green-500">
-                    <SelectValue placeholder="Select household size" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="1">1 person</SelectItem>
-                    <SelectItem value="2">2 people</SelectItem>
-                    <SelectItem value="3">3 people</SelectItem>
-                    <SelectItem value="4">4 people</SelectItem>
-                    <SelectItem value="5+">5+ people</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="monthlyIncome" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Monthly Household Income *
-                </Label>
-                <Input
-                  id="monthlyIncome"
-                  type="number"
-                  value={formData.monthlyIncome}
-                  onChange={(e) => handleInputChange("monthlyIncome", e.target.value)}
-                  placeholder="$2,500"
-                  className="rounded-xl border-2 border-gray-200 focus:border-green-500"
-                  required
-                />
-              </div>
-
-              <div className="md:col-span-2">
-                <Label htmlFor="employmentStatus" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Employment Status *
-                </Label>
-                <Select value={formData.employmentStatus} onValueChange={(value) => handleInputChange("employmentStatus", value)}>
-                  <SelectTrigger className="rounded-xl border-2 border-gray-200 focus:border-green-500">
-                    <SelectValue placeholder="Select employment status" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="employed">Employed Full-time</SelectItem>
-                    <SelectItem value="part-time">Employed Part-time</SelectItem>
-                    <SelectItem value="unemployed">Unemployed</SelectItem>
-                    <SelectItem value="retired">Retired</SelectItem>
-                    <SelectItem value="disabled">Disabled</SelectItem>
-                    <SelectItem value="student">Student</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </div>
-
         
 
            

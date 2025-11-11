@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
       name: "Lisa Rodriguez",
       role: "Small Business Owner, USA",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "This loan gave me a chance when no one else would. Now I'm employing people from my own community.",
+      quote: "This help gave me a chance when no one else would. Now I'm employing people from my own community many thanks to CBNF we are forever grateful.",
       program: "Economic Empowerment",
       location: "Denver, Colorado, USA"
     },
@@ -56,7 +56,7 @@ export default function TestimonialsSection() {
       name: "David Clarke",
       role: "Youth Mentor, UK",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "These kids just needed someone to believe in them. Seeing them graduate fills my heart.",
+      quote: "These kids just needed someone to believe in them. Seeing them graduate fills my heart Kudos CBNF.",
       program: "Youth Development",
       location: "Birmingham, UK"
     },
@@ -64,7 +64,7 @@ export default function TestimonialsSection() {
       name: "Isabelle Laurent",
       role: "Healthcare Worker, France",
       image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Bringing healthcare to remote villages reminds me why I became a nurse. Everyone deserves care.",
+      quote: "Bringing healthcare to remote villages reminds me why I became a nurse. Everyone deserves care CBNF FOR THE FUTURE.",
       program: "Healthcare Access",
       location: "Toulouse, France"
     },
@@ -72,7 +72,7 @@ export default function TestimonialsSection() {
       name: "Robert Taylor",
       role: "Indigenous Rights Advocate, Australia",
       image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Preserving our culture for the next generation is everything to me. Our language lives on.",
+      quote: "The Cbnf helping Preserving our culture for the next generation is everything to me. Our language lives on.",
       program: "Cultural Preservation",
       location: "Alice Springs, Australia"
     },
@@ -80,7 +80,7 @@ export default function TestimonialsSection() {
       name: "Amanda Johnson",
       role: "Disaster Relief Coordinator, USA",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "When disaster strikes, communities come together. I'm honored to be part of that.",
+      quote: "When disaster strikes, communities come together. I'm honored to be part of that. We are forever grateful.",
       program: "Emergency Relief",
       location: "New Orleans, Louisiana, USA"
     },
@@ -88,15 +88,15 @@ export default function TestimonialsSection() {
       name: "Thomas Brown",
       role: "Mental Health Counselor, UK",
       image: "https://images.unsplash.com/photo-1566492031773-4f4e44671d66?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Talking openly about mental health saves lives. I've seen it happen over and over.",
+      quote: "Talking openly about mental health saves lives. I've seen it happen over and over BIG THANK YOU CBNF.",
       program: "Mental Health Support",
-      location: "Edinburgh, Scotland, UK"
+      location: "Burnaby,British Columbia, Canada"
     },
     {
       name: "Camille Moreau",
       role: "Women's Rights Advocate, France",
       image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Watching women build their dreams from scratch is pure joy. We lift each other up.",
+      quote: "Watching women build their dreams from scratch is pure joy. We lift each other up just as the CBNF has done.",
       program: "Women's Empowerment",
       location: "Paris, France"
     },
@@ -104,17 +104,17 @@ export default function TestimonialsSection() {
       name: "Jessica Davis",
       role: "Food Security Coordinator, Australia",
       image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Growing food together brought our neighborhood back to life. It's about more than vegetables.",
+      quote: "Growing food together brought our neighborhood back to life. It's about more than vegetables This is real definition of hoping together.",
       program: "Food Security",
       location: "Brisbane, Australia"
     },
     {
       name: "Christopher White",
-      role: "Senior Program Manager, USA",
+      role: "Senior Program Manager, Canada",
       image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Real change happens when we work together. I see it in every family we support.",
-      program: "Community Development",
-      location: "Portland, Oregon, USA"
+      quote: "Real change happens when we work together. Thanks to the delivery team and Peter for the special delivery organised at the least expected time we are forever grateful never thought it would happen still this year.",
+      program: "Special Delivery",
+      location: "Toronto, Ontario, Canada"
     },
     {
       name: "Grace Williams",
@@ -128,7 +128,7 @@ export default function TestimonialsSection() {
       name: "Pierre Martin",
       role: "Community Development Worker, France",
       image: "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Our neighborhood went from forgotten to thriving. People have hope again.",
+      quote: "Our neighborhood went from forgotten to thriving. People have hope again CBNF D GREAT!.",
       program: "Urban Development",
       location: "Marseille, France"
     },
@@ -136,7 +136,7 @@ export default function TestimonialsSection() {
       name: "Rachel Green",
       role: "Senior Care Specialist, Australia",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Helping seniors stay home with dignity is sacred work. They've earned it.",
+      quote: "Thanks to CBNF and all other affiliated bodies for their support. We’ve been living the dream since receiving our funds, and it has truly been worth it.",
       program: "Elder Care",
       location: "Perth, Australia"
     },
@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
       name: "Kevin Anderson",
       role: "Addiction Recovery Counselor, USA",
       image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Recovery is possible, and it's beautiful. These families are my heroes.",
+      quote: "Recovery is possible, and it's beautiful. These families are  heroes.",
       program: "Addiction Recovery",
       location: "Seattle, Washington, USA"
     },
@@ -152,17 +152,17 @@ export default function TestimonialsSection() {
       name: "Helen Smith",
       role: "Domestic Violence Advocate, UK",
       image: "https://images.unsplash.com/photo-1619895862022-09114b41f16f?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-      quote: "Seeing survivors reclaim their power never gets old. They're the bravest people I know.",
+      quote: "Seeing survivors reclaim their power never gets old. They're the bravest people I know thanks to cbnf for saying NO to domestic violence.",
       program: "Domestic Violence Support",
       location: "Glasgow, Scotland, UK"
     },
     {
       name: "Antoine Dubois",
-      role: "Climate Action Coordinator, France",
+      role: "Climate Action Coordinator, Canada",
       image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
       quote: "Fighting climate change starts at home. Together, we're making a real difference.",
       program: "Climate Action",
-      location: "Bordeaux, France"
+      location: "Regina, Saskatchewan, Canada"
     }
   ];
 
