@@ -65,27 +65,7 @@ export default function Footer() {
                 Dedicated to creating lasting change in communities worldwide through education, healthcare, economic empowerment, and emergency relief programs. Together, we build a better tomorrow.
               </p>
 
-              {/* Contact Info */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center text-gray-300 hover:text-white transition-colors" data-testid="contact-email">
-                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mr-3">
-                    <Mail className="h-5 w-5" />
-                  </div>
-                  <span>contact@hopetogether.org</span>
-                </div>
-                <div className="flex items-center text-gray-300 hover:text-white transition-colors" data-testid="contact-phone">
-                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mr-3">
-                    <Phone className="h-5 w-5" />
-                  </div>
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center text-gray-300 hover:text-white transition-colors" data-testid="contact-address">
-                  <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center mr-3">
-                    <MapPin className="h-5 w-5" />
-                  </div>
-                  <span>123 Hope Street, Community City, CC 12345</span>
-                </div>
-              </div>
+           
 
               {/* Social Links */}
               <div className="flex space-x-4" data-testid="social-links">
