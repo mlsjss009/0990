@@ -27,7 +27,6 @@ export default function Navigation() {
     { href: "/about", label: "About" },
     { href: "/programs", label: "Programs" },
     { href: "/impact", label: "Impact" },
-    { href: "/volunteer", label: "Volunteer" },
     { href: "/partners", label: "Partners" },
     { href: "/testimonials", label: "Stories" },
     { href: "/news", label: "News" },

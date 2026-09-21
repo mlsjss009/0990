@@ -3,6 +3,12 @@ import Navigation from "@/components/navigation";
 import ApplicationSection from "@/components/application-section";
 import { FileText, CheckCircle, ClipboardList, UserCheck } from "lucide-react";
 
+const applicationSteps = [
+  { icon: ClipboardList, title: "Check Eligibility", description: "Quick 2-minute assessment" },
+  { icon: FileText, title: "Submit Application", description: "Simple online form" },
+  { icon: UserCheck, title: "Get Approved", description: "Instant Review" }
+];
+
 export default function Apply() {
   return (
     <div className="min-h-screen bg-page-plum text-ngo-neutral-dark">
@@ -26,20 +32,20 @@ export default function Apply() {
           </p>
           
           {/* Application Process Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { icon: ClipboardList, title: "Check Eligibility", description: "Quick 2-minute assessment" },
-              { icon: FileText, title: "Submit Application", description: "Simple online form" },
-              { icon: UserCheck, title: "Get Approved", description: "Instant Review" }
-            ].map((step, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                <div className="w-16 h-16 bg-gradient-to-br from-violet-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <step.icon className="h-8 w-8 text-white" />
+          <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-3xl px-6 py-6 shadow-xl">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-0 sm:divide-x divide-gray-200">
+              {applicationSteps.map((step) => (
+                <div key={step.title} className="flex items-center gap-3 sm:px-8">
+                  <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <step.icon className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="text-left">
+                    <div className="font-bold text-ngo-neutral-dark">{step.title}</div>
+                    <div className="text-sm text-ngo-neutral">{step.description}</div>
+                  </div>
                 </div>
-                <div className="font-bold text-xl text-ngo-neutral-dark mb-2">{step.title}</div>
-                <div className="text-ngo-neutral">{step.description}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

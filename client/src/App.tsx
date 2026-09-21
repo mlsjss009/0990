@@ -7,7 +7,6 @@ import Footer from "./components/footer";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Programs from "./pages/programs";
-import Volunteer from "./pages/volunteer";
 import Contact from "./pages/contact";
 import Impact from "./pages/impact";
 import News from "./pages/news";
@@ -145,7 +144,6 @@ function App() {
                 <Route path="/" component={Home} />
                 <Route path="/about" component={About} />
                 <Route path="/programs" component={Programs} />
-                <Route path="/volunteer" component={Volunteer} />
                 <Route path="/contact" component={Contact} />
                 <Route path="/impact" component={Impact} />
                 <Route path="/news" component={News} />

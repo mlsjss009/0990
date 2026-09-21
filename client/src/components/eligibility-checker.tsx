@@ -12,9 +12,13 @@ interface EligibilityFormData {
   address: string;
 }
 
-type EligibilityResult = 'eligible' | null;
+export type EligibilityResult = 'eligible' | 'not_eligible' | 'error' | null;
 
-export default function EligibilityChecker() {
+interface EligibilityCheckerProps {
+  onResultChange?: (result: EligibilityResult) => void;
+}
+
+export default function EligibilityChecker({ onResultChange }: EligibilityCheckerProps) {
   const [formData, setFormData] = useState<EligibilityFormData>({
     fullName: "",
     dateOfBirth: "",
@@ -26,6 +30,11 @@ export default function EligibilityChecker() {
   
   // This counter helps rotate between the two response types
   const [checkCounter, setCheckCounter] = useState(0);
+
+  const applyResult = (next: EligibilityResult) => {
+    setResult(next);
+    onResultChange?.(next);
+  };
 
   const handleInputChange = (field: keyof EligibilityFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -49,13 +58,11 @@ export default function EligibilityChecker() {
       }
       
       const data = await response.json();
-      setResult('eligible');
+      applyResult(data.result === 'eligible' ? 'eligible' : 'not_eligible');
       setCheckCounter(prev => prev + 1);
     } catch (error) {
       console.error('Error checking eligibility:', error);
-      // Fallback to local simulation if API fails
-      setResult('eligible');
-      setCheckCounter(prev => prev + 1);
+      applyResult('error');
     } finally {
       setIsChecking(false);
     }
@@ -70,10 +77,10 @@ export default function EligibilityChecker() {
 
   const resetForm = () => {
     setFormData({ fullName: "", dateOfBirth: "", address: "" });
-    setResult(null);
+    applyResult(null);
   };
 
-  if (result) {
+  if (result === 'eligible') {
     return (
       <Card className="bg-white shadow-xl border-0 rounded-3xl overflow-hidden max-w-2xl mx-auto">
         <CardContent className="p-8">
@@ -121,6 +128,33 @@ export default function EligibilityChecker() {
                 </Button>
               </div>
             </div>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  if (result === 'not_eligible' || result === 'error') {
+    return (
+      <Card className="bg-white shadow-xl border-0 rounded-3xl overflow-hidden max-w-2xl mx-auto">
+        <CardContent className="p-8">
+          <div className="text-center">
+            <AlertCircle className="h-16 w-16 text-amber-500 mx-auto mb-6" />
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              {result === 'not_eligible' ? 'Name Not Found' : 'Something Went Wrong'}
+            </h3>
+            <p className="text-lg text-gray-700 mb-8">
+              {result === 'not_eligible'
+                ? 'This name is not on the eligibility list. Please check the spelling of the full name and try again.'
+                : "We couldn't complete the eligibility check. Please try again."}
+            </p>
+
+            <Button
+              onClick={resetForm}
+              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold w-full h-auto"
+            >
+              Try Again
+            </Button>
           </div>
         </CardContent>
       </Card>

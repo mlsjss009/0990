@@ -1,6 +1,13 @@
-import { Users, Leaf, Target, Award } from "lucide-react";
+import { Users, Leaf, Target, Award, Globe } from "lucide-react";
 
 export default function AboutSection() {
+  const vision = [
+    "Our vision for the future is to reach even more people across more countries, building a wider network of partners and supporters who share our commitment to creating positive social change. As needs continue to evolve around the world, CBNF is committed to expanding its reach, strengthening existing programs, and developing new initiatives that respond to emerging challenges.",
+    "We aim to extend our work into communities that have historically had limited access to support and opportunities, while continuing to work closely with trusted local organizations that understand their communities best. By building strong partnerships across borders, we can share knowledge, resources, expertise, and innovative solutions to help communities respond to both immediate needs and long-term challenges.",
+    "Our goal is not simply to reach more countries, but to build meaningful and lasting relationships wherever we work. We want every new program to contribute to stronger communities and greater opportunities for the people we serve.",
+    "CBNF will continue working toward a world where people are not defined by poverty or circumstance, and where everyone has the opportunity to live with dignity, hope, and the chance to build a better future."
+  ];
+
   const values = [
     {
       icon: Users,
@@ -83,11 +90,17 @@ export default function AboutSection() {
             <h2 className="text-5xl font-bold text-ngo-neutral-dark mb-8 section-divider pb-4">
               Building Bridges to a Better Tomorrow
             </h2>
-            <p className="text-xl text-ngo-neutral mb-8 leading-relaxed">
-              Founded in 2010, Hope Together emerged from a simple belief: that communities thrive when people come together with shared purpose. What started as a local initiative has grown into a global movement, touching lives across 25 countries.
+            <p className="text-xl text-ngo-neutral mb-6 leading-relaxed">
+              Founded in 2010, CBNF emerged from a simple belief: that communities thrive when people come together with shared purpose. What started as a local initiative has grown into a global movement, touching lives across 25 countries and creating opportunities for individuals and communities to build safer, healthier, and more sustainable futures.
+            </p>
+            <p className="text-lg text-ngo-neutral mb-6 leading-relaxed">
+              We partner with local organizations, major corporations, community leaders, volunteers, and dedicated individuals to address the root causes of poverty, inequality, and social injustice. Through these partnerships, we support people facing hardship and work alongside communities to create practical solutions that can lead to lasting change.
+            </p>
+            <p className="text-lg text-ngo-neutral mb-6 leading-relaxed">
+              Our work focuses on reaching people who are most in need, including vulnerable families, children and young people, marginalized communities, and individuals affected by poverty, displacement, disaster, and limited access to essential opportunities and resources. We believe that meaningful support goes beyond short-term assistance. It means listening to communities, understanding their needs, strengthening local capacity, and helping create pathways toward greater independence and resilience.
             </p>
             <p className="text-lg text-ngo-neutral mb-10 leading-relaxed">
-              We partner with local organizations, major corporations, and dedicated individuals to address the root causes of poverty, inequality, and social injustice. Our approach is community-driven, sustainable, and designed for lasting impact.
+              From providing essential support and resources to investing in education, community development, livelihoods, and long-term empowerment, Hope Together works to make a meaningful difference wherever there is a need. Every program is shaped by the realities of the communities we serve, with the goal of ensuring that support reaches people in a respectful, effective, and sustainable way.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6 mb-10">
@@ -115,6 +128,31 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Looking Ahead */}
+        <div className="mt-24 pt-16 border-t border-gray-100">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-ngo-primary mb-6">
+              <Globe className="mr-2 h-4 w-4" />
+              Our Vision
+            </div>
+            <h2 className="text-5xl font-bold text-ngo-neutral-dark section-divider pb-4">Looking Ahead</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {vision.map((paragraph, index) => (
+              <div key={index} className="bg-white border border-gray-100 rounded-2xl p-8 shadow-lg card-hover">
+                <p className="text-lg text-ngo-neutral leading-relaxed">{paragraph}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-gradient-ngo-primary rounded-3xl p-10 text-center shadow-2xl">
+            <p className="text-xl md:text-2xl font-semibold text-white leading-relaxed">
+              Together, we can extend the reach of hope — from one community to many, and from one country to the world.
+            </p>
           </div>
         </div>
       </div>

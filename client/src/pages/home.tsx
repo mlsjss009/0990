@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section";
 import ImpactMetrics from "@/components/impact-metrics";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, GraduationCap, Heart, Briefcase, HandHeart, Users, DollarSign, MessageCircle } from "lucide-react";
+import { ArrowRight, GraduationCap, Heart, Briefcase, HandHeart, DollarSign, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
@@ -29,14 +29,6 @@ export default function Home() {
       link: "/apply",
       color: "from-orange-500 to-red-500"
     },
-    {
-      title: "Volunteer",
-      description: "Join our global community of volunteers making a difference.",
-      icon: Users,
-      link: "/volunteer",
-      color: "from-green-500 to-emerald-500"
-    },
-     
     {
       title: "Get in Touch",
       description: "Have questions? We'd love to hear from you and explore how we can help.",
@@ -93,12 +85,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-yellow-400/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-400/30 to-transparent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
-        </div>
-
+      <section className="py-24 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-5xl font-bold text-white mb-6">
             Ready to Make a Difference?
@@ -111,12 +98,6 @@ export default function Home() {
               <Button className="bg-white text-purple-600 hover:bg-gray-100 px-10 py-7 rounded-2xl text-lg font-bold h-auto shadow-xl">
                 Apply for Support
                 <ArrowRight className="ml-3 h-6 w-6" />
-              </Button>
-            </Link>
-            <Link href="/volunteer">
-              <Button className="bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 px-10 py-7 rounded-2xl text-lg font-bold h-auto shadow-xl border-2 border-white/30">
-                Become a Volunteer
-                <Users className="ml-3 h-6 w-6" />
               </Button>
             </Link>
           </div>

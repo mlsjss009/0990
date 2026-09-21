@@ -1,11 +1,14 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, FileText, Users, DollarSign } from "lucide-react";
 import GrantApplicationForm from "./grant-application-form";
-import EligibilityChecker from "./eligibility-checker";
+import EligibilityChecker, { type EligibilityResult } from "./eligibility-checker";
 
 export default function ApplicationSection() {
+  const [eligibilityResult, setEligibilityResult] = useState<EligibilityResult>(null);
+
   const eligibilityRequirements = [
     "Must be a citizen or legal resident",
     "Must have a Government approved Id",
@@ -104,36 +107,38 @@ export default function ApplicationSection() {
             </p>
           </div>
           
-          <EligibilityChecker />
+          <EligibilityChecker onResultChange={setEligibilityResult} />
         </div>
 
-        {/* Application Form */}
-        <div id="application" className="mb-20">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full text-sm font-semibold text-orange-600 mb-6">
-              <FileText className="mr-2 h-4 w-4" />
-              Official Application
-            </div>
-            <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
-              Complete Your  Application
-            </h3>
-            <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
-              Fill out the form below to apply for CBNF programs. All applications are reviewed same day.
-            </p>
-            
-            <div className="bg-yellow-50 rounded-lg p-4 mt-6 mb-8 border border-yellow-200 max-w-2xl mx-auto">
-              <div className="flex items-center justify-center mb-2">
-                <CheckCircle className="text-yellow-600 h-5 w-5 mr-2" />
-                <span className="font-semibold text-yellow-800">Application Timeline</span>
+        {/* Application Form - only reachable after passing the eligibility check */}
+        {eligibilityResult === 'eligible' && (
+          <div id="application" className="mb-20">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full text-sm font-semibold text-orange-600 mb-6">
+                <FileText className="mr-2 h-4 w-4" />
+                Official Application
               </div>
-              <p className="text-sm text-yellow-700">
-                • Form completion: 10-15 minutes • Review: Same Day • Notification via email & phone
+              <h3 className="text-3xl font-bold text-ngo-neutral-dark mb-4">
+                Complete Your  Application
+              </h3>
+              <p className="text-lg text-ngo-neutral max-w-3xl mx-auto">
+                Fill out the form below to apply for CBNF programs. All applications are reviewed same day.
               </p>
+              
+              <div className="bg-yellow-50 rounded-lg p-4 mt-6 mb-8 border border-yellow-200 max-w-2xl mx-auto">
+                <div className="flex items-center justify-center mb-2">
+                  <CheckCircle className="text-yellow-600 h-5 w-5 mr-2" />
+                  <span className="font-semibold text-yellow-800">Application Timeline</span>
+                </div>
+                <p className="text-sm text-yellow-700">
+                  • Form completion: 10-15 minutes • Review: Same Day • Notification via email & phone
+                </p>
+              </div>
             </div>
+            
+            <GrantApplicationForm />
           </div>
-          
-          <GrantApplicationForm />
-        </div>
+        )}
 
         
       </div>

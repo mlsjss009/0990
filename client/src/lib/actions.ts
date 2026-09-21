@@ -3,7 +3,6 @@
 export type ActionType = 
   | 'grant_application'
   | 'submit_grant_application'
-  | 'volunteer_register'
   | 'contact_form'
   | 'newsletter_subscribe'
   | 'watch_video'
@@ -22,22 +21,6 @@ export interface ActionFlow {
 }
 
 export const actionFlows: Record<ActionType, ActionFlow> = {
-  volunteer_register: {
-    id: 'volunteer_register',
-    title: 'Become a Volunteer',
-    description: 'Join our global community of changemakers',
-    primaryAction: 'Register Now',
-    secondaryAction: 'Learn More',
-    steps: [
-      'Fill application form',
-      'Select preferred programs',
-      'Complete background check',
-      'Attend orientation'
-    ],
-    redirectUrl: '#volunteer-form',
-    requiresForm: true
-  },
-  
   contact_form: {
     id: 'contact_form',
     title: 'Contact Us',
@@ -147,8 +130,6 @@ export const executeAction = (actionType: ActionType, data?: any) => {
       return handleGrantApplicationAction(data);
     case 'submit_grant_application':
       return handleSubmitGrantApplication(data);
-    case 'volunteer_register':
-      return handleVolunteerAction(data);
     case 'contact_form':
       return handleContactAction(data);
     case 'newsletter_subscribe':
@@ -170,13 +151,6 @@ const handleGrantApplicationAction = (data?: any) => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
   console.log('Grant application flow initiated', data);
-};
-const handleVolunteerAction = (data?: any) => {
-  // Scroll to volunteer section
-  const element = document.getElementById('volunteer');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
 };
 
 const handleContactAction = (data?: any) => {

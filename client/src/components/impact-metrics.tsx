@@ -1,8 +1,19 @@
 import { Card } from "@/components/ui/card";
 import { TrendingUp, Users, DollarSign, Globe } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+
+type Metric = {
+  value: string;
+  label: string;
+  color: string;
+  bgColor: string;
+  icon: LucideIcon;
+  description?: string;
+  compact?: boolean;
+};
 
 export default function ImpactMetrics() {
-  const metrics = [
+  const metrics: Metric[] = [
     { 
       value: "150K+", 
       label: "Lives Impacted", 
@@ -12,12 +23,12 @@ export default function ImpactMetrics() {
       description: "People directly helped through our programs"
     },
     { 
-      value: "$2.8M", 
-      label: "Funds Raised", 
+      value: "$300M", 
+      label: "Funds raised by NGOs to help communities", 
       color: "text-ngo-secondary",
       bgColor: "bg-orange-50",
       icon: DollarSign,
-      description: "Total funding secured for community projects"
+      compact: true
     },
     { 
       value: "45", 
@@ -52,8 +63,11 @@ export default function ImpactMetrics() {
           <h2 className="text-5xl font-bold text-ngo-neutral-dark mb-6 section-divider pb-4">
             Our Impact on Communities
           </h2>
-          <p className="text-xl text-ngo-neutral max-w-3xl mx-auto leading-relaxed">
-            We create measurable change in communities around the world. See the difference we are making together. Our initiatives empower individuals. We strive for sustainable solutions. We work for a brighter future.
+          <p className="text-xl text-ngo-neutral max-w-3xl mx-auto leading-relaxed mb-4">
+            We create meaningful and measurable change in communities around the world through the support and collaboration of our NGO. Together, we empower individuals, strengthen communities, and implement initiatives that address pressing social and economic challenges.
+          </p>
+          <p className="text-lg text-ngo-neutral max-w-3xl mx-auto leading-relaxed">
+            Through our collective efforts, we work to create sustainable solutions that improve lives, promote opportunity, and build stronger, more resilient communities. Every initiative is driven by our commitment to making a lasting difference and contributing to a brighter, more sustainable future.
           </p>
         </div>
         
@@ -61,17 +75,19 @@ export default function ImpactMetrics() {
           {metrics.map((metric, index) => (
             <Card 
               key={index} 
-              className="text-center bg-white/80 backdrop-blur-sm p-8 shadow-xl hover:shadow-2xl transition-all duration-500 card-hover border-0 rounded-3xl group"
+              className={`text-center bg-white/80 backdrop-blur-sm ${metric.compact ? "p-6" : "p-8"} shadow-xl hover:shadow-2xl transition-all duration-500 card-hover border-0 rounded-3xl group`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-16 h-16 ${metric.bgColor} rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:scale-110 transition-transform duration-300`}>
-                <metric.icon className={`${metric.color} h-8 w-8`} />
+              <div className={`${metric.compact ? "w-12 h-12 mb-4" : "w-16 h-16 mb-6"} ${metric.bgColor} rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                <metric.icon className={`${metric.color} ${metric.compact ? "h-6 w-6" : "h-8 w-8"}`} />
               </div>
               <div className={`text-5xl font-bold ${metric.color} mb-3 group-hover:scale-105 transition-transform duration-300`}>
                 {metric.value}
               </div>
               <div className="text-lg font-semibold text-ngo-neutral-dark mb-2">{metric.label}</div>
-              <div className="text-sm text-ngo-neutral leading-relaxed">{metric.description}</div>
+              {metric.description && (
+                <div className="text-sm text-ngo-neutral leading-relaxed">{metric.description}</div>
+              )}
             </Card>
           ))}
         </div>

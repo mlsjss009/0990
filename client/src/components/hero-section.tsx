@@ -1,9 +1,47 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, CheckCircle, Sparkles, Globe, Users, TrendingUp, Award } from "lucide-react";
 import { executeAction } from "@/lib/actions";
-import heroImage from "@assets/IMG_1070_1761291347959.jpg";
+import defaultHeroImage from "@assets/IMG_1070_1761291347959.jpg";
+
+const HERO_IMAGE_ROTATION_MS = 5000;
 
 export default function HeroSection() {
+  const [uploadedHeroImage, setUploadedHeroImage] = useState<string | null>(null);
+  const [showUploadedImage, setShowUploadedImage] = useState(false);
+
+  // The Telegram bot uploads the hero image to the server; use it when it exists
+  useEffect(() => {
+    let isActive = true;
+
+    fetch("/api/hero-image", { method: "HEAD" })
+      .then((response) => {
+        if (isActive && response.ok) {
+          setUploadedHeroImage("/api/hero-image");
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  // Rotate between the uploaded image and the default one
+  useEffect(() => {
+    if (!uploadedHeroImage) {
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setShowUploadedImage((previous) => !previous);
+    }, HERO_IMAGE_ROTATION_MS);
+
+    return () => clearInterval(interval);
+  }, [uploadedHeroImage]);
+
+  const heroImage = uploadedHeroImage && showUploadedImage ? uploadedHeroImage : defaultHeroImage;
+
   return (
     <section id="home" className="pt-20 relative overflow-hidden min-h-screen flex items-center">
       {/* Animated gradient background */}
@@ -80,9 +118,10 @@ export default function HeroSection() {
               {/* Main Image */}
               <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
                 <img
+                  key={heroImage}
                   src={heroImage}
-                  alt="Community volunteers making a difference"
-                  className="w-full h-auto"
+                  alt="Community members making a difference"
+                  className="w-full h-auto animate-fade-in"
                   data-testid="img-hero"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>

