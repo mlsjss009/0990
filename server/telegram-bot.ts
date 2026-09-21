@@ -186,7 +186,7 @@ async function pollUpdates() {
       const updates = await getUpdates();
       
       for (const update of updates) {
-        if (update.message && update.message.text) {
+        if (update.message) {
           await handleCommand(update.message);
         }
       }
