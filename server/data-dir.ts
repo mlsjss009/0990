@@ -1,17 +1,20 @@
 import fs from "fs";
+import path from "path";
 
-// Single source of truth for the persistent disk location (Render disk mount path).
+// Single source of truth for where persistent data lives.
+// DATA_DIR points at the Render disk mount path. When it is not set, data goes
+// to a local ./data folder, which is ephemeral on hosts without a disk.
 
 const rawDataDir = process.env.DATA_DIR;
+const DATA_DIR: string = rawDataDir ?? path.join(process.cwd(), "data");
 
-if (!rawDataDir) {
+try {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+} catch (error) {
   throw new Error(
-    "DATA_DIR is not set. Point it at the persistent disk mount path (for example /data on Render)."
+    `DATA_DIR (${DATA_DIR}) is not a writable directory: ${(error as Error).message}. ` +
+      "On Render, set DATA_DIR to your disk's mount path from the Disks tab."
   );
 }
-
-const DATA_DIR: string = rawDataDir;
-
-fs.mkdirSync(DATA_DIR, { recursive: true });
 
 export default DATA_DIR;
