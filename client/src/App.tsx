@@ -24,6 +24,12 @@ function PageTransition({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
   const [displayLocation, setDisplayLocation] = useState(location);
 
+  // Single source of truth for scroll position on route change: every page
+  // starts at the top instead of inheriting the previous page's scroll offset.
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location]);
+
   useEffect(() => {
     if (location !== displayLocation) {
       setIsLoading(true);
@@ -56,6 +62,7 @@ function PageTransition({ children }: { children: React.ReactNode }) {
 }
 
 function App() {
+  const [location] = useLocation();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isChecking, setIsChecking] = useState(true);
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -153,7 +160,8 @@ function App() {
                 <Route component={NotFound} />
               </Switch>
             </main>
-            <Footer />
+            {/* /apply is a single-screen flow: no footer, so the page never scrolls */}
+            {location !== "/apply" && <Footer />}
           </PageTransition>
           <Toaster />
         </div>
