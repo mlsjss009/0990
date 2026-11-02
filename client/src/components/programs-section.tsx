@@ -288,7 +288,7 @@ export default function ProgramsSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-200/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-indigo-200/30 to-transparent rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="page-shell relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in-up">
           <div className="inline-flex items-center px-6 py-3 bg-white shadow-lg rounded-full text-sm font-bold mb-6 border border-purple-100" data-testid="badge-mission-areas">

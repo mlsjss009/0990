@@ -46,7 +46,7 @@ export default function Footer() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-600/20 to-transparent rounded-full blur-3xl"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="page-shell relative z-10">
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid lg:grid-cols-4 gap-12">

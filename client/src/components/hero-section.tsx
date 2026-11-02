@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Heart, CheckCircle, Sparkles, Globe, Users, TrendingUp, Award } from "lucide-react";
 import { executeAction } from "@/lib/actions";
+import HeroThreeScene from "@/components/hero-three-scene";
+import Reveal from "@/components/reveal";
 import defaultHeroImage from "@assets/IMG_1070_1761291347959.jpg";
+import communityHeroImage from "@assets/image_1761290603799.png";
 
 const HERO_IMAGE_ROTATION_MS = 5000;
+const DEFAULT_HERO_IMAGES = [defaultHeroImage, communityHeroImage];
 
 export default function HeroSection() {
   const [uploadedHeroImage, setUploadedHeroImage] = useState<string | null>(null);
-  const [showUploadedImage, setShowUploadedImage] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   // The Telegram bot uploads the hero image to the server; use it when it exists
   useEffect(() => {
@@ -27,62 +31,69 @@ export default function HeroSection() {
     };
   }, []);
 
-  // Rotate between the uploaded image and the default one
+  const slides = uploadedHeroImage ? [uploadedHeroImage, ...DEFAULT_HERO_IMAGES] : DEFAULT_HERO_IMAGES;
+
+  // Billboard rotation through the hero images
   useEffect(() => {
-    if (!uploadedHeroImage) {
+    if (slides.length < 2) {
       return;
     }
 
     const interval = setInterval(() => {
-      setShowUploadedImage((previous) => !previous);
+      setSlideIndex((previous) => (previous + 1) % slides.length);
     }, HERO_IMAGE_ROTATION_MS);
 
     return () => clearInterval(interval);
-  }, [uploadedHeroImage]);
+  }, [slides.length]);
 
-  const heroImage = uploadedHeroImage && showUploadedImage ? uploadedHeroImage : defaultHeroImage;
+  const heroImage = slides[slideIndex % slides.length];
 
   return (
     <section id="home" className="pt-20 relative overflow-hidden min-h-screen flex items-center">
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-indigo-400/30 to-purple-400/30 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-pink-400/30 to-rose-400/30 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-purple-400/20 to-indigo-400/20 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-      </div>
+      {/* Gradient base + interactive 3D layer */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50" />
+      <HeroThreeScene />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+      <div className="page-shell py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold mb-8 shadow-lg border border-purple-100" data-testid="badge-since-2010">
-              <Sparkles className="mr-2 h-4 w-4 text-purple-600" />
-              <span className="gradient-text">Making a difference since 2010</span>
-            </div>
-            
+          <div>
+            <Reveal y={18}>
+              <div className="inline-flex items-center px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold mb-8 shadow-lg border border-purple-100" data-testid="badge-since-2010">
+                <Sparkles className="mr-2 h-4 w-4 text-purple-600" />
+                <span className="gradient-text">Making a difference since 2010</span>
+              </div>
+            </Reveal>
+
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8" data-testid="heading-hero">
-              Transforming Lives of {" "}
-              <span className="gradient-text-warm">
-              Communities Around the World
-              </span>
+              <Reveal as="span" className="block" y={28} delay={0.06}>
+                Transforming Lives of
+              </Reveal>
+              <Reveal as="span" className="block gradient-text-warm" y={28} delay={0.16}>
+                Communities Around the World
+              </Reveal>
             </h1>
-            
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl" data-testid="text-hero-description">
-              We provide essential resources, education, and opportunities directly to vulnerable communities, creating immediate and lasting improvements in their lives.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-5 mb-12">
-              <Button
-                onClick={() => {
-                  window.location.href = '/apply#eligibility';
-                }}
-                className="btn-gradient text-white px-10 py-7 rounded-2xl text-lg font-bold h-auto shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-0"
-                data-testid="button-check-eligibility"
-              >
-                <CheckCircle className="mr-3 h-6 w-6" />
-                Check Eligibility Now
-              </Button>
-            </div>
+
+            <Reveal delay={0.26}>
+              <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-xl" data-testid="text-hero-description">
+                We provide essential resources, education, and opportunities directly to vulnerable communities, creating immediate and lasting improvements in their lives.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.34}>
+              <div className="flex flex-col sm:flex-row gap-5 mb-12">
+                <Button
+                  onClick={() => {
+                    window.location.href = '/apply#eligibility';
+                  }}
+                  className="btn-gradient text-white px-10 py-7 rounded-2xl text-lg font-bold h-auto shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-0"
+                  data-testid="button-check-eligibility"
+                >
+                  <CheckCircle className="mr-3 h-6 w-6" />
+                  Check Eligibility Now
+                </Button>
+              </div>
+            </Reveal>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
@@ -113,22 +124,34 @@ export default function HeroSection() {
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <div className="relative z-10">
+          <div className="relative">
+            <Reveal x={32} y={0} delay={0.18} amount={0.2}>
+              <div className="relative z-10">
               {/* Main Image */}
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
-                <img
-                  key={heroImage}
-                  src={heroImage}
-                  alt="Community members making a difference"
-                  className="w-full h-auto animate-fade-in"
-                  data-testid="img-hero"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                
+              <div className="group relative overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/60 transform hover:scale-[1.02] transition-all duration-500">
+                <div className="animate-hero-ken-burns">
+                  <img
+                    key={heroImage}
+                    src={heroImage}
+                    alt="Community members making a difference"
+                    className="w-full h-auto animate-fade-in"
+                    data-testid="img-hero"
+                  />
+                </div>
+
+                {/* Hover shine sweep */}
+                <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                  <div className="absolute -top-10 bottom-[-2.5rem] -left-1/2 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 transition-all duration-1000 group-hover:left-[120%] group-hover:opacity-100" />
+                </div>
+
+                {/* Inner glass edge */}
+                <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/40" />
+
                 {/* Overlay Card */}
                 <div className="absolute bottom-6 left-6 right-6">
-                  <div className="glass-effect rounded-2xl p-5 shadow-xl">
+                  {/* Scrim localized to the card, so the photo stays clean */}
+                  <div className="pointer-events-none absolute -inset-x-2 -inset-y-3 rounded-3xl bg-gradient-to-t from-black/60 via-black/30 to-transparent blur-xl" />
+                  <div className="relative rounded-2xl border border-white/20 bg-slate-900/50 p-5 shadow-xl backdrop-blur-xl">
                     <div className="flex items-center space-x-4">
                       <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                         <Globe className="h-7 w-7 text-white" />
@@ -155,7 +178,8 @@ export default function HeroSection() {
               {/* Decorative Elements */}
               <div className="absolute top-10 -left-10 w-24 h-24 bg-gradient-to-br from-purple-400/30 to-indigo-400/30 rounded-full blur-2xl animate-pulse-slow"></div>
               <div className="absolute bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-pink-400/30 to-rose-400/30 rounded-full blur-2xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
-            </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

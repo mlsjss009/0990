@@ -9,11 +9,11 @@ export default function News() {
       <Navigation />
       
       {/* Hero Header */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96" style={{background: 'radial-gradient(circle, hsl(var(--teal-light) / 0.15), transparent)'}}></div>
         <div className="absolute bottom-0 left-0 w-80 h-80" style={{background: 'radial-gradient(circle, hsl(var(--forest-light) / 0.12), transparent)'}}></div>
         
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+        <div className="page-shell text-center relative z-10">
           <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold mb-8 shadow-lg" style={{color: 'hsl(var(--teal-dark))'}}>
             <Newspaper className="mr-2 h-5 w-5" />
             Latest Updates

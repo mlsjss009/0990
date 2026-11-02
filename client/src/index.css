@@ -103,7 +103,50 @@
   }
 }
 
+@layer components {
+  /* Single source of truth for page width: full-bleed with responsive gutters */
+  .page-shell {
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .page-shell {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .page-shell {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
 @layer utilities {
+  /* Slow camera drift for the hero photograph */
+  @keyframes hero-ken-burns {
+    0% {
+      transform: scale(1) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: scale(1.08) translate3d(-1.5%, -1.5%, 0);
+    }
+  }
+
+  .animate-hero-ken-burns {
+    animation: hero-ken-burns 18s ease-in-out infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-ken-burns {
+      animation: none;
+    }
+  }
+
   /* Legacy NGO Colors */
   .text-ngo-primary { color: var(--ngo-primary); }
   .text-ngo-secondary { color: var(--ngo-secondary); }
