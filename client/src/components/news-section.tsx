@@ -6,6 +6,33 @@ import { executeAction } from "@/lib/actions";
 export default function NewsSection() {
   const news = [
     {
+      date: "April 2, 2025",
+      title: "Helping families facing hunger",
+      description: "A small act of kindness can make a big difference. We support vulnerable families through food assistance and community outreach — putting food on the table and hope in people's hearts.",
+      image: "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Food parcels being packed for families",
+      category: "Food Relief",
+      readTime: "1 min read"
+    },
+    {
+      date: "March 26, 2025",
+      title: "Essential items for people in need",
+      description: "Dignity should never be a luxury. Our outreach provides hygiene products and personal care items to people facing hardship. Your support helps us reach more people.",
+      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Hygiene and personal care packs",
+      category: "Dignity Packs",
+      readTime: "1 min read"
+    },
+    {
+      date: "March 18, 2025",
+      title: "Restoring hope and dignity",
+      description: "No act of kindness is too small. We reach people who need a helping hand with practical support, encouragement and essential resources — building a caring community together.",
+      image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400",
+      alt: "Community outreach volunteers",
+      category: "Community Care",
+      readTime: "1 min read"
+    },
+    {
       date: "March 15, 2025",
       title: "New Education Center Opens in Rural Bangladesh",
       description: "Thanks to our donors and local partners, 500 children now have access to quality education in their community.",
@@ -34,10 +61,13 @@ export default function NewsSection() {
     },
   ];
 
-  const categoryColors = {
+  const categoryColors: Record<string, string> = {
     "Education": "bg-blue-100 text-blue-800",
     "Healthcare": "bg-green-100 text-green-800",
-    "Economic Empowerment": "bg-orange-100 text-orange-800"
+    "Economic Empowerment": "bg-orange-100 text-orange-800",
+    "Food Relief": "bg-sky-100 text-sky-800",
+    "Dignity Packs": "bg-emerald-100 text-emerald-800",
+    "Community Care": "bg-rose-100 text-rose-800"
   };
 
   return (
@@ -46,7 +76,7 @@ export default function NewsSection() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-br from-green-100/20 to-transparent rounded-full blur-3xl"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="page-shell relative z-10">
         <div className="text-center mb-20">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-sm font-semibold text-ngo-primary mb-6">
             <Newspaper className="mr-2 h-4 w-4" />

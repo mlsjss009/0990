@@ -1,6 +1,7 @@
 
 import Navigation from "@/components/navigation";
 import ProgramsSection from "@/components/programs-section";
+import ServicesBento from "@/components/services-bento";
 import { GraduationCap, Heart, Briefcase, HandHeart } from "lucide-react";
 
 export default function Programs() {
@@ -9,11 +10,11 @@ export default function Programs() {
       <Navigation />
       
       {/* Hero Header */}
-      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="pt-32 pb-16 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96" style={{background: 'radial-gradient(circle, hsl(var(--terracotta-light) / 0.15), transparent)'}}></div>
         <div className="absolute bottom-0 left-0 w-80 h-80" style={{background: 'radial-gradient(circle, hsl(var(--amber-light) / 0.12), transparent)'}}></div>
         
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+        <div className="page-shell text-center relative z-10">
           <div className="inline-flex items-center px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full text-sm font-semibold mb-8 shadow-lg" style={{color: 'hsl(var(--terracotta-dark))'}}>
             <HandHeart className="mr-2 h-5 w-5" />
             Making a Difference
@@ -45,6 +46,7 @@ export default function Programs() {
       </div>
       
       <ProgramsSection />
+      <ServicesBento />
     </div>
   );
 }

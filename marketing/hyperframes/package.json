@@ -1,0 +1,13 @@
+{
+  "name": "hope-together-ads",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "npx --yes hyperframes@0.8.183 preview",
+    "check": "npx --yes hyperframes@0.8.183 check",
+    "render": "npx --yes hyperframes@0.8.183 render --output ../hope-together-ad.mp4"
+  },
+  "dependencies": {
+    "three": "0.160.0"
+  }
+}
